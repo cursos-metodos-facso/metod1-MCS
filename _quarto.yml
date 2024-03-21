@@ -39,7 +39,7 @@ website:
 
   navbar:
     pinned: true
-    background: "#08C4C4"
+    background: "#e69138"
     right:
       - syllabus.qmd
       - schedule.qmd
@@ -67,28 +67,26 @@ website:
             - content/index.qmd
         - section: "Sesiones"
           contents:
-            - text: "00: Presentación"
-              file: content/01-content.qmd
             - text: "01: Sesión 1"
               file: content/02-content.qmd
-            - text: "02: Sesión 2"
-              file: content/03-content.qmd
-            - text: "03: Sesión 3"
-              file: content/04-content.qmd
-            - text: "04: Sesión 4"
-              file: content/05-content.qmd
-            - text: "05: Sesión 5"
-              file: content/06-content.qmd
-            - text: "06: Sesión 6"
-              file: content/07-content.qmd
-            - text: "07: Sesión 7"
-              file: content/08-content.qmd
-            - text: "08: Sesión 8"
-              file: content/09-content.qmd
-            - text: "09: Sesión 9"
-              file: content/10-content.qmd
-            - text: "10: Sesión 10"
-              file: content/11-content.qmd
+            #- text: "02: Sesión 2"
+            #  file: content/03-content.qmd
+            #- text: "03: Sesión 3"
+            #  file: content/04-content.qmd
+            #- text: "04: Sesión 4"
+            #  file: content/05-content.qmd
+            #- text: "05: Sesión 5"
+            #  file: content/06-content.qmd
+            #- text: "06: Sesión 6"
+            #  file: content/07-content.qmd
+            #- text: "07: Sesión 7"
+            #  file: content/08-content.qmd
+            #- text: "08: Sesión 8"
+            #  file: content/09-content.qmd
+            #- text: "09: Sesión 9"
+            #  file: content/10-content.qmd
+            #- text: "10: Sesión 10"
+            #  file: content/11-content.qmd
     - title: "Recursos"
       style: "docked"
       search: false
@@ -96,22 +94,7 @@ website:
       contents:
         - text: "Descripción"
           file: resource/index.qmd
-        - text: "Práctica 1"
-          file: resource/01-resource.qmd
-        - text: "Práctica 2"
-          file: resource/02-resource.qmd
-        - text: "Práctica 2.2"
-          file: resource/02-2-resource.qmd
-        - text: "Práctica 3"
-          file: resource/03-resource.qmd
-        - text: "Práctica 4"
-          file: resource/04-resource.qmd
-        - text: "Práctica 5"
-          file: resource/05-resource.qmd
-        - text: "Práctica 6"
-          file: resource/06-resource.qmd
-        - text: "Práctica 7"
-          file: resource/07-resource.qmd
+
 
 
   page-footer:
