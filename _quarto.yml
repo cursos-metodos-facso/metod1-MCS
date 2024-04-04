@@ -39,25 +39,25 @@ website:
 
   navbar:
     pinned: true
-    background: "#e69138"
+    background: "#916ded"
     right:
       - syllabus.qmd
       - schedule.qmd
-      - text: "Contenidos"
+      - text: "Clases"
         file: content/index.qmd
 #      - text: "Assignments"
 #        file: assignment/index.qmd
 #      - text: "Examples"
 #        file: example/index.qmd
       - trabajos.qmd
-      - text: "Recursos"
+      - text: "Practicos"
         file: resource/index.qmd
-      - icon: slack
-        href: "https://www.slack.com"
-        aria-label: Slack
+#     - icon: slack
+#        href: "https://www.slack.com"
+#        aria-label: Slack
 
   sidebar:
-    - title: "Contenidos"
+    - title: "Clases"
       style: "docked"
       search: false
       background: dark
@@ -87,7 +87,7 @@ website:
             #  file: content/10-content.qmd
             #- text: "10: Sesión 10"
             #  file: content/11-content.qmd
-    - title: "Recursos"
+    - title: "Practicos"
       style: "docked"
       search: false
       background: dark
@@ -99,7 +99,7 @@ website:
 
   page-footer:
     left: |
-      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}) <br>
+      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by [{{< var instructor.name_no_title  &  var instructor2.name_no_title >}}]({{< var instructor.url >}}) <br>
       All content licensed under a {{< fa brands creative-commons >}}
       {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
       [Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
