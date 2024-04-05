@@ -2,7 +2,7 @@
 title: "Práctica 1. Aproximación inicial a R"
 subtitle: "Metodología I - Magíster en Ciencias Sociales"
 linktitle: "Práctica 1: Preparación datos"
-date: "2023-03-17"
+date: "2024-04-05"
 lang: es
 ---
 
@@ -87,11 +87,28 @@ O asignar operaciones a un objeto
 c <- a + b
 ```
 
+Así como también agregar texto
+
+```{r}
+d <- "hola"
+
+d
+```
+
+y operaciones un poco más complejas
+
+```{r}
+e <- b^2
+
+e + a * c
+```
+
 Sin embargo, la mayor parte del tiempo usamos funciones que ya existen en R
 
 ```{r}
 sum(28,8)
 ```
+
 ```{r}
 round(10.14536) #aproximar
 ```
@@ -113,7 +130,7 @@ Y en adelante, las librerías se cargan así <span class="sidenote"> pacman::p_l
 
 
 ```{r}
-pacman::p_load(dplyr, guaguas)
+pacman::p_load(dplyr, guaguas, ggplot2)
 ```
 
 
@@ -182,5 +199,61 @@ E incluso pueden ver la cantidad de personas con su nombre, en el mismo año que
 d <- filter(base, nombre=="Kevin" & anio==1996)
 sum(d$n)
 ```
+
+Avanzando un poco más, podemos utilizar ggplot2 para hacer un gráfico de líneas que muestre la evolución en el tiempo
+
+```{r}
+datos <- filter(base, nombre=="Kevin")
+ggplot(datos, aes(x = anio, y = n)) +
+  geom_line() + 
+  labs(x = "Año", y = "Número de personas", title = "Número de personas llamadas Kevin por año")
+```
+
+¿Qué puede explicar el peak de "Kevins" previo a los 2000?
+
+spoiler: [link](https://es.wikipedia.org/wiki/Backstreet_Boys)
+
+## Otro ejemplo
+
+```{r}
+guaguas %>% 
+  filter(nombre %in% c("Salvador", "Augusto"), anio >= 1960 & anio <= 1979) %>% 
+  ggplot(aes(anio, n, color = nombre)) + 
+  geom_line() +
+  labs(x = "año", y = "total inscripciones", color = "nombre", 
+       title = "Inscripciones de 'Salvador' y 'Augusto' entre 1960 - 1979")
+```
+
+# Parte 2
+
+## 2. Flujo de trabajo en R
+
+Tal vez una de las dificultades más comunes o cotidianas del uso de R es el orden de trabajo, en donde tenemos cientos de archivos, scripts, gráficos, bases de datos u otros repartidos desordenadamente en nuestro computador. También se da mucho el caso en que, cuando queremos trabajar con alguien, tenemos que cambiar las rutas de los archivos, por ejemplo en dónde están las bases de datos, ya que nuestros ordenadores y usuarios se llaman y son escencialmente distintos. 
+
+¿Cómo podemos sortear eso? Siguiendo un flujo de trabajo reproducible, autocontenido y ordenado. **En este curso trabajaremos R con un flujo de trabajo reproducible, basado en el sistema [IPO](https://lisa-coes.com/ipo-data/)**. El protocolor IPO es una plantilla/protocolo de estructura digital de carpetas que tiene por objetivo el organizar, procesar y documentar los datos de un proyecto de investigación con miras a la apertura de los datos en un repositorio público y de acceso libre. En concreto, el sistema IPO se propone abordar brevemente todo lo referente a los Datos, Métodos y Resultados.
+
+![](images/cora1.png)
+
+
+### Rproject
+
+Un Rproject es una herramienta de R que nos permite establecer un directorio de trabajo en una carpeta de nuestro computador. Al hacerlo, establecemos un espacio de trabajo que permite crear una estructura de carpetas donde guardar los documentos asociados al proyecto. De esta forma, creamos un conjunto de archivos autocontenidos en un solo lugar que nos permite organizar nuestro trabajo y facilitar la **reproducibilidad**. En las próximas sesiones estableceremos un protocolo de trabajo que permite organizar y armonizar el trabajo: el [protocolo IPO](https://lisa-coes.com/ipo-repro/).
+
+Para crear un Rproject:
+
+1. Abrir Rstudio
+
+2. Seleccionar Archivo -> Nuevo proyecto
+
+![](images/project.png)
+
+3. Seleccionamos la opción de directorio existente
+
+4. Seleccionamos la carpeta donde descargamos nuestro repositorio de Github en el paso anterior
+
+5. Apretamos el botón de crear proyecto
+
+
+
 
 

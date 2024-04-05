@@ -64,7 +64,7 @@ About macros.js: permite escalar las imágenes como [scale 50%](path to image), 
 .pull-left[
 # Metodología I
 ## **Kevin Carrasco**
-## Sociología FACSO - UChile
+## Magister Ciencias Sociales
 ## 1er Sem 2024
 ## [.green[metod1-mcs.netlify.com]](https://metod1-mcs.netlify.com)
 ] 
@@ -94,45 +94,30 @@ class: inverse, bottom, right, animated, slideInRight
 
 ---
 
----
-
-# Este curso
+# Este curso: Estadística descriptiva
 
 
-* Unidad 1: Elementos y herramientas de R
+* Unidad 1: Introducción a R/Rstudio
 
 --
 
-
-* Unidad 2: Operacionalización y análisis descriptivo de datos
-
---
-
-* Unidad 3: Análisis estadístico inferencial en R
+* Unidad 2: Tipos de variables y Operacionalización 
 
 --
 
-* Unidad 4: Regresión lineal y regresión logística
+* Unidad 3: Análisis y visualización de datos descriptivos
 
+--
 
----
-
-# Evaluación 
-
-- 4 trabajos (15% c/u). Asociado a cada unidad
-
-- Presentación final de investigación (10%)
-
-- Examen Final (30%)
-
-- Foco en reproducibilidad, reporte, visualización y análisis de resultados.
+* Unidad 4: Documentos dinámicos en R
 
 ---
+
 # Sitio web del curso
 <br>
 <br>
 
-# .center[[**R-data-analisis.netlify.app**](https://R-data-analisis.netlify.app/)]
+# .center[[**metod1-MCS.netlify.app**](https://metod1-MCS.netlify.app/)]
 
 * Ventajas: Todo en un mismo lugar, permite combinar texto y código, reproducible, gratis, acceso abierto, etc.
 
@@ -140,21 +125,23 @@ class: inverse, bottom, right, animated, slideInRight
 class: inverse, bottom, right, animated, slideInRight
 
 
-# .red[Unidad 1: Elementos y herramientas de R]
+# .red[Unidad 1: Introducción a R/Rstudio]
 
 ---
 
 class: roja, middle, right
 
-.pull-left[
+.pull-left-narrow[
 # ¿Crisis de apertura en ciencia?
 ]
 
 .pull-right-wide[
-
-### 1. Transparencia
+<br>
+<br>
+<br>
+### 1. Acceso
 ### 2. Reproducibilidad 
-### 3. Acceso
+### 3. Transparencia
 ]
 
 ---
@@ -190,27 +177,8 @@ class: middle, center
 ]
 
 ---
-.pull-left-narrow[
-<br>
-![](https://i.pinimg.com/originals/d3/93/93/d39393c978cec32e2598c1d1261ace4f.jpg)
-]
-
-.pull-right-wide[
-
-### Modelo actual de publicación científica:
-- las vacas hacen leche (se ordeñan solas)
-
-- otras vacas revisan la leche (gratis)
-
-- las vacas le pagan al granjero para distribuir la leche
-
-- luego el granjero le vende la leche de vuelta a las vacas
-]
-
----
 <br>
  
-
 ![](../../files/img/flujo_rep.png)
 
 ---
@@ -229,6 +197,19 @@ class: middle, center
 ... alrededor de un **40%!** (... varía por disciplina)
 ]
 
+---
+
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left[
+![:scale 100%](../../files/img/breznau.png)
+]
+.pull-right[
+
+Breznau, et. al, (2023) coordinó una investigación con 161 investigadores de 73 equipos de investigación.
+
+Los equipos informaron tanto hallazgos numéricos como conclusiones sustanciales muy diversas
+]
 ---
 class: center
 
@@ -316,47 +297,7 @@ Más info:
 ]
 
 ---
-# Zotero
 
-.pull-left[
-- Gestor de bibliografía
-
-- Código abierto
-
-- Gratis
-
-- Integración con R
-
-- Acceso desde cualquier equipo
-]
-
-.pull-right[
-![:scale 100%](../../files/img/zotero.png)
-]
-
----
-
-# Github
-
-.pull-left[
-- Repositorio en línea
-
-- Control de versiones
-
-- Gratis
-
-- Integración con R
-
-- Acceso desde cualquier equipo
-]
-
-.pull-right[
-![:scale 100%](../../files/img/github.png)
-]
-
-
-
----
 class: center
 
 ## Protocolo de trabajo reproducible
@@ -374,8 +315,8 @@ class: front
 .pull-left[
 # Metodología I
 ## **Kevin Carrasco**
-## Sociología FACSO - UChile
-## 1er Sem 2023 
+## Magister Ciencias Sociales
+## 1er Sem 2024
 ## [.green[metod1-mcs.netlify.com]](https://metod1-mcs.netlify.com)
 ] 
     
