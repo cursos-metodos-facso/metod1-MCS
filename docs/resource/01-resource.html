@@ -206,17 +206,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
   <ul class="collapse">
   <li><a href="#ejemplos" id="toc-ejemplos" class="nav-link" data-scroll-target="#ejemplos">0. Ejemplos</a></li>
-  <li><a href="#librerías-principales-de-r-a-utilizar" id="toc-librerías-principales-de-r-a-utilizar" class="nav-link" data-scroll-target="#librerías-principales-de-r-a-utilizar">1. Librerías principales (de R) a utilizar</a></li>
-  <li><a href="#cargar-base-de-datos" id="toc-cargar-base-de-datos" class="nav-link" data-scroll-target="#cargar-base-de-datos">2. Cargar base de datos</a></li>
   </ul></li>
-  <li><a href="#otro-ejemplo" id="toc-otro-ejemplo" class="nav-link" data-scroll-target="#otro-ejemplo">Otro ejemplo</a></li>
   </ul></li>
   <li><a href="#parte-2" id="toc-parte-2" class="nav-link" data-scroll-target="#parte-2">Parte 2</a>
   <ul class="collapse">
   <li><a href="#flujo-de-trabajo-en-r" id="toc-flujo-de-trabajo-en-r" class="nav-link" data-scroll-target="#flujo-de-trabajo-en-r">2. Flujo de trabajo en R</a>
   <ul class="collapse">
   <li><a href="#rproject" id="toc-rproject" class="nav-link" data-scroll-target="#rproject">Rproject</a></li>
+  <li><a href="#librerías-principales-de-r-a-utilizar" id="toc-librerías-principales-de-r-a-utilizar" class="nav-link" data-scroll-target="#librerías-principales-de-r-a-utilizar">1. Librerías principales (de R) a utilizar</a></li>
+  <li><a href="#cargar-base-de-datos" id="toc-cargar-base-de-datos" class="nav-link" data-scroll-target="#cargar-base-de-datos">2. Cargar base de datos</a></li>
   </ul></li>
+  <li><a href="#otro-ejemplo" id="toc-otro-ejemplo" class="nav-link" data-scroll-target="#otro-ejemplo">Otro ejemplo</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -364,6 +364,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section id="parte-2" class="level1">
+<h1>Parte 2</h1>
+<section id="flujo-de-trabajo-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="flujo-de-trabajo-en-r">2. Flujo de trabajo en R</h2>
+<p>Tal vez una de las dificultades más comunes o cotidianas del uso de R es el orden de trabajo, en donde tenemos cientos de archivos, scripts, gráficos, bases de datos u otros repartidos desordenadamente en nuestro computador. También se da mucho el caso en que, cuando queremos trabajar con alguien, tenemos que cambiar las rutas de los archivos, por ejemplo en dónde están las bases de datos, ya que nuestros ordenadores y usuarios se llaman y son escencialmente distintos.</p>
+<p>¿Cómo podemos sortear eso? Siguiendo un flujo de trabajo reproducible, autocontenido y ordenado. <strong>En este curso trabajaremos R con un flujo de trabajo reproducible, basado en el sistema <a href="https://lisa-coes.com/ipo-data/">IPO</a></strong>. El protocolor IPO es una plantilla/protocolo de estructura digital de carpetas que tiene por objetivo el organizar, procesar y documentar los datos de un proyecto de investigación con miras a la apertura de los datos en un repositorio público y de acceso libre. En concreto, el sistema IPO se propone abordar brevemente todo lo referente a los Datos, Métodos y Resultados.</p>
+<p><img src="images/cora1.png" class="img-fluid"></p>
+<section id="rproject" class="level3">
+<h3 class="anchored" data-anchor-id="rproject">Rproject</h3>
+<p>Un Rproject es una herramienta de R que nos permite establecer un directorio de trabajo en una carpeta de nuestro computador. Al hacerlo, establecemos un espacio de trabajo que permite crear una estructura de carpetas donde guardar los documentos asociados al proyecto. De esta forma, creamos un conjunto de archivos autocontenidos en un solo lugar que nos permite organizar nuestro trabajo y facilitar la <strong>reproducibilidad</strong>. En las próximas sesiones estableceremos un protocolo de trabajo que permite organizar y armonizar el trabajo: el <a href="https://lisa-coes.com/ipo-repro/">protocolo IPO</a>.</p>
+<p>Para crear un Rproject:</p>
+<ol type="1">
+<li><p>Abrir Rstudio</p></li>
+<li><p>Seleccionar Archivo -&gt; Nuevo proyecto</p></li>
+</ol>
+<p><img src="images/project.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>Seleccionamos la opción de directorio existente</p></li>
+<li><p>Seleccionamos la carpeta donde descargamos nuestro repositorio de Github en el paso anterior</p></li>
+<li><p>Apretamos el botón de crear proyecto</p></li>
+</ol>
 <p>Y muchas de estas funciones que utilizamos en R están contenidas en librerías o paquetes (packages)</p>
 </section>
 <section id="librerías-principales-de-r-a-utilizar" class="level3">
@@ -491,32 +515,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="01-resource_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
-</section>
-<section id="parte-2" class="level1">
-<h1>Parte 2</h1>
-<section id="flujo-de-trabajo-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="flujo-de-trabajo-en-r">2. Flujo de trabajo en R</h2>
-<p>Tal vez una de las dificultades más comunes o cotidianas del uso de R es el orden de trabajo, en donde tenemos cientos de archivos, scripts, gráficos, bases de datos u otros repartidos desordenadamente en nuestro computador. También se da mucho el caso en que, cuando queremos trabajar con alguien, tenemos que cambiar las rutas de los archivos, por ejemplo en dónde están las bases de datos, ya que nuestros ordenadores y usuarios se llaman y son escencialmente distintos.</p>
-<p>¿Cómo podemos sortear eso? Siguiendo un flujo de trabajo reproducible, autocontenido y ordenado. <strong>En este curso trabajaremos R con un flujo de trabajo reproducible, basado en el sistema <a href="https://lisa-coes.com/ipo-data/">IPO</a></strong>. El protocolor IPO es una plantilla/protocolo de estructura digital de carpetas que tiene por objetivo el organizar, procesar y documentar los datos de un proyecto de investigación con miras a la apertura de los datos en un repositorio público y de acceso libre. En concreto, el sistema IPO se propone abordar brevemente todo lo referente a los Datos, Métodos y Resultados.</p>
-<p><img src="images/cora1.png" class="img-fluid"></p>
-<section id="rproject" class="level3">
-<h3 class="anchored" data-anchor-id="rproject">Rproject</h3>
-<p>Un Rproject es una herramienta de R que nos permite establecer un directorio de trabajo en una carpeta de nuestro computador. Al hacerlo, establecemos un espacio de trabajo que permite crear una estructura de carpetas donde guardar los documentos asociados al proyecto. De esta forma, creamos un conjunto de archivos autocontenidos en un solo lugar que nos permite organizar nuestro trabajo y facilitar la <strong>reproducibilidad</strong>. En las próximas sesiones estableceremos un protocolo de trabajo que permite organizar y armonizar el trabajo: el <a href="https://lisa-coes.com/ipo-repro/">protocolo IPO</a>.</p>
-<p>Para crear un Rproject:</p>
-<ol type="1">
-<li><p>Abrir Rstudio</p></li>
-<li><p>Seleccionar Archivo -&gt; Nuevo proyecto</p></li>
-</ol>
-<p><img src="images/project.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li><p>Seleccionamos la opción de directorio existente</p></li>
-<li><p>Seleccionamos la carpeta donde descargamos nuestro repositorio de Github en el paso anterior</p></li>
-<li><p>Apretamos el botón de crear proyecto</p></li>
-</ol>
 
 
-</section>
 </section>
 </section>
 
