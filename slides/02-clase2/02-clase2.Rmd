@@ -1,7 +1,7 @@
 ---
 title: "Metodología I"
 author: ".small[Kevin Carrasco <br><br> Departamento de Sociología - UCH / COES <br><br>]"
-date: "1er Sem 2023"
+date: "1er Sem 2024"
 output:
   xaringan::moon_reader:
     css: "../../files/css/custom_2020.css"
@@ -60,7 +60,7 @@ About macros.js: permite escalar las imágenes como [scale 50%](path to image), 
 # Metodología I
 ## **Kevin Carrasco**
 ## Magister Ciencias Sociales FACSO - UChile
-## 1er Sem 2023 
+## 1er Sem 2024
 ## [.green[metod1-mcs.netlify.com]](https://metod1-mcs.netlify.com)
 ] 
     
@@ -68,7 +68,7 @@ About macros.js: permite escalar las imágenes como [scale 50%](path to image), 
 .pull-right[
 .right[
 <br>
-## .yellow[Sesión 2: Operacionalización de variables ]
+## .yellow[Sesión 2: Tipos de variables]
 ![:scale 70%](../../files/img/eval-hires.png)
 
 
@@ -95,7 +95,7 @@ Medidas de tendencia central
 
 Tipos de diseños de investigación
 
-Operacionalización de variables
+Tipos de variables
 <br>
 <br>
 <br>
@@ -118,6 +118,113 @@ Operacionalización de variables
 <br>
 <br>
 <br>
+---
+---
+
+class: roja, middle, right
+
+.pull-left-narrow[
+# ¿Crisis de apertura en ciencia?
+]
+
+.pull-right-wide[
+<br>
+<br>
+<br>
+### 1. Acceso
+### 2. Reproducibilidad 
+### 3. Transparencia
+]
+
+---
+<br>
+
+![](../../files/img/flujo.png)
+---
+<br>
+ 
+
+![](../../files/img/flujo-acceso.png)
+---
+class: middle, center
+
+.pull-left[
+<br>
+<br>
+<br>
+<br>
+# Barreras de pago
+]
+.pull-right[
+.left[
+![:scale 70%](https://localist-images.azureedge.net/photos/723383/huge/3b15ca9bd709e6738e42326fa3f35ff4a3357bb9.jpg)
+]
+]
+
+---
+# Márgenes de ganancia
+
+.center[
+![:scale 70%](../../files/img/profits.png)
+]
+
+---
+<br>
+ 
+![](../../files/img/flujo_rep.png)
+
+---
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left-wide[
+![:scale 95%](../../files/img/reproducibility_science.png)
+]
+.pull-right-narrow[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+... alrededor de un **40%!** (... varía por disciplina)
+]
+
+---
+
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left[
+![:scale 100%](../../files/img/breznau.png)
+]
+.pull-right[
+
+Breznau, et. al, (2023) coordinó una investigación con 161 investigadores de 73 equipos de investigación.
+
+Los equipos informaron tanto hallazgos numéricos como conclusiones sustanciales muy diversas
+]
+---
+
+<br>
+ 
+![](../../files/img/flujo_trans.png)
+
+
+---
+<br>
+
+![](../../files/img/flujo-herramientas.png)
+
+---
+class: middle center
+Más info:
+
+# lisa-coes.com
+
+# Documental "Paywall: The Business of Scholarship" [Youtube](https://www.youtube.com/watch?v=HM_nWsdbNvQ&ab_channel=JasonSchmitt)
+
+---
+
+
 ---
 
 ## Datos y variables
