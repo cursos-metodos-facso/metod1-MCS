@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Metodología I - MCS - Práctica 2. Operacionalización de variables</title>
+<title>Metodología I - MCS - Práctica 2. Conocimientos básicos de programación en R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,10 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,13 +46,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -91,21 +120,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 
 
-<meta property="og:title" content="Metodología I - MCS - Práctica 2. Operacionalización de variables">
-<meta property="og:description" content="Metodología I - Magíster en Ciencias Sociales">
+<meta property="og:title" content="Metodología I - MCS - Práctica 2. Conocimientos básicos de programación en R">
+<meta property="og:description" content="Hoy aprendimos distintas herramientas básicas para utilizar el lenguaje y ambiente R. Como resumen:">
 <meta property="og:image" content="https://metod1-mcs.netlify.app/files/social-image-f22.png">
 <meta property="og:site-name" content="Metodología I - MCS">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="500">
 <meta property="og:image:width" content="500">
-<meta name="twitter:title" content="Metodología I - MCS - Práctica 2. Operacionalización de variables">
-<meta name="twitter:description" content="Metodología I - Magíster en Ciencias Sociales">
+<meta name="twitter:title" content="Metodología I - MCS - Práctica 2. Conocimientos básicos de programación en R">
+<meta name="twitter:description" content="Hoy aprendimos distintas herramientas básicas para utilizar el lenguaje y ambiente R. Como resumen:">
 <meta name="twitter:image" content="https://metod1-mcs.netlify.app/files/social-image-f22.png">
 <meta name="twitter:creator" content="@juankcastillo">
 <meta name="twitter:site" content="@juankcastillo">
@@ -114,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:image-width" content="500">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -125,42 +153,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">Metodología I - MCS</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html">
  <span class="menu-text">Programa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html" rel="" target="">
+    <a class="nav-link" href="../schedule.html">
  <span class="menu-text">Planificación</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../content/index.html" rel="" target="">
+    <a class="nav-link" href="../content/index.html">
  <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../trabajos.html" rel="" target="">
+    <a class="nav-link" href="../trabajos.html">
  <span class="menu-text">Trabajos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resource/index.html" rel="" target="">
+    <a class="nav-link active" href="../resource/index.html" aria-current="page">
  <span class="menu-text">Practicos</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Práctica 2. Conocimientos básicos de programación en R</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/index.html" class="sidebar-item-text sidebar-link">Descripción</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/01-resource.html" class="sidebar-item-text sidebar-link">Práctico 1</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/02-resource.html" class="sidebar-item-text sidebar-link active">Práctico 2</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -169,27 +224,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#presentación" id="toc-presentación" class="nav-link active" data-scroll-target="#presentación">Presentación</a>
   <ul class="collapse">
-  <li><a href="#objetivo-de-la-práctica" id="toc-objetivo-de-la-práctica" class="nav-link" data-scroll-target="#objetivo-de-la-práctica">Objetivo de la práctica</a></li>
-  <li><a href="#antecedentes-de-los-datos-a-utilizar" id="toc-antecedentes-de-los-datos-a-utilizar" class="nav-link" data-scroll-target="#antecedentes-de-los-datos-a-utilizar">Antecedentes de los datos a utilizar</a></li>
-  </ul></li>
-  <li><a href="#preparación-de-datos-latinobarómetro-2020" id="toc-preparación-de-datos-latinobarómetro-2020" class="nav-link" data-scroll-target="#preparación-de-datos-latinobarómetro-2020">Preparación de datos Latinobarómetro 2020</a>
+  <li><a href="#objetivo-de-la-práctica" id="toc-objetivo-de-la-práctica" class="nav-link" data-scroll-target="#objetivo-de-la-práctica">0. Objetivo de la práctica</a></li>
+  <li><a href="#conocimientos-básicos-de-programación" id="toc-conocimientos-básicos-de-programación" class="nav-link" data-scroll-target="#conocimientos-básicos-de-programación">1. Conocimientos básicos de programación</a>
   <ul class="collapse">
-  <li><a href="#librerias" id="toc-librerias" class="nav-link" data-scroll-target="#librerias">1. Librerías principales (de R) a utilizar en el análisis</a></li>
-  <li><a href="#cargar-base-de-datos" id="toc-cargar-base-de-datos" class="nav-link" data-scroll-target="#cargar-base-de-datos">2. Cargar base de datos</a></li>
-  <li><a href="#selección-de-variables-a-utilizar" id="toc-selección-de-variables-a-utilizar" class="nav-link" data-scroll-target="#selección-de-variables-a-utilizar">3. Selección de variables a utilizar</a></li>
-  <li><a href="#procesamiento-de-variables" id="toc-procesamiento-de-variables" class="nav-link" data-scroll-target="#procesamiento-de-variables">4. Procesamiento de variables</a>
+  <li><a href="#r-como-calculadora" id="toc-r-como-calculadora" class="nav-link" data-scroll-target="#r-como-calculadora">1.1 R como calculadora</a></li>
+  <li><a href="#un-lenguaje-orientado-a-objetos" id="toc-un-lenguaje-orientado-a-objetos" class="nav-link" data-scroll-target="#un-lenguaje-orientado-a-objetos">1.2 Un lenguaje orientado a objetos</a></li>
+  </ul></li>
+  <li><a href="#operadores-en-r" id="toc-operadores-en-r" class="nav-link" data-scroll-target="#operadores-en-r">2. Operadores en R</a></li>
+  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">3. Tipos de datos</a>
   <ul class="collapse">
-  <li><a href="#confianza-en-el-gobierno" id="toc-confianza-en-el-gobierno" class="nav-link" data-scroll-target="#confianza-en-el-gobierno">4.1 Confianza en el Gobierno</a></li>
-  <li><a href="#sexo" id="toc-sexo" class="nav-link" data-scroll-target="#sexo">4.3. Sexo</a></li>
-  <li><a href="#edad" id="toc-edad" class="nav-link" data-scroll-target="#edad">4.4 Edad</a></li>
+  <li><a href="#qué-son-los-tipos-de-datos" id="toc-qué-son-los-tipos-de-datos" class="nav-link" data-scroll-target="#qué-son-los-tipos-de-datos">3.1 ¿Qué son los tipos de datos?</a></li>
+  <li><a href="#qué-tipos-de-datos-encontramos-en-r" id="toc-qué-tipos-de-datos-encontramos-en-r" class="nav-link" data-scroll-target="#qué-tipos-de-datos-encontramos-en-r">3.2 ¿Qué tipos de datos encontramos en R?</a></li>
   </ul></li>
-  <li><a href="#generación-de-base-de-datos-procesada-para-el-análisis" id="toc-generación-de-base-de-datos-procesada-para-el-análisis" class="nav-link" data-scroll-target="#generación-de-base-de-datos-procesada-para-el-análisis">5. Generación de base de datos procesada para el análisis</a></li>
-  <li><a href="#descriptivos-básicos-de-las-variables" id="toc-descriptivos-básicos-de-las-variables" class="nav-link" data-scroll-target="#descriptivos-básicos-de-las-variables">Descriptivos básicos de las variables</a>
-  <ul class="collapse">
-  <li><a href="#media-por-grupos" id="toc-media-por-grupos" class="nav-link" data-scroll-target="#media-por-grupos">Media por grupos</a></li>
-  <li><a href="#representación" id="toc-representación" class="nav-link" data-scroll-target="#representación">Representación</a></li>
+  <li><a href="#cargar-librerías" id="toc-cargar-librerías" class="nav-link" data-scroll-target="#cargar-librerías">4. Cargar librerías</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
   </ul>
 </nav>
     </div>
@@ -198,8 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Práctica 2. Operacionalización de variables</h1>
-<p class="subtitle lead">Metodología I - Magíster en Ciencias Sociales</p>
+<h1 class="title d-none d-lg-block">Práctica 2. Conocimientos básicos de programación en R</h1>
 </div>
 
 
@@ -210,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">24 de marzo de 2023</p>
+      <p class="date">19 de abril de 2024</p>
     </div>
   </div>
   
@@ -223,864 +271,307 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="presentación" class="level1">
 <h1>Presentación</h1>
 <section id="objetivo-de-la-práctica" class="level2">
-<h2 class="anchored" data-anchor-id="objetivo-de-la-práctica">Objetivo de la práctica</h2>
-<p>El desarrollo de esta guía tiene por objetivo revisar algunos procedimientos básicos de la preparación de datos con R, que son necesarios para luego poder analizar e interpretar los datos.</p>
-<p>Por temas de orden y reproducibilidad, en este curso vamos a separar en <strong>dos momentos</strong> el trabajo con datos, y dos archivos de código correspondientes:</p>
-<ul>
-<li><p><strong>Preparación</strong> corresponde a lo que se conoce generalmente como “limpieza”, es decir, realizar las modificaciones necesarias para poder efectuar los análisis. Estas modificaciones previas al análisis son necesarias ya que los datos originales con los que se va a trabajar en general no vienen perfectamente adaptados a los análisis que se quieren hacer. Por lo tanto, en cuanto a datos también hacemos la distinción entre datos originales y datos preparados (o procesados).</p></li>
-<li><p><strong>Análisis</strong>: se relaciona tanto con análisis descriptivos asociados a las preguntas de investigación y como también modelamiento de datos para contrastar hipótesis de investigación.</p></li>
-</ul>
-<section id="flujo" class="level4">
-<h4 class="anchored" data-anchor-id="flujo">Los procesos de preparación y análisis vinculados a datos y resultados se presentan en el siguiente esquema:</h4>
-<p><img src="images/produccion.png" class="img-fluid"></p>
-<p>Tanto la preparación como el análisis (que son parte del concepto más general de procesamiento) quedan registrados cada uno en un <em>archivo de código</em>.</p>
-<p><span class="sidenote"><strong>Archivo de código R</strong>: archivo con extensión .R donde se almacena el código de análisis. Para generarlo desde RStudio: <em>File &gt; New File &gt; R Script</em> (o ctrl+shift+N), y para grabarlo <em>File &gt; Save (o ctrl+s)</em>, y darle nombre la primera vez (recordar: sin tilde ni ñ, y evitar espacios) </span></p>
-<p>El documento de <strong>código de preparación</strong> posee 5 partes, más una sección de identificación inicial:</p>
-<ol start="0" type="1">
-<li>Identificación y descripción general: Título, autor(es), fecha, información breve sobre el contenido del documento</li>
-<li>Librerías: cargar librerías a utilizar</li>
-<li>Datos: carga de datos</li>
-<li>Selección de variables a utilizar</li>
-<li>Procesamiento de variables: en este punto, por cada variable se realiza lo siguiente:
-<ol type="a">
-<li>Descriptivo básico</li>
-<li>Recodificación: datos perdidos y valores (en caso de ser necesario)</li>
-<li>Etiquetamiento: de variable y valores (en caso de ser necesario)</li>
-<li>Otros ajustes</li>
-</ol></li>
-<li>Generación de base de datos preparada para el análisis.</li>
-</ol>
-<p>Al final de esta práctica la idea es que cada un_ elabore y entienda su propio documento de preparación de datos.</p>
-<p>En el ejemplo vamos a procesar variables de confianza en instituciones políticas y variables de caracterización sociodemográfica utilizando los datos de la encuesta <a href="https://www.latinobarometro.org/lat.jsp">Latinobarómetro</a> .</p>
-</section>
-</section>
-<section id="antecedentes-de-los-datos-a-utilizar" class="level2">
-<h2 class="anchored" data-anchor-id="antecedentes-de-los-datos-a-utilizar">Antecedentes de los datos a utilizar</h2>
-<p>Latinobarómetro es un estudio de opinión pública que aplica anualmente alrededor de 20.000 entrevistas en 18 países de América Latina representando a más de 600 millones de habitantes</p>
-<p>“Los gobiernos latinoamericanos, que venían en declive junto con sus democracias desde inicios de la década de 2010, como reflejan los datos de Latinobarómetro, llegaron a fines de 2018 al annus horribilis con la caída de Nicaragua y Venezuela desde su condición de democracias para entrar en la categoría de autocracias y dictadura.</p>
-<p>De los hiperpresidentes de la primera década del siglo con altos niveles de crecimiento en todos los países y altos niveles de aprobación, la región pasó en la segunda década a los subpresidentes, con una baja en aprobación de gobierno a la mitad, en menos de 10 años. Este rechazo al desempeño de las elites gobernantes, indica su fracaso a fines de 2019 en varios países de la región.” (Latinobarómetro, informe 2021, p.&nbsp;7)</p>
-<p>El presente ejercicio tiene por objetivo el procesar los datos para obtener las variables relevantes para el estudio de la <strong>Confianza en instituciones políticas</strong>, entendida como el grado en que los individuos confian en distintas instituciones políticas a nivel nacional, como el gobierno, la justicia, los partidos políticos, etc. Para ello, junto con variables de confianza, consideraremos también variables de estatus (educación), y variables de caracterización sociodemográfica (sexo y edad).</p>
-</section>
-</section>
-<section id="preparación-de-datos-latinobarómetro-2020" class="level1">
-<h1>Preparación de datos Latinobarómetro 2020</h1>
-<section id="librerias" class="level2">
-<h2 class="anchored" data-anchor-id="librerias">1. Librerías principales (de R) a utilizar en el análisis</h2>
-<p>Como sabemos, la lógica de R es instalar librerías (solo 1 vez, con <code>install.packages("librería")</code>), y luego cargarlas cada vez que es necesario usarlas (con <code>library(librería)</code>). El problema de esto es que a veces no se sabe claramente qué librerías están instaladas y cuales no, lo que va a arrojar error al cargarlas. Y, como sucede en R, existe una librería para solucionar este problema que se llama <code>pacman</code> (package manager). Lo que hace <code>pacman</code> es cargar la librería, y si no está instalada, la instala y la carga:</p>
-<p>Para utilizar la primera vez (si es que no está instalada):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Y en adelante, las librerías se cargan así <span class="sidenote"> pacman::p_load(libreria1,libreria2,libreriaX) </span>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(dplyr, sjmisc, car, sjlabelled, stargazer, haven)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Para esta sesión vamos a utilizar Las librerías que vamos a utilizar son:</p>
-<ul>
-<li><code>dplyr</code>: ajuste general de datos</li>
-<li><code>sjmisc</code>: descripción y exploración de base de datos</li>
-<li><code>car</code>: principalmente la función <code>recode</code> para recodificar/agrupar valores de variable</li>
-<li><code>stargazer</code>: para tabla descriptiva</li>
-</ul>
-</section>
-<section id="cargar-base-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="cargar-base-de-datos">2. Cargar base de datos</h2>
-<p><strong>Ajustar espacio de trabajo</strong></p>
-<p>Previo a la carga de nuestra base de datos, se recomienda ejecutar los siguientes comandos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())       <span class="co"># borrar todos los objetos en el espacio de trabajo</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>) <span class="co"># valores sin notación científica</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>La función <code>rm(list=ls())</code> permite comenzar con un espacio de trabajo (environment) vacío y sin otros objetos. Así también, la función <code>options(scipen=999)</code> desactiva la notación científica, es decir, veremos los valores numéricos con todos sus decimales.</p>
-<p><strong>Datos</strong></p>
-<p>Las bases de datos se pueden cargar de un archivo local o en línea. Para este caso utilizaremos un archivo en línea que viene en formato RData: <strong>latinobarometro2020.RData</strong>. <span class="sidenote"><strong>Abrir bases de datos en otros formatos</strong>: Los formatos mas comunes en que se almacenan las bases de datos son .dta (Stata), .sav (Spss) y RData (R). Para abrir desde R utlilizamos la librería <code>haven</code> y sus funciones read_dta y read_sav según corresponda. Ej: <code>datos &lt;- read_dta("base_casen.dta")</code>. Recordar antes instalar/cargar la librería: <code>pacman::p_load(haven)</code> </span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#cargamos la base de datos desde internet</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/Kevin-carrasco/metod1-MCS/raw/main/files/data/external_data/latinobarometro2020.RData"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>o de manera local:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>latinobarometro2020 <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"../files/data/external_data/latinobarometro2020.dta"</span>, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>La base de datos aparece como un objeto en nuestro espacio de trabajo, con el nombre original con la que fue guardada (elsoc_2016):</p>
-<p><img src="images/basecargada.png" class="img-fluid"></p>
-<p>Realizamos un chequeo básico de la lectura de datos: nombres de las variables y tamaño de la base en términos de casos y variables (en este ejemplo, 20204 casos y 408 variables).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(latinobarometro2020) <span class="co"># dimension de la base</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 20204   408</code></pre>
-</div>
-</div>
-<p>Y si se quiere revisar en formato de planilla de datos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(latinobarometro2020)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="selección-de-variables-a-utilizar" class="level2">
-<h2 class="anchored" data-anchor-id="selección-de-variables-a-utilizar">3. Selección de variables a utilizar</h2>
-<p>Este paso consiste en crear un subset reducido de datos que contenga solo las variables de interés. Para ello:</p>
+<h2 class="anchored" data-anchor-id="objetivo-de-la-práctica">0. Objetivo de la práctica</h2>
+<p>El objetivo de esta guía práctica es introducirnos en los procedimientos básicos del uso del lenguaje y ambiente R.</p>
+<p>En detalle, aprenderemos:</p>
 <ol type="1">
-<li>Se identifica el nombre de las variables que registran la información de preguntas o items del instrumento: esto aparece en el libro de códigos y/o en el cuestionario, o también se puede hacer buscando en la base de datos mediante alguna palabra clave asociada a la pregunta. Por ejemplo, si queremos buscar variables asociadas a educación, utilizamos la función <code>find_var</code> (de <code>sjmisc</code>, librería que cargamos en el paso 1), que nos entrega nombre de la variable en columna var.name. Por ejemplo, si buscamos alguna variable asociada al concepto <em>Confianza</em>:</li>
+<li><p>Herramientas básicas de programación en R</p></li>
+<li><p>Operadores en R</p></li>
+<li><p>Tipos de datos</p></li>
+</ol>
+</section>
+<section id="conocimientos-básicos-de-programación" class="level2">
+<h2 class="anchored" data-anchor-id="conocimientos-básicos-de-programación">1. Conocimientos básicos de programación</h2>
+<p>Revisemos algunos conocimientos básicos para la programación en R. Pero antes, tengamos dos cosas en mente:</p>
+<ul>
+<li><p>Primero, ¿qué es codificar?, en programación <strong>codificar corresponde a un proceso de entrega de instrucciones</strong> en un lenguaje específico, siguiendo un orden lógico y coherente.</p></li>
+<li><p>Segundo, de aquí en adelante nos manejaremos con una máxima en el curso; <strong><em>existe un acuerdo implícito entre tú y R</em>: R hará todos los cálculos por ti, pero en cambio <em>tú</em> debes dar las instrucciones con total precisión.</strong></p></li>
+</ul>
+<section id="r-como-calculadora" class="level3">
+<h3 class="anchored" data-anchor-id="r-como-calculadora">1.1 R como calculadora</h3>
+<p>Uno de los usos más sencillos y que están a la base de R, es usarlo como una calculadora.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">/</span><span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">27-2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+</div>
+<p>Como podrás ver, el resultado de estas instrucciones aparecen como un <code>[1]</code> en la consola. También podemos hacer operatorias más complejas y con más cálculos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span><span class="sc">*</span>(<span class="dv">7</span><span class="sc">+</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">45-32</span>)<span class="sc">+</span><span class="dv">8</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 129</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 480</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">200</span> <span class="sc">*</span> <span class="dv">30</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.15</code></pre>
+</div>
+</div>
+</section>
+<section id="un-lenguaje-orientado-a-objetos" class="level3">
+<h3 class="anchored" data-anchor-id="un-lenguaje-orientado-a-objetos">1.2 Un lenguaje orientado a objetos</h3>
+<p>R es un lenguaje de programación orientado a objetos. ¿Qué significa eso?, implica que podemos crear elementos dentro del ambiente de R, a los cuales les <strong>asignaremos información</strong> que quedará almacenada, información que puede ir desde números, palabras, cálculos hasta grandes bases de datos.</p>
+<p>Todas las instrucciones en R en las que crees objetos, es decir, instrucciones de <strong>asignación</strong>, tendrán la misma estructura:</p>
+<p><code>nombre_objeto &lt;- valor</code></p>
+<p>El asignador <code>&lt;-</code> se utiliza para crear objetos y forma parte de uno de los <strong>operadores</strong> usados en R.</p>
+<p>Los elementos que podemos asignar a objetos son múltiples, como números, palabras acompañadas siempre de corchetes <code>" "</code> y vectores que corresponden a un conjunto o secuencia de elementos del mismo tipo definidos por la funcion de concatenar = <code>c()</code>.</p>
+<p>Veamos un ejemplo creando objetos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># asignar</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>x <span class="co"># ejecutar</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Hola mundo"</span> <span class="co"># los carácteres alfabéticos siempre van acompañados de corchetes</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>y </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hola mundo"</code></pre>
+</div>
+</div>
+<p>¿Y concatenando? Hacemos un vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>edad <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>,<span class="dv">22</span>,<span class="dv">36</span>,<span class="dv">19</span>,<span class="dv">35</span>) <span class="co"># concatenar (variable de razon)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>edad</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18 22 36 19 35</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>genero <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co"># masculino = 1; femenino = 2; transgenero = 3 (variable nominal)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>genero </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 1 1 2 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>gse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ABC1"</span>, <span class="st">"C2"</span>, <span class="st">"E"</span>, <span class="st">"AbC1"</span>, <span class="st">"E"</span>)  <span class="co"># tambíen se pueden usar carácteres (variable ordinal)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>gse</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ABC1" "C2"   "E"    "AbC1" "E"   </code></pre>
+</div>
+</div>
+<p><strong>¡Hagamos una pequeño reto!</strong>: ¿Cuál es el valor de a y b? Si a &lt;- 5; b &lt;- a; a &lt;- 4</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a) <span class="co"># imprimir en la consola</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(b)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+</div>
+<p>Ahora, sea z = a^2 ¿qué resultado obtenemos de a * b + z?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> a<span class="sc">^</span><span class="dv">2</span> <span class="co"># asignar</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>a <span class="sc">*</span> b <span class="sc">+</span> z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36</code></pre>
+</div>
+</div>
+<p>Además de lo anterior, en R es fundamental la creación de <strong>data.frames</strong>. Un Data.frame es una estructura de datos de dos dimensiones (columnas y filas), donde las columnas pueden ser de diferente naturaleza, pero deben tener el mismo largo. A partir de ella agrupamos variables en una matriz, o sea, construimos una base de datos. Es como “pegar” las columnas (variables) una al lado de otra.</p>
+<p>Creemos un data.frame con los vectores que ya creamos antes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>base1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(genero, gse, edad) <span class="co"># Resulta como objeto de "datos" en</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                                       <span class="co"># entorno.</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>base1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  genero  gse edad
+1      3 ABC1   18
+2      1   C2   22
+3      1    E   36
+4      2 AbC1   19
+5      3    E   35</code></pre>
+</div>
+</div>
+<p>Como puedes ver, para crear el data.frame usamos la función que lleva el mismo nombre, colocando dentro del paréntesis los vectores que creamos anteriormente: <code>data.frame(mis_vectores)</code>.</p>
+<p>Ahora, creemos un <code>data.frame</code> desce cero. En este ejemplo, crearemos los vectores dentro de la función <code>data.frame()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de como crear un data.frame desde 0: </span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>base2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sexo=</span><span class="fu">c</span>(<span class="st">"H"</span>,<span class="st">"M"</span>,<span class="st">"H"</span>,<span class="st">"M"</span>,<span class="st">"H"</span>,<span class="st">"M"</span>),</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Estatura=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">1.76</span>,<span class="fl">1.82</span>,<span class="fl">1.60</span>,<span class="fl">1.90</span>,<span class="fl">1.66</span>),</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Peso=</span><span class="fu">c</span>(<span class="dv">67</span>,<span class="dv">58</span>,<span class="dv">66</span>,<span class="dv">48</span>,<span class="dv">75</span>,<span class="dv">55</span>))</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(base2)  <span class="co"># Me permite visualizar las primeras filas</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sexo Estatura Peso
+1    H     1.83   67
+2    M     1.76   58
+3    H     1.82   66
+4    M     1.60   48
+5    H     1.90   75
+6    M     1.66   55</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="operadores-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="operadores-en-r">2. Operadores en R</h2>
+<p>Antes de trabajar con datos, debemos conocer el concepto de <strong>operadores</strong>. Estos símbolos no son de uso exclusivo en R, pero no todos tienen el mismo significado que en otros softwares.</p>
+<p>Los operadores son símbolos que permiten, en los distintos procedimientos de procesamiento, simplificar procesos. Por ejemplo, serán útilizados cuando filtremos nuestros datos para personas de ciertas categorías, cuando calculemos variables nuevas (de manera aritmética o condicional) o, simplemente, cuando queramos hacer procesos “concatenados”.</p>
+<p><img src="../images/operadores.png" class="img-fluid"></p>
+<p>¡Veamos algunos ejemplos!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">==</span> <span class="dv">5</span> <span class="co"># igualdad</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="sc">&gt;=</span> <span class="dv">14</span> <span class="co"># mayor o igual que</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span> <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="co"># menor o igual que</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="sc">!=</span> <span class="dv">10</span> <span class="co"># no es igual a</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="dv">10</span>; y <span class="ot">=</span> <span class="dv">5</span>; p <span class="sc">&lt;=</span> y <span class="co"># operatoria en objetos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+</section>
+<section id="tipos-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-datos">3. Tipos de datos</h2>
+<section id="qué-son-los-tipos-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="qué-son-los-tipos-de-datos">3.1 ¿Qué son los tipos de datos?</h3>
+<p>En R, al igual que en la mayoría de lenguajes de programación, contamos con datos de diversos tipos, en razón de los cuales podemos realizar determinados procedimientos de tratamiento o análisis.</p>
+<p><strong>Los tipos de datos están íntimamente relacionados con el nivel de medición de las variables</strong> a las que corresponden. Como viste en clases, la teoría de los niveles de medición contempla cuatro tipos:</p>
+<p><img src="../images/noir2.jpg" class="img-fluid"></p>
+</section>
+<section id="qué-tipos-de-datos-encontramos-en-r" class="level3">
+<h3 class="anchored" data-anchor-id="qué-tipos-de-datos-encontramos-en-r">3.2 ¿Qué tipos de datos encontramos en R?</h3>
+<p>Para responder esta pregunta, ¡metamos nuestras manos en los datos!. En esta oportunidad trabajaremos sobre un subset de datos del Modulo de Desigualdad Social de la encuesta <a href="https://www.gesis.org/en/issp/home">International Social Survey Programme del 2019</a>. Esta base la descargaremos directamente desde internet por esta vez (en futuras sesiones aprenderemos cómo cargar bases de datos).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#cargamos la base de datos desde internet</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/Andreas-Lafferte/descriptiva/blob/main/data/db-proc.RData?raw=true"</span>))</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rand_df) <span class="co"># ver primeros casos de la base</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       pais edad   sexo          ideologia percepcion_conflictos
+1     Suiza   23 Hombre          Izquierda                     2
+2     Chile   27  Mujer Sin identificación                     2
+3     Rusia   43  Mujer Sin identificación                     1
+4 Finlandia   71  Mujer Sin identificación                     1
+5     Japon   54  Mujer          Izquierda                     2
+6  Lituania   67  Mujer Sin identificación                     1</code></pre>
+</div>
+</div>
+<section id="i-character" class="level4">
+<h4 class="anchored" data-anchor-id="i-character">I) Character</h4>
+<p>Los datos <code>character</code> están directamente asociados a las variables cualitativas (o categóricas). Generalmente suelen ser variables de texto abierto, como es el caso de la variable <strong>pais</strong>, que detalla el país de procedencia de la persona encuestada.</p>
+<p>Para conocer cuál es el tipo de variable en R, utilizamos el comando <code>class()</code>, y para detallar dentro de la base de datos cuál es la variable de interés, utilizamos el símbolo <code>$</code> posterior a la base de datos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>pais) <span class="co"># siempre es la misma estructura = base$variable</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>Sin embargo, estas variables no tienden a ser las mejores a la hora de presentar nuestros resultados. Como solución, tenemos las variables de tipo Factor.</p>
+</section>
+<section id="ii-factor" class="level4">
+<h4 class="anchored" data-anchor-id="ii-factor">II) Factor</h4>
+<p>Las variables de tipo <code>factor</code> son ideales para trabajar con variables de tipo nominal u ordinal. Esto es así debido a que permiten establecer un orden entre las categorías de la variable, lo cual es fundamental si trabajamos, por ejemplo, con variables nominales como el sexo de los encuestados, o si trabajamos con variables ordinales como su ideología política.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>sexo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>ideologia)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+</div>
+</section>
+<section id="iii-numeric" class="level4">
+<h4 class="anchored" data-anchor-id="iii-numeric">III) Numeric</h4>
+<p>Las variables de tipo <code>numeric</code> son variables de tipo númerica, las cuales pueden ser intervales o de razón. Así, por ejemplo, cuando trabajamos con variables de razón trabajamos con variables como el número de hijos o la edad (aunque sería extraño encuestar a alguien con 0 años).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="cargar-librerías" class="level2">
+<h2 class="anchored" data-anchor-id="cargar-librerías">4. Cargar librerías</h2>
+<p>En R se trabaja a partir de paquetes (packages). ¿Qué son? De forma resumida, los paquetes son un conjunto de funciones o herramientas que pueden ser usadas en R. Los directorios de R donde se almacenan los paquetes se denominan librerías. La lógica es instalar paquetes y luego cargar (o llamar) las librerías cada vez que es necesario usarlas.</p>
+<p>Usualmente para cargar paquetes lo hacemos de la siguiente manera:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"paquete"</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(paquete)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Pero en esta ocasión utilizaremos un paquete llamado <strong>pacman</strong>, que facilita y agiliza la lectura (instalación y carga) de los paquetes a utilizar en R. De esta forma lo instalamos 1 única vez así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Luego instalaremos y cargaremos los paquetes de R de la siguiente manera, volviendo más eficiente el procedimiento de carga de paquetes.</p>
+<p>En este práctico utilizaremos seis paquetes</p>
+<ol type="1">
+<li><p><code>pacman</code>: este facilita y agiliza la lectura de los paquetes a utilizar en R</p></li>
+<li><p><code>tidyverse</code>: colección de paquetes, de la cual utilizaremos dplyr y haven</p></li>
+<li><p><code>dplyr</code>: nos permite seleccionar variables de un set de datos</p></li>
+<li><p><code>haven</code>: cargar y exportar bases de datos en formatos .sav y .dta</p></li>
+<li><p><code>car</code>: para recodificar/agrupar valores de variables</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find_var</span>(<span class="at">data =</span> latinobarometro2020,<span class="st">"Confianza"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   col.nr   var.name
-1      36    p9stgbs
-2      41 P13STGBS_A
-3      42 P13STGBS_B
-4      43    p13st_c
-5      44    p13st_d
-6      45    p13st_e
-7      46    p13st_f
-8      47    p13st_g
-9      48    p13st_h
-10     49    p13st_i
-11     51    p15st_a
-12     52    p15st_b
-13     53    p15st_c
-14     54    p15st_d
-15     55    p15st_e
-16     56    p15st_f
-17     57    p15st_g
-18     58     p15n_h
-19     59     p15n_i
-20     60     p15n_j
-21     61     p15n_k
-22    154     p36n_a
-23    155     p36n_b
-24    160  P36STMB_A
-25    161  P36STMB_B
-26    162  P36STMB_C
-27    163  P36STMB_D
-                                                                          var.label
-1                                                   P9STGBS Confianza Interpersonal
-2                                       P13STGBS.A Confianza en las Fuerzas Armadas
-3                                  P13STGBS.B Confianza en la Policía / Carabineros
-4                                                   P13ST.C Confianza en la Iglesia
-5                                                  P13ST.D Confianza en el Congreso
-6                                                  P13ST.E Confianza en el Gobierno
-7                                            P13ST.F Confianza en el Poder Judicial
-8                                       P13ST.G Confianza en los Partidos Políticos
-9                           P13ST.H Confianza en: La institución Electoral del país
-10                                              P13ST.I Confianza en: El presidente
-11 P15ST.A Confianza en que las instituciones operan para mejorar nuestra calidad d
-12 P15ST.B Confianza en que las instituciones operan para mejorar nuestra calidad d
-13 P15ST.C Confianza en que las instituciones operan para mejorar nuestra calidad d
-14 P15ST.D Confianza en que las instituciones operan para mejorar nuestra calidad d
-15 P15ST.E Confianza en que las instituciones operan para mejorar nuestra calidad d
-16 P15ST.F Confianza en que las instituciones operan para mejorar nuestra calidad d
-17 P15ST.G Confianza en que las instituciones operan para mejorar nuestra calidad d
-18 P15N.H Confianza en que las instituciones operan para mejorar nuestra calidad de
-19 P15N.I Confianza en que las instituciones operan para mejorar nuestra calidad de
-20 P15N.J Confianza en que las instituciones operan para mejorar nuestra calidad de
-21 P15N.K Confianza en que las instituciones operan para mejorar nuestra calidad de
-22                        P36N.A Confianza en las Fuerzas Armadas de Estados Unidos
-23                                   P36N.B Confianza en las fuerzas Armadas Chinas
-24                    P36STMB.A Confianza en el FMI (Fondo Monetario Internacional)
-25               P36STMB.B Confianza en el BID (Banco Interamericano de Desarrollo)
-26            P36STMB.C Confianza en el CAF (Banco de Desarrollo de América Latina)
-27                                          P36STMB.D Confianza en el Banco Mundial</code></pre>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># colección de paquetes para manipulación de datos</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>               dplyr, <span class="co"># para manipular datos</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>               haven, <span class="co"># para importar datos</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>               car <span class="co"># para recodificar datos</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>               )</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>Nos informa que hay una serie de variables relacionadas con confianza interpersonal y con instituciones. Probemos con la variable <code>p13st_e</code>.</p>
-<p>Mediante la función <code>select</code> de <code>dplyr</code>, seleccionamos cada una de nuestras variables de interés y creamos una nueva base con el nombre <code>proc_data</code>, donde “proc” hace referencia a base procesada:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="ot">&lt;-</span> latinobarometro2020 <span class="sc">%&gt;%</span> <span class="fu">select</span>(p13st_e, <span class="co"># Confianza en el Gobierno</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                          p13st_d, <span class="co"># Confianza en el congreso</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                          p13st_f, <span class="co"># Confianza en el Poder Judicial</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                          p13st_g, <span class="co"># Confianza en los partidos políticos</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                          reeduc_1,<span class="co"># nivel educacional</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                          sexo,<span class="co"># sexo</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                          edad,<span class="co"># edad</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                          idenpa) <span class="co"># pais </span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprobar</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(proc_data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "p13st_e"  "p13st_d"  "p13st_f"  "p13st_g"  "reeduc_1" "sexo"     "edad"    
-[8] "idenpa"  </code></pre>
-</div>
-</div>
-<p>Mediante el comando <code>get_label</code> obtenemos el atributo label de las variables.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sjlabelled<span class="sc">::</span><span class="fu">get_label</span>(proc_data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                                             p13st_e 
-                                  "P13ST.E Confianza en el Gobierno" 
-                                                             p13st_d 
-                                  "P13ST.D Confianza en el Congreso" 
-                                                             p13st_f 
-                            "P13ST.F Confianza en el Poder Judicial" 
-                                                             p13st_g 
-                       "P13ST.G Confianza en los Partidos Políticos" 
-                                                            reeduc_1 
-"REEDUC.1 Nivel de estudios alcanzado - Entrevistado (recodificado)" 
-                                                                sexo 
-                                                         "SEXO Sexo" 
-                                                                edad 
-                                                         "EDAD Edad" 
-                                                              idenpa 
-                                    "IDENPA Identificación del País" </code></pre>
-</div>
-</div>
-<p>Podemos ver que son largas o con códigos poco informativos, por lo tanto, es necesario cambiarlas por etiquetas más cortas y de fácil identificación.</p>
-<p>Para facilitar el análisis, vamos a filtrar la base de datos para quedarnos solo con los casos de Chile. Para esto utilizamos la función <code>filter</code> de <code>dplyr</code>. Si revisamos el libro de códigos, el identificador de Chile es 152</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="ot">&lt;-</span> proc_data <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(idenpa<span class="sc">==</span><span class="dv">152</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Como se puede ver, antes de la función p_load hay un <code>::</code>, esto se refiere a que se “fuerza” que esa función provenga de ese paquete (en este caso del paquete <code>pacman</code>).</p>
 </section>
-<section id="procesamiento-de-variables" class="level2">
-<h2 class="anchored" data-anchor-id="procesamiento-de-variables">4. Procesamiento de variables</h2>
-<p>Para el procesamiento de cada variable se seguirá el siguiente flujo de trabajo:</p>
-<ol type="a">
-<li>Descriptivo general</li>
-<li>Recodificación: de casos perdidos y otros valores (en caso necesario)</li>
-<li>Etiquetado: cambio de nombres de variables y valores (en caso necesario)</li>
-<li>Otros ajustes</li>
-</ol>
-<p>Y se recomienda también un descriptivo final para revisar que el procesamiento de cada variable está ok.</p>
-<section id="confianza-en-el-gobierno" class="level3">
-<h3 class="anchored" data-anchor-id="confianza-en-el-gobierno">4.1 Confianza en el Gobierno</h3>
-<p>En Latinobarómetro, lass variables que permiten medir la Confianza en instituciones políticas en Chile son las siguientes:</p>
+</section>
+<section id="resumen" class="level1">
+<h1>Resumen</h1>
+<p>Hoy aprendimos distintas herramientas básicas para utilizar el lenguaje y ambiente R. Como resumen:</p>
 <ul>
-<li>[<code>p13st_e</code>]: “P13ST.E Confianza en el Gobierno” (1 = Mucha; 4 = Ninguna)</li>
-<li>[<code>p13st_d</code>]: “P13ST.D Confianza en el Congreso” (1 = Mucha; 4 = Ninguna)</li>
-<li>[<code>p13st_f</code>]: “P13ST.F Confianza en el Poder Judicial” (1 = Mucha; 4 = Ninguna)</li>
-<li>[<code>p13st_g</code>]: “P13ST.G Confianza en los Partidos Políticos” (1 = Mucha; 4 = Ninguna)</li>
+<li><p>Utilizar R como calculadora, su lógica orientada a objetos creando objetos, vectores y data.frames</p></li>
+<li><p>Operadores en R</p></li>
+<li><p>Tipos de datos en R como variables cualitativas (character o factor) y cuantitativas (numeric)</p></li>
 </ul>
-<p><em>a. Descriptivo</em></p>
-<p>Para los descriptivos se utilizará la función <code>frq</code>, de la librería <code>sjmisc</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>p13st_e)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x &lt;numeric&gt; 
-# total N=1200 valid N=1200 mean=3.27 sd=0.99
-
-Value |   N | Raw % | Valid % | Cum. %
---------------------------------------
-   -2 |   8 |  0.67 |    0.67 |   0.67
-   -1 |  11 |  0.92 |    0.92 |   1.58
-    1 |  23 |  1.92 |    1.92 |   3.50
-    2 | 176 | 14.67 |   14.67 |  18.17
-    3 | 358 | 29.83 |   29.83 |  48.00
-    4 | 624 | 52.00 |   52.00 | 100.00
- &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-<p>En esta variable vemos valores asociados a la opción “No contesta” (-2) y “No sabe” (-1), que corresponde definirlos como casos perdidos (en el caso de R, como casos NA). El resto de los valores y etiquetas se encuentran en un orden contraintuitivo (mayor valor indica menos confianza), así que en la recodificiación nos haremos cargo de los casos perdidos y de reordenar las categorías.</p>
-<p><em>b. Recodificación</em></p>
-<p>Para recodificar utilizamos la función <code>recode</code>, de la librería <code>car</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_e <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_e, <span class="st">"c(-2,-1)=NA"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_d <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_d, <span class="st">"c(-2,-1)=NA"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_f <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_f, <span class="st">"c(-2,-1)=NA"</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_g <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_g, <span class="st">"c(-2,-1)=NA"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>nota</strong>: con la función <code>set_na</code> de la librería <code>sjmisc</code> podemos recodificar toda la base de datos con un solo código, pero debemos estar completamente segur-s de que estos valores no tienen otra categoría asociada en otra variable.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="ot">&lt;-</span> proc_data <span class="sc">%&gt;%</span> <span class="fu">set_na</span>(., <span class="at">na =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Para reordenar las categorías volvemos a utilizar la función <code>recode</code>, de la librería <code>car</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_e <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_e, <span class="st">"1=3; 2=2; 3=1; 4=0"</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_d <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_d, <span class="st">"1=3; 2=2; 3=1; 4=0"</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_f <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_f, <span class="st">"1=3; 2=2; 3=1; 4=0"</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>p13st_g <span class="ot">&lt;-</span> <span class="fu">recode</span>(proc_data<span class="sc">$</span>p13st_g, <span class="st">"1=3; 2=2; 3=1; 4=0"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em>c - Etiquetado</em></p>
-<p>Vamos a dar un nombre más sustantivo a las variables con la función <code>rename</code>, de la librería <code>dplyr</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="ot">&lt;-</span> proc_data <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="st">"conf_gob"</span><span class="ot">=</span>p13st_e, <span class="co"># Confianza en el gobierno</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"conf_cong"</span><span class="ot">=</span>p13st_d, <span class="co"># Confianza en el congreso</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"conf_jud"</span><span class="ot">=</span>p13st_f, <span class="co"># Confianza en el Poder Judicial</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"conf_partpol"</span><span class="ot">=</span>p13st_g) <span class="co"># Confianza en los partidos políticos </span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>nota</strong>: recodificación más rápida si estamos segur-s de todos los valores</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="ot">&lt;-</span> proc_data <span class="sc">%&gt;%</span> <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="fu">starts_with</span>(<span class="st">"conf"</span>)), <span class="sc">~</span>(<span class="dv">4</span><span class="sc">-</span>.))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Además de cambiar el nombre, queremos cambiar las etiquetas de las variables.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_gob <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>conf_gob,<span class="at">label =</span> <span class="st">"Confianza: Gobierno"</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>conf_gob)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Confianza: Gobierno"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_cong  <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>conf_cong, <span class="at">label =</span> <span class="st">"Confianza: Congreso"</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>conf_cong)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Confianza: Congreso"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_jud  <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>conf_jud, <span class="at">label =</span> <span class="st">"Confianza: Poder judicial"</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>conf_jud)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Confianza: Poder judicial"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_partpol  <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>conf_partpol, <span class="at">label =</span> <span class="st">"Confianza: Partidos politicos"</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>conf_partpol)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Confianza: Partidos politicos"</code></pre>
-</div>
-</div>
-<p><em>d.&nbsp;Otros ajustes</em></p>
-<p>Para este caso vamos a crear una variable que sea la suma de los cuatro items de confianza.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_inst <span class="ot">&lt;-</span> (proc_data<span class="sc">$</span>conf_gob<span class="sc">+</span>proc_data<span class="sc">$</span>conf_cong<span class="sc">+</span>proc_data<span class="sc">$</span>conf_jud<span class="sc">+</span>proc_data<span class="sc">$</span>conf_partpol)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(proc_data<span class="sc">$</span>conf_inst)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   0.00    0.00    2.00    2.42    4.00   12.00      38 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>conf_inst)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Confianza: Gobierno"</code></pre>
-</div>
-</div>
-<p>Vemos que una etiqueta de la variable anterior.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_inst  <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>conf_inst, <span class="at">label =</span> <span class="st">"Confianza en instituciones"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em>Revisión final</em></p>
-<p>Nuevamente un descriptivo de cada variable para confirmar que el procesamiento está ok:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>conf_gob)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Confianza: Gobierno (x) &lt;numeric&gt; 
-# total N=1200 valid N=1181 mean=0.66 sd=0.80
-
-Value |   N | Raw % | Valid % | Cum. %
---------------------------------------
-    0 | 624 | 52.00 |   52.84 |  52.84
-    1 | 358 | 29.83 |   30.31 |  83.15
-    2 | 176 | 14.67 |   14.90 |  98.05
-    3 |  23 |  1.92 |    1.95 | 100.00
- &lt;NA&gt; |  19 |  1.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>conf_cong)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Confianza: Congreso (x) &lt;numeric&gt; 
-# total N=1200 valid N=1178 mean=0.59 sd=0.71
-
-Value |   N | Raw % | Valid % | Cum. %
---------------------------------------
-    0 | 628 | 52.33 |   53.31 |  53.31
-    1 | 408 | 34.00 |   34.63 |  87.95
-    2 | 134 | 11.17 |   11.38 |  99.32
-    3 |   8 |  0.67 |    0.68 | 100.00
- &lt;NA&gt; |  22 |  1.83 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>conf_inst)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Confianza en instituciones (x) &lt;numeric&gt; 
-# total N=1200 valid N=1162 mean=2.42 sd=2.49
-
-Value |   N | Raw % | Valid % | Cum. %
---------------------------------------
-    0 | 397 | 33.08 |   34.17 |  34.17
-    1 | 141 | 11.75 |   12.13 |  46.30
-    2 | 130 | 10.83 |   11.19 |  57.49
-    3 | 111 |  9.25 |    9.55 |  67.04
-    4 | 169 | 14.08 |   14.54 |  81.58
-    5 |  71 |  5.92 |    6.11 |  87.69
-    6 |  41 |  3.42 |    3.53 |  91.22
-    7 |  41 |  3.42 |    3.53 |  94.75
-    8 |  44 |  3.67 |    3.79 |  98.54
-    9 |  11 |  0.92 |    0.95 |  99.48
-   10 |   4 |  0.33 |    0.34 |  99.83
-   11 |   1 |  0.08 |    0.09 |  99.91
-   12 |   1 |  0.08 |    0.09 | 100.00
- &lt;NA&gt; |  38 |  3.17 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-<p>Vemos que los valores (labels) de cada categoría de las primeras variables que recodificamos no se corresponden con el nuevo valor. Para re-etiquetar valores usamos la función <code>set_labels</code>, de la librería <code>sjlabelled</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_gob <span class="ot">&lt;-</span> <span class="fu">set_labels</span>(proc_data<span class="sc">$</span>conf_gob,</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"Ninguna"</span><span class="ot">=</span><span class="dv">0</span>,</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Poca"</span><span class="ot">=</span><span class="dv">1</span>,</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Algo"</span><span class="ot">=</span><span class="dv">2</span>,</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mucha"</span><span class="ot">=</span><span class="dv">3</span>))</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_cong <span class="ot">&lt;-</span> <span class="fu">set_labels</span>(proc_data<span class="sc">$</span>conf_cong,</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"Ninguna"</span><span class="ot">=</span><span class="dv">0</span>,</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Poca"</span><span class="ot">=</span><span class="dv">1</span>,</span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Algo"</span><span class="ot">=</span><span class="dv">2</span>,</span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mucha"</span><span class="ot">=</span><span class="dv">3</span>))</span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_jud <span class="ot">&lt;-</span> <span class="fu">set_labels</span>(proc_data<span class="sc">$</span>conf_jud,</span>
-<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"Ninguna"</span><span class="ot">=</span><span class="dv">0</span>,</span>
-<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Poca"</span><span class="ot">=</span><span class="dv">1</span>,</span>
-<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Algo"</span><span class="ot">=</span><span class="dv">2</span>,</span>
-<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mucha"</span><span class="ot">=</span><span class="dv">3</span>))</span>
-<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>conf_partpol <span class="ot">&lt;-</span> <span class="fu">set_labels</span>(proc_data<span class="sc">$</span>conf_partpol,</span>
-<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"Ninguna"</span><span class="ot">=</span><span class="dv">0</span>,</span>
-<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Poca"</span><span class="ot">=</span><span class="dv">1</span>,</span>
-<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Algo"</span><span class="ot">=</span><span class="dv">2</span>,</span>
-<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mucha"</span><span class="ot">=</span><span class="dv">3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>y volvemos a revisar</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>conf_gob)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Confianza: Gobierno (x) &lt;numeric&gt; 
-# total N=1200 valid N=1181 mean=0.66 sd=0.80
-
-Value |   Label |   N | Raw % | Valid % | Cum. %
-------------------------------------------------
-    0 | Ninguna | 624 | 52.00 |   52.84 |  52.84
-    1 |    Poca | 358 | 29.83 |   30.31 |  83.15
-    2 |    Algo | 176 | 14.67 |   14.90 |  98.05
-    3 |   Mucha |  23 |  1.92 |    1.95 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |  19 |  1.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>conf_cong)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Confianza: Congreso (x) &lt;numeric&gt; 
-# total N=1200 valid N=1178 mean=0.59 sd=0.71
-
-Value |   Label |   N | Raw % | Valid % | Cum. %
-------------------------------------------------
-    0 | Ninguna | 628 | 52.33 |   53.31 |  53.31
-    1 |    Poca | 408 | 34.00 |   34.63 |  87.95
-    2 |    Algo | 134 | 11.17 |   11.38 |  99.32
-    3 |   Mucha |   8 |  0.67 |    0.68 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |  22 |  1.83 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-<section id="educación" class="level4">
-<h4 class="anchored" data-anchor-id="educación">4.2. Educación</h4>
-<ul>
-<li>[<code>reeduc_1</code>] = REEDUC.1 Nivel de estudios alcanzado - Entrevistado (recodificado)</li>
-</ul>
-<p><em>a. Descriptivo</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>reeduc_1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x &lt;numeric&gt; 
-# total N=1200 valid N=1200 mean=5.05 sd=1.22
-
-Value |   N | Raw % | Valid % | Cum. %
---------------------------------------
-    1 |   8 |  0.67 |    0.67 |   0.67
-    2 |  53 |  4.42 |    4.42 |   5.08
-    3 |  36 |  3.00 |    3.00 |   8.08
-    4 | 161 | 13.42 |   13.42 |  21.50
-    5 | 643 | 53.58 |   53.58 |  75.08
-    6 | 109 |  9.08 |    9.08 |  84.17
-    7 | 190 | 15.83 |   15.83 | 100.00
- &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-<p><em>b. Recodificación</em></p>
-<ul>
-<li><p>Vemos que no hay datos perdidos</p></li>
-<li><p>Valores</p></li>
-</ul>
-<p>Para hacer más fácil el análisis, recodificamos en tres categorías (en este caso decisión arbitraria. Se debería tener una razón teórica para recodificar)</p>
-<pre><code>1.  Analfabeto                                =   Educacion basica    =   1
-2   Básica incompleta                         =   Educacion basica    =   1
-3.  Básica completa                           =   Educacion basica    =   1
-4.  Secundaria, media, técnica incompleta     =   Educacion media     =   2
-5.  Secundaria, media, técnica completa       =   Educacion media     =   2
-6.  Superior incompleta                       =   Educacion superior  =   3
-7.  Superior completa                         =   Educacion superior  =   3
-</code></pre>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># recodificacion usando funcion 'recode' de la libreria car</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>reeduc_1 <span class="ot">&lt;-</span> car<span class="sc">::</span><span class="fu">recode</span>(proc_data<span class="sc">$</span>reeduc_1, <span class="st">"c(1,2,3)=1; c(4,5)=2; c(6,7)=3"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Comprobar con un nuevo descriptivo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>reeduc_1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x &lt;numeric&gt; 
-# total N=1200 valid N=1200 mean=2.17 sd=0.55
-
-Value |   N | Raw % | Valid % | Cum. %
---------------------------------------
-    1 |  97 |  8.08 |    8.08 |   8.08
-    2 | 804 | 67.00 |   67.00 |  75.08
-    3 | 299 | 24.92 |   24.92 | 100.00
- &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-<p>Se observa que los valores coinciden con la recodificación (los casos se acumulan entre las categorías 1 y 3), pero las etiquetas ahora no coinciden; se soluciona en el siguiente paso.</p>
-<p><em>c.&nbsp;Etiquetado</em></p>
-<p>Para re-etiquetar valores usamos la función <code>set_labels</code>, de la librería <code>sjlabelled</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>reeduc_1 <span class="ot">&lt;-</span> <span class="fu">set_labels</span>(proc_data<span class="sc">$</span>reeduc_1,</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"Educacion basica"</span><span class="ot">=</span><span class="dv">1</span>,</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Educacion media"</span><span class="ot">=</span><span class="dv">2</span>,</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Educacion superior"</span><span class="ot">=</span><span class="dv">3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Luego renombramos la variable con un nombre más sustantivo</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="ot">&lt;-</span> <span class="fu">rename</span>(proc_data,<span class="st">"educacion"</span><span class="ot">=</span>reeduc_1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Además de cambiar el nombre, queremos cambiar la etiqueta de la variable.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>educacion)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>educacion <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>educacion,<span class="at">label =</span> <span class="st">"Educación"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="sexo" class="level3">
-<h3 class="anchored" data-anchor-id="sexo">4.3. Sexo</h3>
-<ul>
-<li>[<code>sexo</code>] = SEXO Sexo</li>
-</ul>
-<p><em>a. Descriptivo</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>sexo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x &lt;numeric&gt; 
-# total N=1200 valid N=1200 mean=1.54 sd=0.50
-
-Value |   N | Raw % | Valid % | Cum. %
---------------------------------------
-    1 | 555 | 46.25 |   46.25 |  46.25
-    2 | 645 | 53.75 |   53.75 | 100.00
- &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-<p><em>b. Recodificación</em></p>
-<p>En general esta variable no tiene problemas de casos perdidos ni de etiquetas, pero de todas maneras vamos a hacer un cambio de acuerdo a convenciones en análisis de datos, donde por lo general hombres tienen valor 0 y mujeres 1:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>sexo <span class="ot">&lt;-</span> car<span class="sc">::</span><span class="fu">recode</span>(proc_data<span class="sc">$</span>sexo, <span class="st">"1=0;2=1"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em>c.&nbsp;Etiquetado</em></p>
-<p>Y ahora cambiamos las etiquetas de acuerdo a la recodificación anterior:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>sexo <span class="ot">&lt;-</span> <span class="fu">set_labels</span>(proc_data<span class="sc">$</span>sexo,</span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"Hombre"</span><span class="ot">=</span><span class="dv">0</span>,</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mujer"</span><span class="ot">=</span><span class="dv">1</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>También queremos cambiar la etiqueta de la variable.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>sexo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>sexo <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>sexo,<span class="at">label =</span> <span class="st">"Sexo"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Revisar con un nuevo descriptivo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>sexo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Sexo (x) &lt;numeric&gt; 
-# total N=1200 valid N=1200 mean=0.54 sd=0.50
-
-Value |  Label |   N | Raw % | Valid % | Cum. %
------------------------------------------------
-    0 | Hombre | 555 | 46.25 |   46.25 |  46.25
-    1 |  Mujer | 645 | 53.75 |   53.75 | 100.00
- &lt;NA&gt; |   &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="edad" class="level3">
-<h3 class="anchored" data-anchor-id="edad">4.4 Edad</h3>
-<ul>
-<li>[<code>edad</code>] = EDAD Edad.</li>
-</ul>
-<p><em>a. Descriptivo</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_data<span class="sc">$</span>edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x &lt;numeric&gt; 
-# total N=1200 valid N=1200 mean=44.49 sd=17.01
-
-Value |  N | Raw % | Valid % | Cum. %
--------------------------------------
-   18 | 31 |  2.58 |    2.58 |   2.58
-   19 | 29 |  2.42 |    2.42 |   5.00
-   20 | 25 |  2.08 |    2.08 |   7.08
-   21 | 23 |  1.92 |    1.92 |   9.00
-   22 | 21 |  1.75 |    1.75 |  10.75
-   23 | 26 |  2.17 |    2.17 |  12.92
-   24 | 28 |  2.33 |    2.33 |  15.25
-   25 | 19 |  1.58 |    1.58 |  16.83
-   26 | 21 |  1.75 |    1.75 |  18.58
-   27 | 23 |  1.92 |    1.92 |  20.50
-   28 | 19 |  1.58 |    1.58 |  22.08
-   29 | 22 |  1.83 |    1.83 |  23.92
-   30 | 34 |  2.83 |    2.83 |  26.75
-   31 | 21 |  1.75 |    1.75 |  28.50
-   32 | 26 |  2.17 |    2.17 |  30.67
-   33 | 21 |  1.75 |    1.75 |  32.42
-   34 | 14 |  1.17 |    1.17 |  33.58
-   35 | 22 |  1.83 |    1.83 |  35.42
-   36 | 28 |  2.33 |    2.33 |  37.75
-   37 | 14 |  1.17 |    1.17 |  38.92
-   38 | 24 |  2.00 |    2.00 |  40.92
-   39 | 23 |  1.92 |    1.92 |  42.83
-   40 | 32 |  2.67 |    2.67 |  45.50
-   41 | 21 |  1.75 |    1.75 |  47.25
-   42 | 16 |  1.33 |    1.33 |  48.58
-   43 | 22 |  1.83 |    1.83 |  50.42
-   44 | 16 |  1.33 |    1.33 |  51.75
-   45 | 25 |  2.08 |    2.08 |  53.83
-   46 | 19 |  1.58 |    1.58 |  55.42
-   47 | 15 |  1.25 |    1.25 |  56.67
-   48 | 26 |  2.17 |    2.17 |  58.83
-   49 | 19 |  1.58 |    1.58 |  60.42
-   50 | 35 |  2.92 |    2.92 |  63.33
-   51 |  6 |  0.50 |    0.50 |  63.83
-   52 | 24 |  2.00 |    2.00 |  65.83
-   53 |  7 |  0.58 |    0.58 |  66.42
-   54 | 13 |  1.08 |    1.08 |  67.50
-   55 | 27 |  2.25 |    2.25 |  69.75
-   56 | 18 |  1.50 |    1.50 |  71.25
-   57 | 17 |  1.42 |    1.42 |  72.67
-   58 | 34 |  2.83 |    2.83 |  75.50
-   59 | 17 |  1.42 |    1.42 |  76.92
-   60 | 24 |  2.00 |    2.00 |  78.92
-   61 | 18 |  1.50 |    1.50 |  80.42
-   62 | 21 |  1.75 |    1.75 |  82.17
-   63 | 15 |  1.25 |    1.25 |  83.42
-   64 | 20 |  1.67 |    1.67 |  85.08
-   65 | 12 |  1.00 |    1.00 |  86.08
-   66 | 24 |  2.00 |    2.00 |  88.08
-   67 |  9 |  0.75 |    0.75 |  88.83
-   68 | 12 |  1.00 |    1.00 |  89.83
-   69 | 15 |  1.25 |    1.25 |  91.08
-   70 | 30 |  2.50 |    2.50 |  93.58
-   71 |  9 |  0.75 |    0.75 |  94.33
-   72 | 10 |  0.83 |    0.83 |  95.17
-   73 |  8 |  0.67 |    0.67 |  95.83
-   74 |  8 |  0.67 |    0.67 |  96.50
-   75 |  8 |  0.67 |    0.67 |  97.17
-   76 | 12 |  1.00 |    1.00 |  98.17
-   77 |  5 |  0.42 |    0.42 |  98.58
-   78 |  2 |  0.17 |    0.17 |  98.75
-   79 |  2 |  0.17 |    0.17 |  98.92
-   80 |  4 |  0.33 |    0.33 |  99.25
-   82 |  1 |  0.08 |    0.08 |  99.33
-   84 |  2 |  0.17 |    0.17 |  99.50
-   85 |  3 |  0.25 |    0.25 |  99.75
-   86 |  1 |  0.08 |    0.08 |  99.83
-   87 |  1 |  0.08 |    0.08 |  99.92
-   89 |  1 |  0.08 |    0.08 | 100.00
- &lt;NA&gt; |  0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-<p><em>b. Recodificación</em>: no es necesario en este caso</p>
-<p><em>c.&nbsp;Etiquetado</em></p>
-<p>Cambio la etiqueta de la variable.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data<span class="sc">$</span>edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>proc_data<span class="sc">$</span>edad <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data<span class="sc">$</span>edad,<span class="at">label =</span> <span class="st">"Edad"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="generación-de-base-de-datos-procesada-para-el-análisis" class="level2">
-<h2 class="anchored" data-anchor-id="generación-de-base-de-datos-procesada-para-el-análisis">5. Generación de base de datos procesada para el análisis</h2>
-<p>Antes de guardar la base procesada, revisamos nuevamente todas las variables con una tabla descriptiva general mediante la función <code>stargazer</code> (de la librería homónima)</p>
-<p>Primero vamos a reformatear el objeto proc_data como base de datos (as.data.frame), paso necesario para que sea reconocido como tal por <code>stargazer</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(proc_data)</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(proc_data, <span class="at">type=</span><span class="st">"text"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-===========================================
-Statistic      N    Mean   St. Dev. Min Max
--------------------------------------------
-conf_gob     1,181  0.660   0.800    0   3 
-conf_cong    1,178  0.594   0.714    0   3 
-conf_jud     1,186  0.717   0.789    0   3 
-conf_partpol 1,178  0.451   0.673    0   3 
-educacion    1,200  2.168   0.549    1   3 
-sexo         1,200  0.537   0.499    0   1 
-edad         1,200 44.491   17.008  18  89 
-idenpa       1,200 152.000  0.000   152 152
-conf_inst    1,162  2.420   2.489    0  12 
--------------------------------------------</code></pre>
-</div>
-</div>
-<div class="alert alert-info">
-<p>Si se desea modificar las columnas que aparecen en la tabla se puede ocupar la opción <code>summary.stat</code>, donde se pueden especificar:</p>
-<ul>
-<li>“max” maximum</li>
-<li>“mean” mean</li>
-<li>“median” median</li>
-<li>“min” minimum</li>
-<li>“n” number of observations</li>
-<li>“p25” 25th percentile</li>
-<li>“p75” 75th percentile</li>
-<li>“sd” standard deviation</li>
-</ul>
-<p>Por ejemplo, si quiero una tabla solo con promedio, n, sd y p75: <code>stargazer(data, type="text", summary.stat = c("mean", "n", "sd", "p75"))</code></p>
-</div>
-<ul>
-<li>Guardar base de datos procesada: en carpeta local <span class="sidenote">La ruta hacia su carpeta local si está trabajando en windows debería ser algo como “C:/Users/Lenovo/Clases/y aquí nombre del archivo a grabar</span></li>
-</ul>
-<p>El comando para guardar es <code>save</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(proc_data,<span class="at">file =</span> <span class="st">"[ruta hacia carpeta local en su computador]/ELSOC_ess_merit2016.RData"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>En este caso, seguimos una estructura de carpetas de datos, separando en una carpeta los datos originales, y en otra (proc) los datos procesados:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(proc_data,<span class="at">file =</span> <span class="st">"files/data/latinobarometro_proc.RData"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="alert alert-info">
-<p><strong>De rutas, estructura de carpetas y otros </strong></p>
-<ul>
-<li><p><strong>Encontrando la ruta a carpeta local</strong>: lo más fácil es crear la carpeta donde se desean guardar los datos desde el administrador de archivos del computador. Luego, posicionarse con el cursor sobre la carpeta y seleccionar “Propiedades”, en la ventana emergente debería aparecer la ruta hacia la carpeta en “Ubicación”. Copiar esa ruta y agregar al final el nombre de la carpeta (separada por slash)</p></li>
-<li><p><strong>Sobre los “slashes” (<code>\</code> o <code>/</code>)</strong>: en la ruta las carpetas y el archivo final aparecen separados por slashes, que según el sistema utilizado pueden ser <em>slash</em> (<code>/</code>) o <em>backslash</em> (<code>\</code>). En R por defecto se usa <em>slash</em>, pero en Windows <em>backslash</em>, por lo que si se usa Windows hay que reemplazarlos por <em>backslash</em> o también puede ser por un doble <em>slash</em> (<code>//</code>).</p></li>
-<li><p>Por temas de compatibilidad general, en las rutas se recomienda evitar tildes, eñes, espacios, mayúsculas y guiones bajos (_).</p></li>
-<li><p><strong>Estructura de carpetas</strong>: para mantener el orden se sugiere seguir un protocolo de estructura de carpetas de proyecto, para lo que recomendamos el protocolo <a href="https://lisa-coes.com/ipo-protocol/">IPO</a>, y que se adapta al flujo de trabajo presentado al principio de este práctico. Básicamente son tres carpetas: <strong>input</strong>, <strong>procesamiento</strong>, <strong>output</strong>. En la carpeta input crear la subcarpeta data-orig para guardar datos originales, y data-proc para los procesados. En procesamiento se guardan los archivos de código y en output las tablas y los gráficos.</p></li>
-</ul>
-<div>
 
 
-</div></div></section>
-<section id="descriptivos-básicos-de-las-variables" class="level2">
-<h2 class="anchored" data-anchor-id="descriptivos-básicos-de-las-variables">Descriptivos básicos de las variables</h2>
-<p>Podemos conocer ciertas medidas de tendencia central utilizando algunas funciones de <code>dplyr</code></p>
-<section id="media-por-grupos" class="level3">
-<h3 class="anchored" data-anchor-id="media-por-grupos">Media por grupos</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">group_by</span>(sexo) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">mean</span>(conf_inst, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-   sexo `mean(conf_inst, na.rm = TRUE)`
-  &lt;dbl&gt;                           &lt;dbl&gt;
-1     0                            2.48
-2     1                            2.36</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">group_by</span>(educacion) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">mean</span>(conf_inst, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-  educacion `mean(conf_inst, na.rm = TRUE)`
-      &lt;dbl&gt;                           &lt;dbl&gt;
-1         1                            2.96
-2         2                            2.38
-3         3                            2.36</code></pre>
-</div>
-</div>
-</section>
-<section id="representación" class="level3">
-<h3 class="anchored" data-anchor-id="representación">Representación</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_data<span class="sc">$</span>educacion, proc_data<span class="sc">$</span>conf_inst, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-
-<table style="border-collapse:collapse; border:none;">
- <tbody><tr>
- <th style="border-top:double; text-align:center; font-style:italic; font-weight:normal; border-bottom:1px solid;" rowspan="2">Educación</th>
- <th style="border-top:double; text-align:center; font-style:italic; font-weight:normal;" colspan="13">Confianza en<br>instituciones</th>
- <th style="border-top:double; text-align:center; font-style:italic; font-weight:normal; font-weight:bolder; font-style:italic; border-bottom:1px solid; " rowspan="2">Total</th>
- </tr>
- 
-<tr>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">0</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">1</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">2</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">3</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">4</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">5</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">6</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">7</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">8</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">9</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">10</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">11</td>
- <td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">12</td>
- </tr>
- 
-<tr> 
-<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">Educacion basica</td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">30</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">11</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">6</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">6</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">12</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">6</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">4</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">4</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">7</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">3</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">0</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">0</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1</span></td>
-<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">90</span></td> 
-</tr>
- 
-<tr> 
-<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">Educacion media</td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">268</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">95</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">83</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">79</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">121</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">45</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">24</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">29</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">28</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">3</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">4</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">1</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">0</span></td>
-<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">780</span></td> 
-</tr>
- 
-<tr> 
-<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">Educacion superior</td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">99</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">35</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">41</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">26</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">36</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">20</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">13</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">8</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">9</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">5</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">0</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">0</span></td>
-<td style="padding:0.2cm; text-align:center; "><span style="color:black;">0</span></td>
-<td style="padding:0.2cm; text-align:center;  "><span style="color:black;">292</span></td> 
-</tr>
- 
-<tr> 
-<td style="padding:0.2cm;  border-bottom:double; font-weight:bolder; font-style:italic; text-align:left; vertical-align:middle;">Total</td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">397</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">141</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">130</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">111</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">169</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">71</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">41</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">41</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">44</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">11</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">4</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">1</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">1</span></td>
-<td style="padding:0.2cm; text-align:center;   border-bottom:double;"><span style="color:black;">1162</span></td> 
-</tr>
-<tr><td style="text-align:right; font-size:0.9em; font-style:italic; padding:0.2cm;" colspan="15">χ<sup>2</sup>=37.850 · df=24 · Cramer's V=0.128 · Fisher's p=0.134</td> 
-</tr>
- 
-</tbody></table>
-</div>
-</div>
-
-
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1111,23 +602,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -1192,92 +669,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1321,9 +712,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by <a href="https://coes.cl/integrantes/kevin-carrasco-quintanilla/">Kevin Carrasco</a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
     <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/cursos-metodos-facso/metod1-MCS">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>

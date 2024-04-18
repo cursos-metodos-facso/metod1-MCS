@@ -1,99 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://metod1-mcs.netlify.app/trabajos.html</loc>
-    <lastmod>2024-04-05T13:14:40.568Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/schedule.html</loc>
-    <lastmod>2024-04-05T13:14:36.867Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/resource/07-resource.html</loc>
-    <lastmod>2024-04-05T13:14:33.537Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/resource/05-resource.html</loc>
-    <lastmod>2024-04-05T13:14:24.910Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/resource/02-resource.html</loc>
-    <lastmod>2024-04-05T13:14:16.560Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/index.html</loc>
-    <lastmod>2024-04-05T13:14:06.379Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/content/11-content.html</loc>
-    <lastmod>2024-04-05T13:14:03.066Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/content/09-content.html</loc>
-    <lastmod>2024-04-05T13:13:59.975Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/content/07-content.html</loc>
-    <lastmod>2024-04-05T13:13:56.822Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/content/05-content.html</loc>
-    <lastmod>2024-04-05T13:13:53.722Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/content/03-content.html</loc>
-    <lastmod>2024-04-05T13:13:50.618Z</lastmod>
+    <loc>https://metod1-mcs.netlify.app/assignment/index.html</loc>
+    <lastmod>2024-04-18T21:44:50.147Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/content/01-content.html</loc>
-    <lastmod>2024-04-05T13:13:47.520Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metod1-mcs.netlify.app/assignment/index.html</loc>
-    <lastmod>2024-04-05T13:13:45.942Z</lastmod>
+    <lastmod>2024-04-18T21:45:48.046Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/content/02-content.html</loc>
-    <lastmod>2024-04-05T13:13:49.086Z</lastmod>
+    <lastmod>2024-04-18T21:46:13.562Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/content/04-content.html</loc>
-    <lastmod>2024-04-05T13:13:52.171Z</lastmod>
+    <lastmod>2024-04-18T21:44:53.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/content/05-content.html</loc>
+    <lastmod>2024-04-18T21:44:53.732Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/content/06-content.html</loc>
-    <lastmod>2024-04-05T13:13:55.269Z</lastmod>
+    <lastmod>2024-04-18T21:44:54.418Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/content/07-content.html</loc>
+    <lastmod>2024-04-18T21:44:55.100Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/content/08-content.html</loc>
-    <lastmod>2024-04-05T13:13:58.390Z</lastmod>
+    <lastmod>2024-04-18T21:44:55.680Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/content/09-content.html</loc>
+    <lastmod>2024-04-18T21:44:56.261Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/content/10-content.html</loc>
-    <lastmod>2024-04-05T13:14:01.513Z</lastmod>
+    <lastmod>2024-04-18T21:44:56.767Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/content/11-content.html</loc>
+    <lastmod>2024-04-18T21:44:57.348Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/content/index.html</loc>
-    <lastmod>2024-04-05T13:14:04.684Z</lastmod>
+    <lastmod>2024-04-18T21:44:57.958Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/index.html</loc>
+    <lastmod>2024-04-18T21:45:01.267Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/resource/01-resource.html</loc>
-    <lastmod>2024-04-05T13:14:13.528Z</lastmod>
+    <lastmod>2024-04-18T21:45:09.544Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/resource/02-resource.html</loc>
+    <lastmod>2024-04-18T21:45:16.164Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/resource/04-resource.html</loc>
-    <lastmod>2024-04-05T13:14:20.556Z</lastmod>
+    <lastmod>2024-04-18T21:45:17.705Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/resource/05-resource.html</loc>
+    <lastmod>2024-04-18T21:45:19.516Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/resource/06-resource.html</loc>
-    <lastmod>2024-04-05T13:14:29.755Z</lastmod>
+    <lastmod>2024-04-18T21:45:22.493Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/resource/07-resource.html</loc>
+    <lastmod>2024-04-18T21:45:24.155Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/resource/index.html</loc>
-    <lastmod>2024-04-05T13:14:35.152Z</lastmod>
+    <lastmod>2024-04-18T21:45:24.674Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/schedule.html</loc>
+    <lastmod>2024-04-18T21:45:25.229Z</lastmod>
   </url>
   <url>
     <loc>https://metod1-mcs.netlify.app/syllabus.html</loc>
-    <lastmod>2024-04-05T13:14:38.722Z</lastmod>
+    <lastmod>2024-04-18T21:45:27.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metod1-mcs.netlify.app/trabajos.html</loc>
+    <lastmod>2024-04-18T21:45:28.281Z</lastmod>
   </url>
 </urlset>

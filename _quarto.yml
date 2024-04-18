@@ -68,9 +68,9 @@ website:
         - section: "Sesiones"
           contents:
             - text: "01: Sesión 1"
+              file: content/01-content.qmd
+            - text: "02: Sesión 2"
               file: content/02-content.qmd
-            #- text: "02: Sesión 2"
-            #  file: content/03-content.qmd
             #- text: "03: Sesión 3"
             #  file: content/04-content.qmd
             #- text: "04: Sesión 4"
@@ -96,6 +96,8 @@ website:
           file: resource/index.qmd
         - text: "Práctico 1"
           file: resource/01-resource.qmd
+        - text: "Práctico 2"
+          file: resource/02-resource.qmd
 
 
 
