@@ -91,8 +91,6 @@ class: inverse, bottom, right, animated, slideInRight
 
 Repaso sesión anterior
 
-Medidas de tendencia central
-
 Tipos de diseños de investigación
 
 Tipos de variables
@@ -109,33 +107,13 @@ class: inverse, bottom, right
 
 .yellow[Repaso sesión anterior]
 
-Medidas de tendencia central
-
 Tipos de diseños de investigación
 
-Operacionalización de variables
+Tipos de variables
 <br>
 <br>
 <br>
 <br>
----
----
-
-class: roja, middle, right
-
-.pull-left-narrow[
-# ¿Crisis de apertura en ciencia?
-]
-
-.pull-right-wide[
-<br>
-<br>
-<br>
-### 1. Acceso
-### 2. Reproducibilidad 
-### 3. Transparencia
-]
-
 ---
 <br>
 
@@ -159,13 +137,6 @@ class: middle, center
 .left[
 ![:scale 70%](https://localist-images.azureedge.net/photos/723383/huge/3b15ca9bd709e6738e42326fa3f35ff4a3357bb9.jpg)
 ]
-]
-
----
-# Márgenes de ganancia
-
-.center[
-![:scale 70%](../../files/img/profits.png)
 ]
 
 ---
@@ -223,10 +194,125 @@ Más info:
 # Documental "Paywall: The Business of Scholarship" [Youtube](https://www.youtube.com/watch?v=HM_nWsdbNvQ&ab_channel=JasonSchmitt)
 
 ---
+class: inverse, bottom, right
+
+
+# .red[Sesión 2]
+<br>
+
+Repaso sesión anterior
+
+.yellow[Tipos de diseños de investigación]
+
+Tipos de variables
+<br>
+<br>
+<br>
+<br>
+
+---
+## Tipos de diseños de investigación
+
+Un diseño de investigación es un plan estructurado y ordenado, que está orientado a responder empíricamente (con evidencia observable) una pregunta de investigación.
+
+¿Qué aspecto de la teoría se va a investigar? ¿Cómo se levantarán los datos? ¿cómo se analizará la información obtenida?
+
+Todo diseño de investigación busca **obtener conclusiones basadas en la evidencia empírica y un correcto tratamiento de los datos**
+
+---
+* Diseños de investigación transversal
+
+.center[
+![:scale 75%](../../files/img/transversal.png)
+]
+---
+* Diseños de investigación longitudinal
+
+.center[
+![:scale 64%](../../files/img/longitudinal.png)
+]
+
+---
+* Diseños de investigación experimentales
+.center[
+![:scale 53%](../../files/img/experiment.png)
+]
 
 
 ---
+class: inverse, bottom, right
 
+
+# .red[Sesión 2]
+<br>
+
+Repaso sesión anterior
+
+Tipos de diseños de investigación
+
+.yellow[Tipos de variables]
+<br>
+<br>
+<br>
+<br>
+
+---
+## Datos y variables
+
+* Los datos miden al menos una *característica* de a los menos una *unidad*  en a lo menos *un punto en el tiempo*
+
+--
+ + Ejemplo: La esperanza de vida en Chile el 2017 fue de 79,9 años
+
+   - Característica (variable) : esperanza de vida
+
+   - Unidad: Años
+
+   - Punto en el tiempo: 2017
+
+---
+## Datos y variables
+
+* Base de Datos
+
+* Forma "rectangular" de almacenamiento de datos:
+
+.center[![:scale 60%](../../files/img/ObservacionesyVariables.png)]
+
+---
+## Datos y variables
+
+  - cada .blue[fila] representa una unidad o caso (ej: un encuestad_)
+
+  - cada .orange[columna] una variable (ej: edad)
+
+  - cada .purple[variable] posee valores numéricos
+
+  - los valores numéricos pueden estar asociados a una etiqueta (ej: 1=Mujer)
+  
+---
+## Datos y variables
+
+### Ejemplos de estudios / bases de datos
+
+1. [Encuesta Centro de Estudios Públicos](https://www.cepchile.cl/encuesta/encuesta-cep-n-90/)
+
+2. [Encuesta CASEN 2022](https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-2022)
+
+3. [Encuesta Latinobarómetro](https://www.latinobarometro.org/lat.jsp) 
+
+4. [ELSOC](https://coes.cl/encuesta-panel/)
+
+5. [Banco de datos MINEDUC](https://datosabiertos.mineduc.cl/)
+
+---
+## Datos y variables
+
+- Una variable representa cualquier cosa o propiedad que varía y a la cuál se le asigna un valor. Es decir:
+
+- $Variable \neq Constante$
+
+---
 ## Datos y variables
 
 - discretas (Rango finito de valores):
@@ -264,198 +350,6 @@ Más info:
     - Pueden ser transformados a datos categóricos
     
 ---
-class: inverse, bottom, right
-
-
-# .red[Sesión 2]
-<br>
-
-Repaso sesión anterior
-
-.yellow[Medidas de tendencia central]
-
-Tipos de diseños de investigación
-
-Operacionalización de variables
-<br>
-<br>
-<br>
-<br>
----
-
-## Medidas de tendencia Central
-
-* **Moda**: valor que ocurre más frecuentemente
-
---
-
-* **Mediana**: valor medio de la distribución ordenada. Si N es par, entonces es el promedio de los valores medios
-
---
-* **Media** o promedio aritmético: suma de los valores dividido por el total de casos
-
----
-.pull-left-narrow[
-## Dispersión:
-### Varianza
-]
-
-.pull-right-wide[
-
-![:scale 100%](../../files/img/varianza1.png)
-]
-
----
-.pull-left-narrow[
-## Dispersión:
-### Varianza
-]
-
-.pull-right-wide[
-
-![:scale 100%](../../files/img/varianza3.png)
-]
-
-
-
----
-.pull-left-narrow[
-## Dispersión:
-### Varianza
-]
-
-.pull-right-wide[
-
-![:scale 100%](../../files/img/varianza2.png)
-]
----
-## Dispersión:
-
-![:scale 100%](../../files/img/varianza_formula.png)
----
-class: inverse, middle, center
-
-#La **VARIANZA** equivale al promedio de la suma de las diferencias del promedio al cuadrado
-
----
-##  Desviación Estándar
-
-.pull-left-narrow[
-![](../../files/img/desviacion_estandar.png)
-
-]
-
-.pull-right-wide[
-  - Raiz Cuadrada de la varianza.
-
-
-  - Expresada  en la mismas unidades que los puntajes de la escala original
-]
-
-
-
----
-class: middle, center
-
-# Más sobre datos, variables y varianza en:
-
-##-  [Moore: 1.Comprensión de los datos (1-54)](https://multivariada.netlify.app/docs/lecturas/moore_comprensiondelosdatos.pdf)
-
----
-class: inverse, bottom, right
-
-
-# .red[Sesión 2]
-<br>
-
-Repaso sesión anterior
-
-Medidas de tendencia central
-
-.yellow[Tipos de diseños de investigación]
-
-Operacionalización de variables
-<br>
-<br>
-<br>
-<br>
-
----
-## Tipos de diseños de investigación
-
-Un diseño de investigación es un plan estructurado y ordenado, que está orientado a responder empíricamente (con evidencia observable) una pregunta de investigación.
-
-¿Qué aspecto de la teoría se va a investigar? ¿Cómo se levantarán los datos? ¿cómo se analizará la información obtenida?
-
-Todo diseño de investigación busca **obtener conclusiones basadas en la evidencia empírica y un correcto tratamiento de los datos**
-
----
-## Tipos de diseños de investigación
-
-Según el grado de intervención del investigador/a:
-
-* **Experimentales**: Manipulación o tratamiento de fenómenos y/o información para investigar causalidad
-
-* **Observacionales**: Descripción *objetiva* de un fenómeno
-
----
-## Tipos de diseños de investigación
-
-Según los objetivos de investigación:
-
-* **Descriptivos**: describir conceptos nuevos, asociaciones o agrupaciones entre conceptos
-
-* **Causales**: conocer efectos causales o encontrar causas que expliquen un fenómeno a partir de los datos observados
-
----
-## Tipos de diseños de investigación
-
-Según el tiempo de estudio:
-
-* **Transversal**: Los datos se toman en un momento determinado y no hay manipulación de variables.
-
-* **Longitudinales**:
-      - panel: estudio del mismo grupo de personas a través del tiempo
-      - Tendencia: estudio de la misma población, pero distinto grupo de personas
-
----
-class: inverse, bottom, right
-
-
-# .red[Sesión 2]
-<br>
-
-Repaso sesión anterior
-
-Medidas de tendencia central
-
-
-Tipos de diseños de investigación
-
-.yellow[Operacionalización de variables]
-<br>
-<br>
-<br>
-<br>
-
----
-## Operacionalización de variables
-
-Guía de trabajo en:
-
-
-# .center[[**metod1-mcs.netlify.app/resource/02-resource.html**](https://metod1-mcs.netlify.app/resource/02-resource.html)]
-
----
-
-.center[![:scale 58%](../../files/img/conferencia-Ciencia-Abierta3.png)]
-
-<br>
-<br>
-<br>
----
-
-
 class: front
 
 .pull-left[
