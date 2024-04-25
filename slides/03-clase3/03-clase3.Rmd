@@ -262,7 +262,6 @@ Ventajas:
 - No requiere unidad de medida
 - Permite medir un mayor número de conceptos sociales
 
---
 Desventajas:
 
 - Ambigüedad en sentido del número asignado (no hay unidad de medida; no se emplean todas las propiedades de los números)
