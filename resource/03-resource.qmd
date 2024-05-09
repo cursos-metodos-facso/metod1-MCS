@@ -521,29 +521,14 @@ save(proc_data,file = "[ruta hacia carpeta local en su computador]/ELSOC_ess_mer
 
 En este caso, seguimos una estructura de carpetas de datos, separando en una carpeta los datos originales, y en otra (proc) los datos procesados:
 
-
 ```{r eval=FALSE}
-save(proc_data,file = "files/data/latinobarometro_proc.RData")
+save(proc_data, file = "input/data/proc/data_proc.RData")
 ```
 
 
-## Descriptivos básicos de las variables
-
-Podemos conocer ciertas medidas de tendencia central utilizando algunas funciones de `dplyr`
-
-### Media por grupos
-
-```{r}
-proc_data %>% dplyr::group_by(sexo) %>% summarise(mean(conf_inst, na.rm=TRUE))
+```{r echo=FALSE}
+save(proc_data,file = "../files/data/latinobarometro_proc.RData")
 ```
 
-```{r}
-proc_data %>% dplyr::group_by(educacion) %>% summarise(mean(conf_inst, na.rm=TRUE))
-```
 
-### Representación
 
-```{r}
-library(sjPlot)
-sjt.xtab(proc_data$educacion, proc_data$conf_inst, encoding = "UTF-8")
-```

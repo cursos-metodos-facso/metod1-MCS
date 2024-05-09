@@ -73,8 +73,8 @@ website:
               file: content/02-content.qmd
             - text: "03: Sesión 3"
               file: content/03-content.qmd
-            #- text: "04: Sesión 4"
-            #  file: content/05-content.qmd
+            - text: "04: Sesión 4"
+              file: content/05-content.qmd
             #- text: "05: Sesión 5"
             #  file: content/06-content.qmd
             #- text: "06: Sesión 6"
@@ -100,6 +100,8 @@ website:
           file: resource/02-resource.qmd
         - text: "Práctico 3"
           file: resource/03-resource.qmd
+        - text: "Práctico 4"
+          file: resource/04-resource.qmd
 
 
 
