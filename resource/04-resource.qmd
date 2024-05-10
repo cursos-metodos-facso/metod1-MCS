@@ -97,6 +97,13 @@ load("input/data/proc/data_proc.Rdata")
 load("../files/data/latinobarometro_proc.RData")
 ```
 
+o desde internet si no completamos el práctico anterior:
+
+```{r}
+load(url("https://github.com/cursos-metodos-facso/metod1-MCS/raw/main/files/data/latinobarometro_proc.RData"))
+```
+
+
 
 ## 3 Explorar datos 
 

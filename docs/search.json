@@ -667,7 +667,7 @@
     "href": "resource/04-resource.html#importar-datos",
     "title": "Práctica 4 Correlación y Regresión",
     "section": "2 Importar datos",
-    "text": "2 Importar datos\nUsamos los datos creados en el procesamiento que se encuentran guardados en la carpeta output.\n\nload(\"input/data/proc/data_proc.Rdata\")",
+    "text": "2 Importar datos\nUsamos los datos creados en el procesamiento que se encuentran guardados en la carpeta output.\n\nload(\"input/data/proc/data_proc.Rdata\")\n\no desde internet si no completamos el práctico anterior:\n\nload(url(\"https://github.com/cursos-metodos-facso/metod1-MCS/raw/main/files/data/latinobarometro_proc.RData\"))",
     "crumbs": [
       "Practicos",
       "Práctico 4"
