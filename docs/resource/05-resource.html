@@ -263,79 +263,23 @@ window.Quarto = {
 <h1>Librerías</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(dplyr, summarytools, sjPlot,texreg, corrplot,ggplot2,ggfortify,sandwich,lmtest,sjlabelled)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into 'C:/Users/kevin/AppData/Local/R/win-library/4.3'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.3:
-  no fue posible abrir la URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.3/PACKAGES'</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'ggfortify' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\kevin\AppData\Local\Temp\RtmpsrPOaW\downloaded_packages</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-ggfortify installed
-Installing package into 'C:/Users/kevin/AppData/Local/R/win-library/4.3'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>also installing the dependency 'zoo'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.3:
-  no fue posible abrir la URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.3/PACKAGES'</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'zoo' successfully unpacked and MD5 sums checked
-package 'sandwich' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\kevin\AppData\Local\Temp\RtmpsrPOaW\downloaded_packages</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-sandwich installed</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into 'C:/Users/kevin/AppData/Local/R/win-library/4.3'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.3:
-  no fue posible abrir la URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.3/PACKAGES'</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'lmtest' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\kevin\AppData\Local\Temp\RtmpsrPOaW\downloaded_packages</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-lmtest installed</code></pre>
-</div>
 </div>
 </section>
 <section id="datos" class="level1">
 <h1>Datos</h1>
 <p>El Estudio Longitudinal Social del Chile <a href="https://coes.cl/encuesta-panel/">ELSOC</a>, único en Chile y América Latina, consiste en encuestar a casi 3.000 chilenos, anualmente, a lo largo de una década. ELSOC ha sido diseñado para evaluar la manera cómo piensan, sienten y se comportan los chilenos en torno a un conjunto de temas referidos al conflicto y la cohesión social en Chile. La población objetivo son hombres y mujeres entre 15 y 75 años de edad con un alcance nacional, donde se obtuvo una muestra final de <strong>3748</strong> casos en el año 2018.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"../files/data/elsoc.RData"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"../files/data/elsoc.RData"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Cargamos la base de datos desde internet</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/Kevin-carrasco/metod1-MCS/raw/main/files/data/elsoc.RData"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Cargamos la base de datos desde internet</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/Kevin-carrasco/metod1-MCS/raw/main/files/data/elsoc.RData"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="explorar-datos" class="level2">
 <h2 class="anchored" data-anchor-id="explorar-datos">Explorar datos</h2>
 <p>A partir de la siguiente tabla se obtienen estadísticos descriptivos que luego serán relevantes para realizar las transformaciones y análisis posteriores.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(<span class="fu">dfSummary</span>(elsoc, <span class="at">headings =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"render"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(<span class="fu">dfSummary</span>(elsoc, <span class="at">headings =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"render"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -403,7 +347,7 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAGkAAAA3BAMAAAD9KHmOAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxbAqZBXAAAAQklEQVRIx2NgGL5ACR8QRAcCUF3KxriB0aiuUV2jukZ1YdFFXmkjSBIYCF1KJAEFIsIQE4zqGtU1qmtUF7mlzXAEALA3YowAbRPnAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAGkAAAA3BAMAAAD9KHmOAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJgxZsC0NAAAAQklEQVRIx2NgGL5ACR8QRAcCUF3KxriB0aiuUV2jukZ1YdFFXmkjSBIYCF1KJAEFIsIQE4zqGtU1qmtUF7mlzXAEALA3YowAbRPnAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3748 (100.0%)</td>
 <td style="text-align: center;">0 (0.0%)</td>
 </tr>
@@ -428,7 +372,7 @@ lmtest installed</code></pre>
 </tbody>
 </table></td>
 <td style="text-align: left; vertical-align: middle;">70 distinct values</td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJgAAABuBAMAAAApJ8cWAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxbAqZBXAAAAvklEQVRo3u3YfQ6DIAyHYa4wbzC9wXr/u21tFibBMYTGj/n+/jCY2CdKTAVDIC251WTUlC5Yg00i8gCrxQadezfs5QjYaTF7Ge5emJYfHLPO44WZ8Y9YnCUPLJaPsfM4YFM09seG7MF6sKwcDOzsWGnFtxqTwu3NsbTZd2J5FdhBsWRR04vpAQwM7ALYwmeqHbMzMDAwMDAwMLDNsYW/blVYuol6Y1+qfmI6AAMDuwD22UQ5YDYwcd7PuhNIS57my94dWyVbJgAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJgAAABuBAMAAAApJ8cWAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJgxZsC0NAAAAvklEQVRo3u3YfQ6DIAyHYa4wbzC9wXr/u21tFibBMYTGj/n+/jCY2CdKTAVDIC251WTUlC5Yg00i8gCrxQadezfs5QjYaTF7Ge5emJYfHLPO44WZ8Y9YnCUPLJaPsfM4YFM09seG7MF6sKwcDOzsWGnFtxqTwu3NsbTZd2J5FdhBsWRR04vpAQwM7ALYwmeqHbMzMDAwMDAwMLDNsYW/blVYuol6Y1+qfmI6AAMDuwD22UQ5YDYwcd7PuhNIS57my94dWyVbJgAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3748 (100.0%)</td>
 <td style="text-align: center;">0 (0.0%)</td>
 </tr>
@@ -489,7 +433,7 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAE0AAAB9BAMAAAAVXfMuAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxe3rqDBAAAAdklEQVRYw+3WsQ3AIAxEUUaIN4Bkg2T/3SJFpomMzg3IwvfrV0BxiFLid/aamB3qrkejo0vkvPsQ0CzXj4ec3vemo8vkvPsQ0Oz9jqr/92oQHd2OzruPCPtt+L36oqPL4rz7ENCK/VrfBOu+1reDjm5H591H5F5kKse6HRk9NwAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAE0AAAB9BAMAAAAVXfMuAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg0utx2bAAAAdklEQVRYw+3WsQ3AIAxEUUaIN4Bkg2T/3SJFpomMzg3IwvfrV0BxiFLid/aamB3qrkejo0vkvPsQ0CzXj4ec3vemo8vkvPsQ0Oz9jqr/92oQHd2OzruPCPtt+L36oqPL4rz7ENCK/VrfBOu+1reDjm5H591H5F5kKse6HRk9NwAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3743 (99.9%)</td>
 <td style="text-align: center;">5 (0.1%)</td>
 </tr>
@@ -541,7 +485,7 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAD0AAABmBAMAAACKBYTuAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxe3rqDBAAAAYUlEQVRIx2NgGHighA4EIUAAKq9sjAqMRuVH5akoTyj9CeIA1JJXwgLwuR/mhVH5UXlqyBNKf7RO/yTmD0V0eTT/jcqPylNVnlD6o3P6hwMF3PkbDEblR+WpIU8o/Q0kAADKv2NasD6r2gAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAD0AAABmBAMAAACKBYTuAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg0utx2bAAAAYUlEQVRIx2NgGHighA4EIUAAKq9sjAqMRuVH5akoTyj9CeIA1JJXwgLwuR/mhVH5UXlqyBNKf7RO/yTmD0V0eTT/jcqPylNVnlD6o3P6hwMF3PkbDEblR+WpIU8o/Q0kAADKv2NasD6r2gAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3664 (97.8%)</td>
 <td style="text-align: center;">84 (2.2%)</td>
 </tr>
@@ -609,7 +553,7 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAHkAAAB9BAMAAAB0RdFsAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxe3rqDBAAAAeElEQVRYw+3XsQ2AMBBD0YwAGwDZIOy/Gw0BUZ5PkSzy3b/iXFi6UubNIWW7dT2VoNFo9Eid27VVymKg31sU/XTe0Gg02kXndi1ivHS/epd07xyNRqN9dG7XQshKRy/+6hpsG41Go8fr3K4J1ESH3hE0Go3+vZ4xFxoycA8frCj/AAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAHkAAAB9BAMAAAB0RdFsAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg0utx2bAAAAeElEQVRYw+3XsQ2AMBBD0YwAGwDZIOy/Gw0BUZ5PkSzy3b/iXFi6UubNIWW7dT2VoNFo9Eid27VVymKg31sU/XTe0Gg02kXndi1ivHS/epd07xyNRqN9dG7XQshKRy/+6hpsG41Go8fr3K4J1ESH3hE0Go3+vZ4xFxoycA8frCj/AAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3742 (99.8%)</td>
 <td style="text-align: center;">6 (0.2%)</td>
 </tr>
@@ -677,7 +621,7 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJAAAAB9BAMAAAC/svfXAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxe3rqDBAAAAfklEQVRo3u3V0QmAMAxAwa7gCNoN6v67aUHwT4WkUOHeAAdtIClFX9rCXVDdgzUQCAQCvUBpO3sJNy3UX7lmQH1qIBAIBBoKpe3skDE31P8oBTqn1kAgEAg0FErb2TFkaih4+G+ogkAgEGg0lLazo8zEUPDwg0AgEOiPkJ47ABWtx0D2x9HUAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJAAAAB9BAMAAAC/svfXAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAfklEQVRo3u3V0QmAMAxAwa7gCNoN6v67aUHwT4WkUOHeAAdtIClFX9rCXVDdgzUQCAQCvUBpO3sJNy3UX7lmQH1qIBAIBBoKpe3skDE31P8oBTqn1kAgEAg0FErb2TFkaih4+G+ogkAgEGg0lLazo8zEUPDwg0AgEOiPkJ47ABWtx0D2x9HUAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3745 (99.9%)</td>
 <td style="text-align: center;">3 (0.1%)</td>
 </tr>
@@ -745,7 +689,7 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJUAAAB9BAMAAABZmzyTAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxgnEb1QAAAAb0lEQVRo3u3V0QmAMAxAwY6gG9g6gvvvZj8cwNAUKt4b4CAEklIUrSV0PNZ5jcdisVisOVbmvd8T2ha3+rg1y+p7ZLFYLNaiVua9H3W+YPmPLBaL9Q/Lf4xZjcVisVisoJVALW9VFovFYrGClt53AxDQ32gWeDXZAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJUAAAB9BAMAAABZmzyTAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAb0lEQVRo3u3V0QmAMAxAwY6gG9g6gvvvZj8cwNAUKt4b4CAEklIUrSV0PNZ5jcdisVisOVbmvd8T2ha3+rg1y+p7ZLFYLNaiVua9H3W+YPmPLBaL9Q/Lf4xZjcVisVisoJVALW9VFovFYrGClt53AxDQ32gWeDXZAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3745 (99.9%)</td>
 <td style="text-align: center;">3 (0.1%)</td>
 </tr>
@@ -813,7 +757,7 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAHUAAAB9BAMAAABueTHiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxgnEb1QAAAAg0lEQVRYw+3XwQ2AIBBEUUrQDlQ60P57M4qJeGN2E9yEP/d32DkMIaXxshmyPDYferBYLNZqPXs1GzL9bMsFq8mWnrFYLLaP9eyVhILY95Vpv/nbs9Y1FovFWq1nr5pBIHufarRXzzsWi8V2sp69ElkIq/4VapvFPwoWi8V6rGevRsoJI6Fh6Io7pmoAAAAASUVORK5CYII=" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAHUAAAB9BAMAAABueTHiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAg0lEQVRYw+3XwQ2AIBBEUUrQDlQ60P57M4qJeGN2E9yEP/d32DkMIaXxshmyPDYferBYLNZqPXs1GzL9bMsFq8mWnrFYLLaP9eyVhILY95Vpv/nbs9Y1FovFWq1nr5pBIHufarRXzzsWi8V2sp69ElkIq/4VapvFPwoWi8V6rGevRsoJI6Fh6Io7pmoAAAAASUVORK5CYII=" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3743 (99.9%)</td>
 <td style="text-align: center;">5 (0.1%)</td>
 </tr>
@@ -883,20 +827,20 @@ lmtest installed</code></pre>
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAACkAAACVBAMAAAA3Rs7LAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQkTGxgnEb1QAAAAR0lEQVRIx2NgoB1QQgEKUFFlY2QwKjr4RLHHmyAKECBDdDQ9DE3R0fQwKjqaHkZFR9PDqOhApwdFDFGQG0ZFB7Mo9nijBQAAufNRRm204TwAAAAASUVORK5CYII=" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
+<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAACkAAACVBAMAAAA3Rs7LAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAR0lEQVRIx2NgoB1QQgEKUFFlY2QwKjr4RLHHmyAKECBDdDQ9DE3R0fQwKjqaHkZFR9PDqOhApwdFDFGQG0ZFB7Mo9nijBQAAufNRRm204TwAAAAASUVORK5CYII=" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
 <td style="text-align: center;">3748 (100.0%)</td>
 <td style="text-align: center;">0 (0.0%)</td>
 </tr>
 </tbody>
 </table>
 
-<p>Generated by <a href="https://github.com/dcomtois/summarytools">summarytools</a> 1.0.1 (<a href="https://www.r-project.org/">R</a> version 4.3.3)<br>2024-05-09</p>
+<p>Generated by <a href="https://github.com/dcomtois/summarytools">summarytools</a> 1.0.1 (<a href="https://www.r-project.org/">R</a> version 4.3.2)<br>2024-05-09</p>
 </div>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view_df</span>(elsoc,<span class="at">max.len =</span> <span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view_df</span>(elsoc,<span class="at">max.len =</span> <span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
@@ -1039,24 +983,24 @@ Missing</td>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>elsoc <span class="ot">&lt;-</span> elsoc <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">partpol=</span><span class="fu">rowSums</span>(<span class="fu">select</span>(., part01,part02,part03,part04)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>elsoc <span class="ot">&lt;-</span> elsoc <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">partpol=</span><span class="fu">rowSums</span>(<span class="fu">select</span>(., part01,part02,part03,part04)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="estimación" class="level1">
 <h1>Estimación</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fit01 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo, <span class="at">data=</span>elsoc)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fit02 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad, <span class="at">data=</span>elsoc)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>fit03 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> quintilemiss, <span class="at">data=</span>elsoc)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>fit04 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> quintilemiss <span class="sc">+</span> pospol, <span class="at">data=</span>elsoc)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit01 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo, <span class="at">data=</span>elsoc)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fit02 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad, <span class="at">data=</span>elsoc)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fit03 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> quintilemiss, <span class="at">data=</span>elsoc)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>fit04 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> quintilemiss <span class="sc">+</span> pospol, <span class="at">data=</span>elsoc)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>labs01 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Centro (ref. derecha)"</span>,<span class="st">"Izquierda"</span>,<span class="st">"Idep./Ninguno"</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit01,fit02,fit03, fit04),<span class="at">doctype =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 1"</span>,<span class="st">"Modelo 2"</span>,<span class="st">"Modelo 3"</span>, <span class="st">"Modelo 4"</span>),</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.coef.names =</span> labs01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>labs01 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Centro (ref. derecha)"</span>,<span class="st">"Izquierda"</span>,<span class="st">"Idep./Ninguno"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit01,fit02,fit03, fit04),<span class="at">doctype =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 1"</span>,<span class="st">"Modelo 2"</span>,<span class="st">"Modelo 3"</span>, <span class="st">"Modelo 4"</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.coef.names =</span> labs01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
 <caption>
 Statistical models
@@ -1522,22 +1466,22 @@ Num. obs.
 <p>Para determinar si un outlier es un caso influyente, es decir que su presencia/ausencia genera un cambio importante en la estimación de los coeficientes de regresión, calculamos la <strong>Distancia de Cook.</strong>.</p>
 <p>Posteriormente, se establece un punto de corte de <span class="math inline">\(4/(n-k-1)\)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span> <span class="fu">nobs</span>(fit04) <span class="co">#n de observaciones</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>k<span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">coef</span>(fit04)) <span class="co"># n de parametros</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>dcook<span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">/</span>(n<span class="sc">-</span>k<span class="dv">-1</span>) <span class="co">#punt de corte</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span> <span class="fu">nobs</span>(fit04) <span class="co">#n de observaciones</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>k<span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">coef</span>(fit04)) <span class="co"># n de parametros</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dcook<span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">/</span>(n<span class="sc">-</span>k<span class="dv">-1</span>) <span class="co">#punt de corte</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Si lo graficamos se ve de la siguiente manera:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">augment_columns</span>(fit04,<span class="at">data =</span> elsoc)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>final<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">row.names</span>(final))</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># identify obs with Cook's D above cutoff</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(final, <span class="fu">aes</span>(id, .cooksd)) <span class="sc">+</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Obs. Number"</span>)<span class="sc">+</span> <span class="co"># Modificación nombre eje x</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Cook's distance"</span>)<span class="sc">+</span> <span class="co"># Modificación nombre eje y</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>dcook)<span class="sc">+</span> <span class="co"># Incluir una línea horizontal</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">ifelse</span>((.cooksd<span class="sc">&gt;</span>dcook),id,<span class="st">""</span>)), <span class="co"># geom text agrega nombre a los casos, en esta oportunidad solo a los valores mayores a dcook</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.2</span>, <span class="at">hjust=</span><span class="fl">0.5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">augment_columns</span>(fit04,<span class="at">data =</span> elsoc)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>final<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">row.names</span>(final))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># identify obs with Cook's D above cutoff</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(final, <span class="fu">aes</span>(id, .cooksd)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Obs. Number"</span>)<span class="sc">+</span> <span class="co"># Modificación nombre eje x</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Cook's distance"</span>)<span class="sc">+</span> <span class="co"># Modificación nombre eje y</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>dcook)<span class="sc">+</span> <span class="co"># Incluir una línea horizontal</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">ifelse</span>((.cooksd<span class="sc">&gt;</span>dcook),id,<span class="st">""</span>)), <span class="co"># geom text agrega nombre a los casos, en esta oportunidad solo a los valores mayores a dcook</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.2</span>, <span class="at">hjust=</span><span class="fl">0.5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1548,21 +1492,21 @@ Num. obs.
 </div>
 <p>Identificamos los casos influyentes y filtramos la base de datos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ident<span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.cooksd<span class="sc">&gt;</span>dcook)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>elsoc02 <span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>(id <span class="sc">%in%</span> ident<span class="sc">$</span>id))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ident<span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.cooksd<span class="sc">&gt;</span>dcook)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>elsoc02 <span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>(id <span class="sc">%in%</span> ident<span class="sc">$</span>id))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Estimación sin casos influyentes:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fit05<span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fit05<span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>labs02 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit04,fit05), </span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 4"</span>, <span class="st">"Modelo 5"</span>),</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.coef.names =</span> labs02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>labs02 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit04,fit05), </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 4"</span>, <span class="st">"Modelo 5"</span>),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.coef.names =</span> labs02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
 <caption>
 Statistical models
@@ -1876,10 +1820,10 @@ Num. obs.
 <li>La presencia de un patrón no lineal, es señal de que el modelo está especificado incorrectamente.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fit05, <span class="fu">aes</span>(.fitted, .resid)) <span class="sc">+</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fit05, <span class="fu">aes</span>(.fitted, .resid)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
 </div>
@@ -1897,18 +1841,18 @@ Num. obs.
 <li>Polinomio: <span class="math inline">\(\text{Edad}^2\)</span></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>elsoc02<span class="sc">$</span>edad2 <span class="ot">&lt;-</span> elsoc02<span class="sc">$</span>edad<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>fit06<span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>edad2<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>elsoc02<span class="sc">$</span>edad2 <span class="ot">&lt;-</span> elsoc02<span class="sc">$</span>edad<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fit06<span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>edad2<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>edad<span class="ot">&lt;-</span> fit06<span class="sc">$</span>model<span class="sc">$</span>edad</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>fit<span class="ot">&lt;-</span> fit06<span class="sc">$</span>fitted.values</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>data01 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(edad,fit))</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data01, <span class="fu">aes</span>(<span class="at">x =</span> edad, <span class="at">y =</span> fit)) <span class="sc">+</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>edad<span class="ot">&lt;-</span> fit06<span class="sc">$</span>model<span class="sc">$</span>edad</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fit<span class="ot">&lt;-</span> fit06<span class="sc">$</span>fitted.values</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>data01 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(edad,fit))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data01, <span class="fu">aes</span>(<span class="at">x =</span> edad, <span class="at">y =</span> fit)) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
 </div>
@@ -1922,15 +1866,15 @@ Num. obs.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fit07 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>edad2<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fit07 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>edad2<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>labs03 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>, <span class="st">"Edad²"</span>)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit05, fit06, fit07), <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 4"</span>, <span class="st">"Modelo 5"</span>, <span class="st">"Modelo 6"</span>), </span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">custom.coef.names =</span> labs03)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>labs03 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>, <span class="st">"Edad²"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit05, fit06, fit07), <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 4"</span>, <span class="st">"Modelo 5"</span>, <span class="st">"Modelo 6"</span>), </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">custom.coef.names =</span> labs03)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
 <caption>
 Statistical models
@@ -2345,7 +2289,7 @@ Num. obs.
 <section id="test-homogeneidad-de-varianza" class="level1">
 <h1>Test homogeneidad de varianza</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">ncvTest</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">ncvTest</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Non-constant Variance Score Test 
 Variance formula: ~ fitted.values 
@@ -2353,7 +2297,7 @@ Chisquare = 521.5278, Df = 1, p = &lt; 2.22e-16</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">bptest</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">bptest</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     studentized Breusch-Pagan test
@@ -2365,15 +2309,15 @@ BP = 385.59, df = 11, p-value &lt; 2.2e-16</code></pre>
 <p>Tanto el test Breush-Pagan como el de Cook-Weisberg nos indican que existen problemas con respecto a homogeneidad en la distribución de los residuos del modelo debido a que <span class="math inline">\(p&gt;0.05\)</span> en ambos casos. Es decir, se rechaza <span class="math inline">\(H_0\)</span> donde se asume que la varianza del error es constante, lo cual nos indica que tenemos problemas de <strong>heterocedasticidad</strong> en los residuos.</p>
 <p>Para hacer frente a este problema, debemos calcular los errores estándar robustos para nuestra última estimación para corregir problemas de heterocedasticidad y así estimar el último modelo nuevamente:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>model_robust<span class="ot">&lt;-</span> <span class="fu">coeftest</span>(fit06, <span class="at">vcov=</span>vcovHC)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>model_robust<span class="ot">&lt;-</span> <span class="fu">coeftest</span>(fit06, <span class="at">vcov=</span>vcovHC)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Comparemos los resultados:</strong></p>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>labs04 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>, <span class="st">"Edad²"</span>)</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit05, fit06, model_robust), <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 5"</span>,<span class="st">"Modelo 6"</span>, <span class="st">"M6 Robust"</span>), <span class="at">custom.coef.names =</span> labs04)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>labs04 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>, <span class="st">"Edad²"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit05, fit06, model_robust), <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 5"</span>,<span class="st">"Modelo 6"</span>, <span class="st">"M6 Robust"</span>), <span class="at">custom.coef.names =</span> labs04)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
 <caption>
 Statistical models
@@ -2787,8 +2731,8 @@ Num. obs.
 <section id="multicolinealidad" class="level1">
 <h1>Multicolinealidad</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(fit05)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(fit05)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 GVIF Df GVIF^(1/(2*Df))
 sexo         1.057775  1        1.028482
