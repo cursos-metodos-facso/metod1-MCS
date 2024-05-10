@@ -18,6 +18,7 @@ output:
 ---
 class: front
 
+
 ```{r eval=FALSE, include=FALSE}
 # Correr esto para que funcione el infinite moonreader, el root folder debe ser static para si dirigir solo "bajndo" en directorios hacia el bib y otros
 
@@ -45,6 +46,7 @@ pacman::p_load(flipbookr, tidyverse)
 ```{r xaringanExtra, include=FALSE}
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css"))
 xaringanExtra::use_scribble()
+
 ```
 
 <!---
@@ -190,10 +192,27 @@ Repaso sesión anterior
 
 * **Varianza**: promedio de la suma de las diferencias del promedio al cuadrado
 
+.center[![:scale 100%](../../files/img/varianza_formula.png)]
+
+---
+
+.center[![:scale 80%](../../files/img/varianza1.png)]
+
+---
+
+.center[![:scale 80%](../../files/img/varianza2.png)]
+---
+
+.center[![:scale 80%](../../files/img/varianza3.png)]
+
+---
+
 * **Desviación Estándar**:
   - Raiz Cuadrada de la varianza.
 
   - Expresada  en la mismas unidades que los puntajes de la escala original
+
+
 
 ---
 class: middle, center
