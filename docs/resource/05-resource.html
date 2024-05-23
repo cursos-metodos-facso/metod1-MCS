@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Metodología I - MCS - Práctica 5 Supuestos de regresión lineal</title>
+<title>Metodología I - MCS - Práctica 5 Herramientas y documentos dinámicos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,44 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Metodología I - MCS - Práctica 5 Supuestos de regresión lineal">
+<meta property="og:title" content="Metodología I - MCS - Práctica 5 Herramientas y documentos dinámicos">
 <meta property="og:description" content="Metodología I - Magíster en Ciencias Sociales">
 <meta property="og:image" content="https://metod1-mcs.netlify.app/files/social-image-f22.png">
 <meta property="og:site_name" content="Metodología I - MCS">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="500">
 <meta property="og:image:width" content="500">
-<meta name="twitter:title" content="Metodología I - MCS - Práctica 5 Supuestos de regresión lineal">
+<meta name="twitter:title" content="Metodología I - MCS - Práctica 5 Herramientas y documentos dinámicos">
 <meta name="twitter:description" content="Metodología I - Magíster en Ciencias Sociales">
 <meta name="twitter:image" content="https://metod1-mcs.netlify.app/files/social-image-f22.png">
 <meta name="twitter:creator" content="@juankcastillo">
@@ -150,7 +87,7 @@ window.Quarto = {
 <meta name="twitter:image-width" content="500">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -184,7 +121,7 @@ window.Quarto = {
 <span class="menu-text">Trabajos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resource/index.html"> 
+    <a class="nav-link active" href="../resource/index.html" aria-current="page"> 
 <span class="menu-text">Practicos</span></a>
   </li>  
 </ul>
@@ -193,34 +130,85 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resource/05-resource.html">Práctico 5</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descripción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/01-resource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Práctico 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/02-resource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Práctico 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/03-resource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Práctico 3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/04-resource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Práctico 4</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resource/05-resource.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Práctico 5</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#presentación" id="toc-presentación" class="nav-link active" data-scroll-target="#presentación">Presentación</a></li>
-  <li><a href="#librerías" id="toc-librerías" class="nav-link" data-scroll-target="#librerías">Librerías</a></li>
-  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a>
+  <li><a href="#github" id="toc-github" class="nav-link active" data-scroll-target="#github">Github</a>
   <ul class="collapse">
-  <li><a href="#explorar-datos" id="toc-explorar-datos" class="nav-link" data-scroll-target="#explorar-datos">Explorar datos</a></li>
+  <li><a href="#descripción" id="toc-descripción" class="nav-link" data-scroll-target="#descripción">Descripción</a></li>
+  <li><a href="#repositorios" id="toc-repositorios" class="nav-link" data-scroll-target="#repositorios">Repositorios</a></li>
+  <li><a href="#principales-términos" id="toc-principales-términos" class="nav-link" data-scroll-target="#principales-términos">Principales términos</a></li>
+  <li><a href="#crear-cuenta-e-instalación" id="toc-crear-cuenta-e-instalación" class="nav-link" data-scroll-target="#crear-cuenta-e-instalación">Crear cuenta e instalación</a></li>
+  <li><a href="#crear-repositorio" id="toc-crear-repositorio" class="nav-link" data-scroll-target="#crear-repositorio">Crear repositorio</a></li>
+  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop">Github desktop</a></li>
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero">Zotero</a>
+  <ul class="collapse">
+  <li><a href="#veamos-cómo-se-ve-zotero" id="toc-veamos-cómo-se-ve-zotero" class="nav-link" data-scroll-target="#veamos-cómo-se-ve-zotero">Veamos cómo se ve zotero</a></li>
   </ul></li>
-  <li><a href="#estimación" id="toc-estimación" class="nav-link" data-scroll-target="#estimación">Estimación</a>
-  <ul class="collapse">
-  <li><a href="#diágnosticos" id="toc-diágnosticos" class="nav-link" data-scroll-target="#diágnosticos">Diágnosticos</a>
-  <ul class="collapse">
-  <li><a href="#casos-influyentes" id="toc-casos-influyentes" class="nav-link" data-scroll-target="#casos-influyentes">Casos influyentes</a></li>
-  <li><a href="#linealidad" id="toc-linealidad" class="nav-link" data-scroll-target="#linealidad">Linealidad</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#test-homogeneidad-de-varianza" id="toc-test-homogeneidad-de-varianza" class="nav-link" data-scroll-target="#test-homogeneidad-de-varianza">Test homogeneidad de varianza</a></li>
-  <li><a href="#multicolinealidad" id="toc-multicolinealidad" class="nav-link" data-scroll-target="#multicolinealidad">Multicolinealidad</a>
-  <ul class="collapse">
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#researchrabbit" id="toc-researchrabbit" class="nav-link" data-scroll-target="#researchrabbit">Researchrabbit</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#github-desktop-1" id="toc-github-desktop-1" class="nav-link" data-scroll-target="#github-desktop-1">Github desktop</a></li>
+  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">Github pages</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -230,7 +218,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Práctica 5 Supuestos de regresión lineal</h1>
+<h1 class="title">Práctica 5 Herramientas y documentos dinámicos</h1>
 <p class="subtitle lead">Metodología I - Magíster en Ciencias Sociales</p>
 </div>
 
@@ -254,2504 +242,347 @@ window.Quarto = {
 </header>
 
 
-<section id="presentación" class="level1">
-<h1>Presentación</h1>
-<p>La siguiente práctica tiene el objetivo de introducir en los <strong>supuestos y robustez del modelo de regresión</strong>. Por esta razón, volveremos a algunos de los contenidos previos relacionados con la estimación, análisis de residuos y ajuste. Para ello, utilizaremos la base de datos de la tercera ola del <a href="https://doi.org/10.7910/DVN/H8OVMF"><em>Estudio Longitudinal Social del Chile 2018</em></a> con el objetivo de analizar los determinantes de la <strong>Participación Ciudadana.</strong></p>
-<p>La versión original de este ejercicio proviene del curso de <a href="https://multivariada.netlify.app/assignment/10-code/">Estadística multivariada</a> versión 2022.</p>
-</section>
-<section id="librerías" class="level1">
-<h1>Librerías</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(dplyr, summarytools, sjPlot,texreg, corrplot,ggplot2,ggfortify,sandwich,lmtest,sjlabelled)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="github" class="level1">
+<h1>Github</h1>
+<section id="descripción" class="level2">
+<h2 class="anchored" data-anchor-id="descripción">Descripción</h2>
+<p>Github es una plataforma de desarrollo colaborativo que permite alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creación de código fuente de programas (software).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El 4 de junio de 2018 Microsoft compró GitHub por la cantidad de 7500 millones de dólares. Al inicio, el cambio de propietario generó preocupaciones y la salida de algunos proyectos de este sitio; sin embargo, no fueron representativos. GitHub continúa siendo la plataforma más importante de colaboración para proyectos de código abierto.</p>
+</div>
 </div>
 </section>
-<section id="datos" class="level1">
-<h1>Datos</h1>
-<p>El Estudio Longitudinal Social del Chile <a href="https://coes.cl/encuesta-panel/">ELSOC</a>, único en Chile y América Latina, consiste en encuestar a casi 3.000 chilenos, anualmente, a lo largo de una década. ELSOC ha sido diseñado para evaluar la manera cómo piensan, sienten y se comportan los chilenos en torno a un conjunto de temas referidos al conflicto y la cohesión social en Chile. La población objetivo son hombres y mujeres entre 15 y 75 años de edad con un alcance nacional, donde se obtuvo una muestra final de <strong>3748</strong> casos en el año 2018.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"../files/data/elsoc.RData"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Cargamos la base de datos desde internet</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/Kevin-carrasco/metod1-MCS/raw/main/files/data/elsoc.RData"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="explorar-datos" class="level2">
-<h2 class="anchored" data-anchor-id="explorar-datos">Explorar datos</h2>
-<p>A partir de la siguiente tabla se obtienen estadísticos descriptivos que luego serán relevantes para realizar las transformaciones y análisis posteriores.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(<span class="fu">dfSummary</span>(elsoc, <span class="at">headings =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"render"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div class="container st-container">
-
-<table class="table table-striped table-bordered st-table st-table-striped st-table-bordered st-multiline table-sm small" data-quarto-postprocess="true">
+<section id="repositorios" class="level2">
+<h2 class="anchored" data-anchor-id="repositorios">Repositorios</h2>
+<p>Un repositorio contiene todo el código, tus archivos y el historial de revisiones y cambios de cada uno de ellos. Es el elemento más básico de Github.</p>
+<p>Los repositorios pueden contar con múltiples colaboradores y pueden ser públicos o privados.</p>
+</section>
+<section id="principales-términos" class="level2">
+<h2 class="anchored" data-anchor-id="principales-términos">Principales términos</h2>
+<table class="table">
 <colgroup>
 <col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
+<col style="width: 87%">
 </colgroup>
 <thead>
 <tr class="header">
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>No</strong></th>
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>Variable</strong></th>
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>Label</strong></th>
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>Stats / Values</strong></th>
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>Freqs (% of Valid)</strong></th>
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>Graph</strong></th>
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>Valid</strong></th>
-<th class="st-protect-top-border" style="text-align: center;" data-quarto-table-cell-role="th"><strong>Missing</strong></th>
+<th>Término</th>
+<th>Definición</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">sexo [numeric]</td>
-<td style="text-align: left;">Sexo entrevistado</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Mean : 0.6</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Max : 1</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">1446</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">38.6%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">1</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">2302</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">61.4%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAGkAAAA3BAMAAAD9KHmOAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJgxZsC0NAAAAQklEQVRIx2NgGL5ACR8QRAcCUF3KxriB0aiuUV2jukZ1YdFFXmkjSBIYCF1KJAEFIsIQE4zqGtU1qmtUF7mlzXAEALA3YowAbRPnAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3748 (100.0%)</td>
-<td style="text-align: center;">0 (0.0%)</td>
+<td>Branch</td>
+<td>Una versión paralela del código contenido en el repositorio, pero que no afecta a la rama principal.</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">edad [numeric]</td>
-<td style="text-align: left;">Edad entrevistado</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Mean (sd) : 47.1 (15.5)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">min ≤ med ≤ max:</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">18 ≤ 47 ≤ 90</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">IQR (CV) : 25 (0.3)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle;">70 distinct values</td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJgAAABuBAMAAAApJ8cWAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJgxZsC0NAAAAvklEQVRo3u3YfQ6DIAyHYa4wbzC9wXr/u21tFibBMYTGj/n+/jCY2CdKTAVDIC251WTUlC5Yg00i8gCrxQadezfs5QjYaTF7Ge5emJYfHLPO44WZ8Y9YnCUPLJaPsfM4YFM09seG7MF6sKwcDOzsWGnFtxqTwu3NsbTZd2J5FdhBsWRR04vpAQwM7ALYwmeqHbMzMDAwMDAwMLDNsYW/blVYuol6Y1+qfmI6AAMDuwD22UQ5YDYwcd7PuhNIS57my94dWyVbJgAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3748 (100.0%)</td>
-<td style="text-align: center;">0 (0.0%)</td>
+<td>Clonar</td>
+<td>Para descargar una copia completa de los datos de un repositorio de GitHub.com, incluidas todas las versiones de cada archivo y carpeta.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">educ [factor]</td>
-<td style="text-align: left;">Nivel educacional</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">1. 1</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">2. 2</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">3. 3</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">4. 4</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">5. 5</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">450</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">12.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">370</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">9.9%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">1600</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">42.7%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">598</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">16.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">725</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">19.4%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAE0AAAB9BAMAAAAVXfMuAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg0utx2bAAAAdklEQVRYw+3WsQ3AIAxEUUaIN4Bkg2T/3SJFpomMzg3IwvfrV0BxiFLid/aamB3qrkejo0vkvPsQ0CzXj4ec3vemo8vkvPsQ0Oz9jqr/92oQHd2OzruPCPtt+L36oqPL4rz7ENCK/VrfBOu+1reDjm5H591H5F5kKse6HRk9NwAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3743 (99.9%)</td>
-<td style="text-align: center;">5 (0.1%)</td>
+<td>Fork</td>
+<td>Un nuevo repositorio que comparte la configuración de visibilidad y código con el repositorio «ascendente» original.</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">pospol [factor]</td>
-<td style="text-align: left;">Autoubicacion escala izquierda-derecha</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">1. 1</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">2. 2</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">3. 3</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">4. 4</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">807</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">22.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">952</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">26.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">734</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">20.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">1171</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">32.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAD0AAABmBAMAAACKBYTuAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg0utx2bAAAAYUlEQVRIx2NgGHighA4EIUAAKq9sjAqMRuVH5akoTyj9CeIA1JJXwgLwuR/mhVH5UXlqyBNKf7RO/yTmD0V0eTT/jcqPylNVnlD6o3P6hwMF3PkbDEblR+WpIU8o/Q0kAADKv2NasD6r2gAAAABJRU5ErkJggg==" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3664 (97.8%)</td>
-<td style="text-align: center;">84 (2.2%)</td>
+<td>Merge</td>
+<td>Para aplicar los cambios de una rama y en otra.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">part01 [numeric]</td>
-<td style="text-align: left;">Frecuencia: Firma carta o peticion apoyando causa</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Mean (sd) : 1.5 (0.9)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">min ≤ med ≤ max:</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">1 ≤ 1 ≤ 5</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">IQR (CV) : 1 (0.6)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">1</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">2717</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">72.6%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">2</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">476</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">12.7%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">3</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">411</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">11.0%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">4</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">117</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">3.1%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">5</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">21</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">0.6%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAHkAAAB9BAMAAAB0RdFsAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg0utx2bAAAAeElEQVRYw+3XsQ2AMBBD0YwAGwDZIOy/Gw0BUZ5PkSzy3b/iXFi6UubNIWW7dT2VoNFo9Eid27VVymKg31sU/XTe0Gg02kXndi1ivHS/epd07xyNRqN9dG7XQshKRy/+6hpsG41Go8fr3K4J1ESH3hE0Go3+vZ4xFxoycA8frCj/AAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3742 (99.8%)</td>
-<td style="text-align: center;">6 (0.2%)</td>
+<td>Pull request</td>
+<td>Una solicitud para combinar los cambios de una branch en otra.</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">part02 [numeric]</td>
-<td style="text-align: left;">Frecuencia: Asiste a marcha o manifestacion pacifica</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Mean (sd) : 1.2 (0.6)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">min ≤ med ≤ max:</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">1 ≤ 1 ≤ 5</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">IQR (CV) : 0 (0.5)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">1</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">3289</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">87.8%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">2</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">195</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">5.2%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">3</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">191</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">5.1%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">4</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">51</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">1.4%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">5</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">19</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">0.5%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJAAAAB9BAMAAAC/svfXAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAfklEQVRo3u3V0QmAMAxAwa7gCNoN6v67aUHwT4WkUOHeAAdtIClFX9rCXVDdgzUQCAQCvUBpO3sJNy3UX7lmQH1qIBAIBBoKpe3skDE31P8oBTqn1kAgEAg0FErb2TFkaih4+G+ogkAgEGg0lLazo8zEUPDwg0AgEOiPkJ47ABWtx0D2x9HUAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3745 (99.9%)</td>
-<td style="text-align: center;">3 (0.1%)</td>
+<td>Remote</td>
+<td>Un repositorio almacenado en GitHub, no en el equipo.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">part03 [numeric]</td>
-<td style="text-align: left;">Frecuencia: Participa en huelga</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Mean (sd) : 1.2 (0.5)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">min ≤ med ≤ max:</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">1 ≤ 1 ≤ 5</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">IQR (CV) : 0 (0.5)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">1</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">3407</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">91.0%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">2</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">152</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">4.1%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">3</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">146</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">3.9%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">4</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">29</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">0.8%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">5</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">11</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">0.3%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAJUAAAB9BAMAAABZmzyTAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAb0lEQVRo3u3V0QmAMAxAwY6gG9g6gvvvZj8cwNAUKt4b4CAEklIUrSV0PNZ5jcdisVisOVbmvd8T2ha3+rg1y+p7ZLFYLNaiVua9H3W+YPmPLBaL9Q/Lf4xZjcVisVisoJVALW9VFovFYrGClt53AxDQ32gWeDXZAAAAAElFTkSuQmCC" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3745 (99.9%)</td>
-<td style="text-align: center;">3 (0.1%)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: left;">part04 [numeric]</td>
-<td style="text-align: left;">Frecuencia: Usa redes sociales para opinar en temas publicos</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">Mean (sd) : 1.6 (1.1)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">min ≤ med ≤ max:</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">1 ≤ 1 ≤ 5</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">IQR (CV) : 1 (0.7)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">1</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">2598</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">69.4%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">2</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">310</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">8.3%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">3</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">514</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">13.7%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">4</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">223</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">6.0%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">5</td>
-<td style="text-align: left; padding: 0 2px; border: 0;">:</td>
-<td style="text-align: right; padding: 0 4px 0 6px; margin: 0; border: 0;">98</td>
-<td style="text-align: left; padding: 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0 2px; margin: 0; border: 0;">2.6%</td>
-<td style="text-align: left; padding: 0 4px 0 0; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAHUAAAB9BAMAAABueTHiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAg0lEQVRYw+3XwQ2AIBBEUUrQDlQ60P57M4qJeGN2E9yEP/d32DkMIaXxshmyPDYferBYLNZqPXs1GzL9bMsFq8mWnrFYLLaP9eyVhILY95Vpv/nbs9Y1FovFWq1nr5pBIHufarRXzzsWi8V2sp69ElkIq/4VapvFPwoWi8V6rGevRsoJI6Fh6Io7pmoAAAAASUVORK5CYII=" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3743 (99.9%)</td>
-<td style="text-align: center;">5 (0.1%)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">quintilemiss [factor]</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">1. Quintil 1</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">2. Quintil 2</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">3. Quintil 3</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">4. Quintil 4</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">5. Quintil 5</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: left; padding: 0; margin: 0; border: 0;">6. Missing</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">711</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">19.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">711</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">19.0%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">710</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">18.9%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">710</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">18.9%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="odd" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">710</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">18.9%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-<tr class="even" style="background-color:transparent">
-<td style="text-align: right; padding: 0 5px 0 7px; margin: 0; border: 0;">196</td>
-<td style="text-align: left; padding: 0 2px 0 0; border: 0;">(</td>
-<td style="text-align: right; padding: 0; border: 0;">5.2%</td>
-<td style="text-align: left; padding: 0 4px 0 2px; border: 0;">)</td>
-</tr>
-</tbody>
-</table></td>
-<td style="text-align: left; vertical-align: middle; padding: 0; background-color: transparent;"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAACkAAACVBAMAAAA3Rs7LAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAPUExURf////3+/aampvDw8P///7GHRIEAAAACdFJOUwAAdpPNOAAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBQoDJg63vkwhAAAAR0lEQVRIx2NgoB1QQgEKUFFlY2QwKjr4RLHHmyAKECBDdDQ9DE3R0fQwKjqaHkZFR9PDqOhApwdFDFGQG0ZFB7Mo9nijBQAAufNRRm204TwAAAAASUVORK5CYII=" class="img-fluid" style="border:none;background-color:transparent;padding:0;max-width:max-content;"></td>
-<td style="text-align: center;">3748 (100.0%)</td>
-<td style="text-align: center;">0 (0.0%)</td>
+<td>Upstream</td>
+<td>La branch de un repositorio original que se ha <em>forkeado</em> o clonado. La branch correspondiente de la branch clonada o <em>forkeada</em> se denomina «descendente».</td>
 </tr>
 </tbody>
 </table>
-
-<p>Generated by <a href="https://github.com/dcomtois/summarytools">summarytools</a> 1.0.1 (<a href="https://www.r-project.org/">R</a> version 4.3.2)<br>2024-05-09</p>
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view_df</span>(elsoc,<span class="at">max.len =</span> <span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<caption>Data frame: elsoc</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" style="text-align: left; border-bottom: double; font-style: italic; font-weight: normal; padding: 0.2cm; vertical-align: top;">ID</td>
-<td data-quarto-table-cell-role="th" style="text-align: left; border-bottom: double; font-style: italic; font-weight: normal; padding: 0.2cm; vertical-align: top;">Name</td>
-<td data-quarto-table-cell-role="th" style="text-align: left; border-bottom: double; font-style: italic; font-weight: normal; padding: 0.2cm; vertical-align: top;">Label</td>
-<td data-quarto-table-cell-role="th" style="text-align: left; border-bottom: double; font-style: italic; font-weight: normal; padding: 0.2cm; vertical-align: top;">Values</td>
-<td data-quarto-table-cell-role="th" style="text-align: left; border-bottom: double; font-style: italic; font-weight: normal; padding: 0.2cm; vertical-align: top;">Value Labels</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">sexo</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Sexo entrevistado</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0<br>
-1</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Hombre<br>
-Mujer</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">2</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">edad</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">Edad entrevistado</td>
-<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;"><em>range: 18-90</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">educ</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Nivel educacional</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1<br>
-2<br>
-3<br>
-4<br>
-5</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Primaria incompleta menos<br>
-Primaria y secundaria baja<br>
-Secundaria alta<br>
-Terciaria ciclo corto<br>
-Terciaria y Postgrado</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">4</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">pospol</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">Autoubicacion escala izquierda-derecha</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">1<br>
-2<br>
-3<br>
-4</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">Derecha<br>
-Centro<br>
-Izquierda<br>
-Indep./Ninguno</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">5</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">part01</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Frecuencia: Firma carta o peticion apoyando causa</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1<br>
-2<br>
-3<br>
-4<br>
-5</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Nunca<br>
-Casi nunca<br>
-A veces<br>
-Frecuentemente<br>
-Muy frecuentemente</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">6</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">part02</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">Frecuencia: Asiste a mbackground-color:#eeeeeeha o manifestacion<br>
-pacifica</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">1<br>
-2<br>
-3<br>
-4<br>
-5</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">Nunca<br>
-Casi nunca<br>
-A veces<br>
-Frecuentemente<br>
-Muy frecuentemente</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">7</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">part03</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Frecuencia: Participa en huelga</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1<br>
-2<br>
-3<br>
-4<br>
-5</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Nunca<br>
-Casi nunca<br>
-A veces<br>
-Frecuentemente<br>
-Muy frecuentemente</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">8</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">part04</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">Frecuencia: Usa redes sociales para opinar en<br>
-temas publicos</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">1<br>
-2<br>
-3<br>
-4<br>
-5</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; background-color: #eeeeee;">Nunca<br>
-Casi nunca<br>
-A veces<br>
-Frecuentemente<br>
-Muy frecuentemente</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">9</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">quintilemiss</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Quintil 1<br>
-Quintil 2<br>
-Quintil 3<br>
-Quintil 4<br>
-Quintil 5<br>
-Missing</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>elsoc <span class="ot">&lt;-</span> elsoc <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">partpol=</span><span class="fu">rowSums</span>(<span class="fu">select</span>(., part01,part02,part03,part04)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
+<section id="crear-cuenta-e-instalación" class="level2">
+<h2 class="anchored" data-anchor-id="crear-cuenta-e-instalación">Crear cuenta e instalación</h2>
+<ol type="1">
+<li>Acceder a la página de <a href="https://github.com/">github</a></li>
+</ol>
+<p>Registrarse ingresando correo electrónico y siguiendo los pasos siguientes (crear contraseña y nombre de usuario)</p>
+<p><img src="images/github1.png" class="img-fluid"></p>
+<p>La personalización de la cuenta se puede saltar haciendo click en <strong>skip</strong> abajo de la selección de opciones</p>
+<ol start="2" type="1">
+<li>Descargar e instalar Github Desktop</li>
+</ol>
+<p><img src="images/github2.png" class="img-fluid"></p>
 </section>
-<section id="estimación" class="level1">
-<h1>Estimación</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit01 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo, <span class="at">data=</span>elsoc)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fit02 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad, <span class="at">data=</span>elsoc)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fit03 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> quintilemiss, <span class="at">data=</span>elsoc)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>fit04 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> quintilemiss <span class="sc">+</span> pospol, <span class="at">data=</span>elsoc)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>labs01 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Centro (ref. derecha)"</span>,<span class="st">"Izquierda"</span>,<span class="st">"Idep./Ninguno"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit01,fit02,fit03, fit04),<span class="at">doctype =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 1"</span>,<span class="st">"Modelo 2"</span>,<span class="st">"Modelo 3"</span>, <span class="st">"Modelo 4"</span>),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.coef.names =</span> labs01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>
-Statistical models
-</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 1
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 2
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 3
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 4
-</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Intercepto
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-5.56<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.62<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.03<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.97<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.06)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.15)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.16)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Sexo (mujer=1)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.13
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.08
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.07
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.12
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Edad
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.04<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.04<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.04<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 2
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.23<sup>*</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.21
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 3
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.51<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.51<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 4
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.56<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.50<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 5
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-1.02<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.88<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil perdido
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.51<sup>**</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.59<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.18)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.18)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Centro (ref. derecha)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.04<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.10)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Izquierda
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.13<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Idep./Ninguno
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.60<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.10)
-</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.09
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.17
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Adj. R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.09
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.17
-</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Num. obs.
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3740
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3740
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3740
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3656
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="5">
-<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
-</td>
-</tr>
-</tfoot>
-</table>
-<section id="diágnosticos" class="level2">
-<h2 class="anchored" data-anchor-id="diágnosticos">Diágnosticos</h2>
-<section id="casos-influyentes" class="level3">
-<h3 class="anchored" data-anchor-id="casos-influyentes">Casos influyentes</h3>
-<p>Para determinar si un outlier es un caso influyente, es decir que su presencia/ausencia genera un cambio importante en la estimación de los coeficientes de regresión, calculamos la <strong>Distancia de Cook.</strong>.</p>
-<p>Posteriormente, se establece un punto de corte de <span class="math inline">\(4/(n-k-1)\)</span>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span> <span class="fu">nobs</span>(fit04) <span class="co">#n de observaciones</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>k<span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">coef</span>(fit04)) <span class="co"># n de parametros</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dcook<span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">/</span>(n<span class="sc">-</span>k<span class="dv">-1</span>) <span class="co">#punt de corte</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Si lo graficamos se ve de la siguiente manera:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">augment_columns</span>(fit04,<span class="at">data =</span> elsoc)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>final<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">row.names</span>(final))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># identify obs with Cook's D above cutoff</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(final, <span class="fu">aes</span>(id, .cooksd)) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Obs. Number"</span>)<span class="sc">+</span> <span class="co"># Modificación nombre eje x</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Cook's distance"</span>)<span class="sc">+</span> <span class="co"># Modificación nombre eje y</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>dcook)<span class="sc">+</span> <span class="co"># Incluir una línea horizontal</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">ifelse</span>((.cooksd<span class="sc">&gt;</span>dcook),id,<span class="st">""</span>)), <span class="co"># geom text agrega nombre a los casos, en esta oportunidad solo a los valores mayores a dcook</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.2</span>, <span class="at">hjust=</span><span class="fl">0.5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Identificamos los casos influyentes y filtramos la base de datos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ident<span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.cooksd<span class="sc">&gt;</span>dcook)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>elsoc02 <span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>(id <span class="sc">%in%</span> ident<span class="sc">$</span>id))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Estimación sin casos influyentes:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fit05<span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>labs02 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit04,fit05), </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 4"</span>, <span class="st">"Modelo 5"</span>),</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.coef.names =</span> labs02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>
-Statistical models
-</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 4
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 5
-</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Intercepto
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.97<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.05<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.16)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Sexo (mujer=1)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.12
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.07
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.05)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Edad
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.04<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.03<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 2
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.21
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 3
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.51<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.34<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 4
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.50<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.32<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 5
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.88<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil perdido
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.59<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.31<sup>*</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.18)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.13)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Izquierda (ref. derecha)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.04<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.65<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.10)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Centro
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.13<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.71<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Idep./Ninguno
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.60<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.14<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.10)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.17
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Adj. R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.17
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Num. obs.
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3656
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3460
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="3">
-<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
-</td>
-</tr>
-</tfoot>
-</table>
-<p>En términos generales, el sentido y significación estadística de los coeficientes del Modelo 5 se mantiene respecto al Modelo 4. Adicionalmente, si observamos que el modelo sin casos influyentes presenta una mejora en ajuste. Por lo tanto, los análisis posteriores se realizaran en base a este modelo.</p>
+<section id="crear-repositorio" class="level2">
+<h2 class="anchored" data-anchor-id="crear-repositorio">Crear repositorio</h2>
+<p>En la página principal de <a href="https://github.com/">github</a> hacer click en el ícono de usuario de la esquina superior derecha y luego ir a Tus repositorios</p>
+<p><img src="images/repos.png" class="img-fluid"></p>
+<p>Una vez accedemos a Tus repositorios hacemos click en New/Nuevo</p>
+<p><img src="images/repos2.png" class="img-fluid"></p>
+<p>Luego le ponemos un nombre a nuestro repositorio, evitando siempre espacios, ñ y tíldes, y apretamos Crear repositorio</p>
+<p><img src="images/repos3.png" class="img-fluid"></p>
 </section>
-<section id="linealidad" class="level3">
-<h3 class="anchored" data-anchor-id="linealidad">Linealidad</h3>
-<p>Para analizar la linealidad respecto de un modelo de regresión, debemos analizar la distribución de los residuos con respecto a la recta de regresión.</p>
+<section id="github-desktop" class="level2">
+<h2 class="anchored" data-anchor-id="github-desktop">Github desktop</h2>
+<p>Una vez creado un repositorio, lo que nos interesa es descargarlo. Al abrir la aplicación de Github desktop por primera vez (descargada anteriormente), nos debería aparecer la opción de clonar nuestro repositorio R-data-analisis en la pantalla de inicio. Lo clonamos y seleccionamos una carpeta de nuestro computador para almacenarlo.</p>
+<p>Para todas las siguientes veces, las instrucciones son estas:</p>
+<p>1- Apretamos Repositorio actual en la esquina superior izquierda</p>
+<p>2- Apretamos añadir</p>
+<p>3- Apretamos clonar repositorio…</p>
+<p><img src="images/clonar.png" class="img-fluid"></p>
+<p>4- Seleccionamos nuestro repositorio</p>
+<p>5- seleccionamos la carpeta donde se almacenará. Siempre evitando tener tíldes, ñ y espacios en la dirección de almacenamiento y apretamos ‘clone’.</p>
+<p><img src="images/clonar2.png" class="img-fluid"></p>
+</section>
+<section id="zotero" class="level2">
+<h2 class="anchored" data-anchor-id="zotero">Zotero</h2>
+<ol type="1">
+<li>Acceder a la página de <a href="https://www.zotero.org/">zotero</a></li>
+</ol>
+<p>Vamos a Log in</p>
+<p><img src="images/zotero1.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Y creamos una cuenta gratis</li>
+</ol>
+<p><img src="images/zotero2.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Finalmente volvemos al inicio y descargamos el programa:</li>
+</ol>
+<p><img src="images/zotero3.png" class="img-fluid"></p>
+<section id="veamos-cómo-se-ve-zotero" class="level3">
+<h3 class="anchored" data-anchor-id="veamos-cómo-se-ve-zotero">Veamos cómo se ve zotero</h3>
+<p><img src="images/zotero4.png" class="img-fluid"></p>
+<p>Zotero es un gestor bibliográfico que nos permite almacenar referencias bibliográficas.</p>
 <ul>
-<li>Los residuos deben ser independientes de los valores predichos (fitted values).</li>
-<li>Cualquier correlación entre residuo y valores predichos violarían este supuesto.</li>
-<li>La presencia de un patrón no lineal, es señal de que el modelo está especificado incorrectamente.</li>
+<li><p>Es posible crear distintas bibliotecas personales (esquina superior izquierda) o grupales (abajo). Se recomienda separar las bibliotecas por temas o proyectos</p></li>
+<li><p>Al visualizar una referencia bibliográfica nos muestra todos los <strong>metadatos</strong>: Título, autores, nombre de la revista, año de publicación, DOI, ISBN de la revista, número de páginas, etc.</p></li>
+<li><p>El dato central que nos va a servir en esta parte del proceso es el DOI</p></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fit05, <span class="fu">aes</span>(.fitted, .resid)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="960"></p>
-<figcaption>Relación entre residuos y valores predichos</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Nota
 </div>
 </div>
-</div>
-<p>El gráfico nos indica que existe un patrón en la distribución de los residuos. Para intentar mejorar la estimación podemos realizar una transformación de variables. A continuación presentaremos un ejemplo para la Edad y para los Ingresos.</p>
-<ul>
-<li>Polinomio: <span class="math inline">\(\text{Edad}^2\)</span></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>elsoc02<span class="sc">$</span>edad2 <span class="ot">&lt;-</span> elsoc02<span class="sc">$</span>edad<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fit06<span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>edad2<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>edad<span class="ot">&lt;-</span> fit06<span class="sc">$</span>model<span class="sc">$</span>edad</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fit<span class="ot">&lt;-</span> fit06<span class="sc">$</span>fitted.values</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>data01 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(edad,fit))</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data01, <span class="fu">aes</span>(<span class="at">x =</span> edad, <span class="at">y =</span> fit)) <span class="sc">+</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="960"></p>
-<figcaption>Efecto cuadrático de la edad (Modelo 5)</figcaption>
-</figure>
+<div class="callout-body-container callout-body">
+<p>DOI: Digital Object Identifier (Identificador de objetos digitales)</p>
+<p>El DOI consiste en un código alfanumérico que identifica en la web un artículo y que lo recupera incluso si éste se ubica en un servidor distinto al que fue alojado en un principio. Se evita así el típico problema de los enlaces rotos, muy habitual en macrowebs como las universitarias.</p>
+<p><img src="images/doi.png" class="img-fluid"></p>
 </div>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fit07 <span class="ot">&lt;-</span> <span class="fu">lm</span>(partpol<span class="sc">~</span>sexo<span class="sc">+</span>edad<span class="sc">+</span>edad2<span class="sc">+</span>quintilemiss<span class="sc">+</span>pospol,<span class="at">data=</span>elsoc02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>labs03 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>, <span class="st">"Edad²"</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit05, fit06, fit07), <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 4"</span>, <span class="st">"Modelo 5"</span>, <span class="st">"Modelo 6"</span>), </span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">custom.coef.names =</span> labs03)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>
-Statistical models
-</caption>
+<ol start="4" type="1">
+<li>Para crear una biblioteca en zotero vamos a Archivo -&gt; Nueva colección y le ponemos un nombre que no tenga tíldes, ñ o espacios</li>
+</ol>
+<p><img src="images/zotero5.png" class="img-fluid"></p>
+<p>En este caso mi biblioteca se llama “percepcion-desigualdad”.</p>
+<ol start="5" type="1">
+<li><p>Zotero tiene dos funciones para agregar referencias botón verde “Nuevo elemento” o varita mágica “añadir elemento por identificador”. Esta vez vamos por la segunda opción</p></li>
+<li><p>Buscamos un paper que nos interese: en este caso busqué el paper <a href="https://academic.oup.com/ser/article-abstract/19/1/7/5299221?redirectedFrom=fulltext">The paradox of inequality: income inequality and belief in meritocracy go hand in hand</a> de Jonathan Mijs (2021). Su DOI es <a href="https://doi.org/10.1093/ser/mwy051">https://doi.org/10.1093/ser/mwy051</a></p></li>
+<li><p>Usamos la función Añadir elemento por identificador para agregar nuestra referencia a zotero</p></li>
+</ol>
+<p><img src="images/zotero6.png" class="img-fluid"></p>
+<p>¿Cuál es la forma más eficiente de buscar bibliografía sobre un mismo tema?</p>
+</section>
+</section>
+<section id="researchrabbit" class="level2">
+<h2 class="anchored" data-anchor-id="researchrabbit">Researchrabbit</h2>
+<p>Research Rabbit es una plataforma que a partir de un paper busca otros similares, cruzando referencias y autores. Además, tiene una ventaja: Se vincula con Zotero</p>
+<ol type="1">
+<li><p>Ingresar a la página <a href="https://researchrabbitapp.com/">https://researchrabbitapp.com/</a>.</p></li>
+<li><p>Crear cuenta</p></li>
+</ol>
+<p><img src="images/research.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Una vez dentro apretamos “Import Zotero Collection” y seleccionamos nuestra biblioteca</li>
+</ol>
+<p><img src="images/research2.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Así se ve research rabbit</li>
+</ol>
+<p><img src="images/research3.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Podemos revisar el abstract de algún paper y, si nos interesa, lo agregamos a nuestra biblioteca</li>
+</ol>
+<p><img src="images/research4.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>Después volvemos a Zotero, actualizamos y aparece nuestro nuevo paper</li>
+</ol>
+<p><img src="images/zotero7.png" class="img-fluid"></p>
+<p>Ahora solo nos interesa lograr una cosa más: vincular nuestra biblioteca de Zotero con R</p>
+<ol start="7" type="1">
+<li><p>Vamos a este <a href="https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.169">link</a> y descargamos zotero-better-bibtex-6.7.169.xpi</p></li>
+<li><p>Volvemos a Zotero –&gt; Herramientas –&gt; Complementos –&gt; La tuerca en la esquina superior derecha –&gt; Instalar Add-on desde archivo –&gt; Seleccionamos el archivo que acabamos de descargar</p></li>
+</ol>
+<p><img src="images/zotero9.png" class="img-fluid"></p>
+<ol start="9" type="1">
+<li>Paso final: exportamos nuestra biblioteca. Click derecho en nuestra biblioteca –&gt; Exportar colección</li>
+</ol>
+<p><img src="images/zotero8.png" class="img-fluid"></p>
+<ol start="10" type="1">
+<li>Seleccionamos formato: Better BibTeX y marcamos la casilla “Keep updated”. Esto último actualizará el archivo automáticamente cuando agreguemos nueva bibliografía</li>
+</ol>
+<p><img src="images/zotero10.png" class="img-fluid"></p>
+<ol start="11" type="1">
+<li>Guardamos nuestro archivo .bib en la misma carpeta de nuestro proyecto de trabajo</li>
+</ol>
+</section>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>La escritura en Quarto tiene algunos códigos o funciones, aquí un resumen de su mayoría:</p>
+<table class="table">
 <thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 4
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 5
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 6
-</th>
+<tr class="header">
+<th>Código</th>
+<th>Así se ve</th>
 </tr>
 </thead>
 <tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Intercepto
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.05<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.62<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.62<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.24)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.24)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Sexo (mujer=1)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.07
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.08
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.08
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.05)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.05)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.05)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Edad
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.03<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.06<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.06<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 2
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 3
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.34<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.34<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.34<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 4
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.32<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.32<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.32<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 5
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil perdido
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.31<sup>*</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.31<sup>*</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.31<sup>*</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.13)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.13)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.13)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Izquierda (ref. derecha)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.65<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.65<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.65<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Centro
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.71<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.70<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.70<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Idep./Ninguno
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.14<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.13<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.13<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Edad²
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00<sup>**</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00<sup>**</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.19
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.19
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Adj. R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Num. obs.
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3460
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3460
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3460
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="4">
-<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
-</td>
-</tr>
-</tfoot>
-</table>
-</section>
-</section>
-</section>
-<section id="test-homogeneidad-de-varianza" class="level1">
-<h1>Test homogeneidad de varianza</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">ncvTest</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Non-constant Variance Score Test 
-Variance formula: ~ fitted.values 
-Chisquare = 521.5278, Df = 1, p = &lt; 2.22e-16</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">bptest</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    studentized Breusch-Pagan test
+<tr class="odd">
+<td><pre><code>Algo de texto en el párrafo.
 
-data:  fit06
-BP = 385.59, df = 11, p-value &lt; 2.2e-16</code></pre>
-</div>
-</div>
-<p>Tanto el test Breush-Pagan como el de Cook-Weisberg nos indican que existen problemas con respecto a homogeneidad en la distribución de los residuos del modelo debido a que <span class="math inline">\(p&gt;0.05\)</span> en ambos casos. Es decir, se rechaza <span class="math inline">\(H_0\)</span> donde se asume que la varianza del error es constante, lo cual nos indica que tenemos problemas de <strong>heterocedasticidad</strong> en los residuos.</p>
-<p>Para hacer frente a este problema, debemos calcular los errores estándar robustos para nuestra última estimación para corregir problemas de heterocedasticidad y así estimar el último modelo nuevamente:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>model_robust<span class="ot">&lt;-</span> <span class="fu">coeftest</span>(fit06, <span class="at">vcov=</span>vcovHC)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Comparemos los resultados:</strong></p>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>labs04 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Intercepto"</span>,<span class="st">"Sexo (mujer=1)"</span>,<span class="st">"Edad"</span>,</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Quintil 2"</span>,<span class="st">"Quintil 3"</span>,<span class="st">"Quintil 4"</span>,<span class="st">"Quintil 5"</span>,<span class="st">"Quintil perdido"</span>,</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Izquierda (ref. derecha)"</span>,<span class="st">"Centro"</span>,<span class="st">"Idep./Ninguno"</span>, <span class="st">"Edad²"</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit05, fit06, model_robust), <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Modelo 5"</span>,<span class="st">"Modelo 6"</span>, <span class="st">"M6 Robust"</span>), <span class="at">custom.coef.names =</span> labs04)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>
-Statistical models
-</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 5
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Modelo 6
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-M6 Robust
-</th>
+Más texto
+espacio entre lineas.</code></pre></td>
+<td><p>Algo de texto.</p>
+<p>Algo de texto en el párrafo. Siempre utilizando espacios para dividir párrafos</p></td>
 </tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Intercepto
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.05<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.62<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-7.62<sup>***</sup>
-</td>
+<tr class="even">
+<td><code>`*Cursivas*`</code></td>
+<td><em>Cursivas</em></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.11)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.24)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.27)
-</td>
+<tr class="odd">
+<td><code>`**Negrita**`</code></td>
+<td><strong>Negrita</strong></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Sexo (mujer=1)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.07
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.08
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.08
-</td>
+<tr class="even">
+<td><code># Título 1</code></td>
+<td><h1 id="título-1">Título 1</h1></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.05)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.05)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.05)
-</td>
+<tr class="odd">
+<td><code>## Título 2</code></td>
+<td><h2 id="título-2" class="anchored">Título 2</h2></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Edad
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.03<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.06<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.06<sup>***</sup>
-</td>
+<tr class="even">
+<td><code>### Título 3</code></td>
+<td><h3 id="título-3" class="anchored">Título 3</h3></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
+<tr class="odd">
+<td>(puedes llegar hasta un título N° 6 con <code>######</code>)</td>
+<td></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 2
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.11
-</td>
+<tr class="even">
+<td><code>`[Texto enlace](https://quarto.org/)`</code></td>
+<td><a href="https://quarto.org/">Texto enlace</a></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
+<tr class="odd">
+<td><code>`![Texto imagen](/path/to/image.png)`</code></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../files/img/eval-hires.png" class="img-fluid figure-img"></p>
+<figcaption>Texto imagen</figcaption>
+</figure>
+</div></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 3
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.34<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.34<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.34<sup>***</sup>
-</td>
+<tr class="even">
+<td><code>&gt; Citas</code></td>
+<td><blockquote class="blockquote">
+<p>Citas</p>
+</blockquote></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
+<tr class="odd">
+<td><pre><code>1. Una
+2. lista
+3 ordenada</code></pre></td>
+<td><ol type="1">
+<li><p>Una</p></li>
+<li><p>lista</p></li>
+<li><p>ordenada</p></li>
+</ol></td>
 </tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 4
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.32<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.32<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.32<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil 5
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.09)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Quintil perdido
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.31<sup>*</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.31<sup>*</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.31<sup>**</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.13)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.13)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.12)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Izquierda (ref. derecha)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.65<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.65<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.65<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.09)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Centro
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.71<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.70<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.70<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.09)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Idep./Ninguno
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.14<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.13<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--1.13<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.07)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.08)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Edad²
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00<sup>**</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00<sup>**</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.00)
-</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.19
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Adj. R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.18
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Num. obs.
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3460
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-3460
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-&nbsp;
-</td>
+<tr class="even">
+<td><pre><code>- Otro
+- tipo
+- de lista</code></pre></td>
+<td><ul>
+<li><p>Otro</p></li>
+<li><p>tipo</p></li>
+<li><p>de lista</p></li>
+</ul></td>
 </tr>
 </tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="4">
-<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
-</td>
-</tr>
-</tfoot>
 </table>
-<p>Los resultados del modelo con errores estándar robustos nos indica que nuestras estimaciones son robustas a la presencia de heterocedasticidad en los residuos, debido a que la significancia de los coeficientes se mantiene si lo comparamos con el Modelo 6.</p>
+<ol type="1">
+<li><p>Abrimos nuestro Rproject y creamos un nuevo documento de Quarto file –&gt; new file –&gt; Quarto document</p></li>
+<li><p>Editamos el yaml, agregando bibliography: percepcion-desigualdad.bib y link-citations: yes</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>YAML: Lenguaje de programación. Es un formato de serialización de datos que proporcionan un mecanismo de intercambio de datos legible por humanos. Dan formato a los datos de manera estandarizada para su intercambio entre aplicaciones de software.</p>
+<p><img src="images/yaml.png" class="img-fluid"></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>Comenzamos a escribir la introducción de nuestra investigación</p></li>
+<li><p>Para insertar referencias:</p></li>
+</ol>
+<p>Se pueden insertar citas usando el comando Insert -&gt; Citation o usando la sintaxis directamente (por ejemplo, <code>[@cita]</code> o <code>@cita</code>).</p>
+<p>Las citas van entre corchetes y están separadas por punto y coma. Cada cita debe tener una clave, compuesta por ‘@’ + el identificador de la cita en zotero.</p>
+<p><img src="images/zotero11.png" class="img-fluid"></p>
+<p>En este caso, <code>[@mijsParadoxInequalityIncome2021a]</code></p>
+<p>Aquí hay otros ejemplos:</p>
+<p>La investigación sobre percepción de desigualdad económica ha tenido un auge durante los últimos años <code>[@mijsParadoxInequalityIncome2021a; @crucesBiasedPerceptionsIncome2013]</code>.</p>
+<p>Específicamente, se ha encontrado evidencia sobre que… <code>[@mijsParadoxInequalityIncome2021a]</code>. De todas formas, <code>@crucesBiasedPerceptionsIncome2013</code> plantea que…</p>
+<p>Así mismo, Mijs señala que… <code>[-@mijsParadoxInequalityIncome2021a]</code></p>
+<p>Aunque ambos concluyen que… <code>[@mijsParadoxInequalityIncome2021a; @crucesBiasedPerceptionsIncome2013]</code></p>
+<p><img src="images/quarto4.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Luego renderizamos y se debería ver así:</li>
+</ol>
+<p><img src="images/quarto5.png" class="img-fluid"></p>
+<p>Con referencias automáticas!</p>
+<ol start="6" type="1">
+<li>Ahora que tenemos la introducción de nuestra investigación podemos subirla a Github Pages a través de Github Desktop.</li>
+</ol>
 </section>
-<section id="multicolinealidad" class="level1">
-<h1>Multicolinealidad</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(fit05)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(fit06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                 GVIF Df GVIF^(1/(2*Df))
-sexo         1.057775  1        1.028482
-edad         1.012463  1        1.006212
-quintilemiss 1.085365  5        1.008225
-pospol       1.041316  3        1.006770
-                  GVIF Df GVIF^(1/(2*Df))
-sexo          1.058907  1        1.029032
-edad         38.308809  1        6.189411
-edad2        38.275011  1        6.186680
-quintilemiss  1.087725  5        1.008444
-pospol        1.042085  3        1.006894</code></pre>
-</div>
-</div>
-<p>Entonces, asumiendo que valores del VIF (Variance Inflation Factor) mayores a 2.5, vemos que en el modelo que no incorpora el término cuadrático de edad no tendríamos problemas de multicolinealidad. Sin embargo, al incorporar el término cuadrático, nos muestra un VIF de 6.2 en la variable <code>edad</code> y <code>edad2</code>.</p>
-<section id="referencias" class="level2">
-<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
-<p><a href="https://multivariada.netlify.app/docs/lecturas/Darlington&amp;Hayes_16irregularities.pdf">Darlington &amp; Hayes 2016 Cap16 Detecting and Managing Irregularities</a></p>
-<p><a href="https://multivariada.netlify.app/docs/lecturas/Darlington&amp;Hayes_13nonlinear.pdf">Darlington &amp; Hayes 2016 Cap12 Nonlinear relationships</a></p>
+<section id="github-desktop-1" class="level2">
+<h2 class="anchored" data-anchor-id="github-desktop-1">Github desktop</h2>
+<p><img src="images/push-github.png" class="img-fluid"></p>
+</section>
+<section id="github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="github-pages">Github pages</h2>
+<p>Ahora podemos ver los documentos modificados en nuestro repositorio online de github.</p>
+<ol start="7" type="1">
+<li>Vamos a settings</li>
+</ol>
+<p><img src="images/pages.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li>Dentro de Settings vamos a Pages, luego ‘none’ y seleccionamos ‘main’. Luego apretamos Save</li>
+</ol>
+<p><img src="images/pages2.png" class="img-fluid"></p>
+<p>Luego de aproximadamente un minuto se actualiza la página y aparecerá un link en la parte superior, algo así como <a href="kevincarrascoq.github.ui/R-data-analisis">kevincarrascoq.github.ui/R-data-analisis</a> que es nuestra página principal de nuestro sitio web de github.</p>
+<p>El link para llegar a nuestro documento renderizado de quarto sigue la estructura del repositorio:</p>
+<p><img src="images/url-pages.png" class="img-fluid"></p>
 
 
 </section>
