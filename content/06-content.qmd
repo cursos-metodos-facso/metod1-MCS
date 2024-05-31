@@ -7,7 +7,7 @@ lang: es
 ## Documento de presentación
 
 
-<iframe src=/slides/05-clase5/05-clase5.html height="550" width=100% allowfullscreen="true">
+<iframe src=/slides/06-clase6/06-clase6.html height="550" width=100% allowfullscreen="true">
 </iframe> 
 
 

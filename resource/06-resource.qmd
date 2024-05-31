@@ -1,5 +1,5 @@
 ---
-title: "Práctica 6 Regresión logística y Probabilidades predichas"
+title: "Práctica 6 Visualización de datos"
 subtitle: "Metodología I - Magíster en Ciencias Sociales"
 linktitle: "Práctica 6: Regresión logística y Probabilidades predichas"
 date: "2023-06-23"
@@ -8,425 +8,535 @@ lang: es
 
 # Presentación
 
-La Encuesta Mundial de Valores (EMV) o World Values Survey [WVS](https://www.worldvaluessurvey.org/wvs.jsp) es un proyecto global de investigación social que explora los valores y opiniones de la gente, cómo estos cambian con el tiempo, y su impacto social y político. Desde 1981 una red mundial de científicos sociales y politólogos llevan a cabo esta investigación, haciendo encuestas nacionales representativas en casi 100 países. La WVS es la única fuente de datos empíricos sobre actitudes y valores humanos que abarca a la mayoría de la población mundial (casi el 90%).
+# Objetivo de la práctica
 
-## Objetivo
+Esta práctica asume como base el desarrollo de la [Práctica anterior](https://r-data-analisis.netlify.app/practicos/03-content), a la cual se hará referencia permanente. Sin embargo, en esta oportunidad la base de datos contiene los datos de los 18 países participantes en la encuesta, no solo Chile. El código específico que crea esta base está disponible [acá](https://github.com/Kevin-carrasco/R-data-analisis/blob/main/practicos/latin_proc.R)
 
-En el ejemplo de esta práctica, que utiliza solo casos para Chile entre 2005 y 2022, se intentará responder la pregunta ¿existe una relación entre la afiliación a sindicatos y la participación en marchas?
+En la [Práctica anterior](https://r-data-analisis.netlify.app/practicos/03-content) se desarrolló un código de preparación de datos que generó una base de datos procesada para el análisis. En esta **Práctica** comenzamos con el segundo momento de procesamiento de datos, que es el análisis propiamente tal. El análisis se divide en descripción de variables y contraste de hipótesis. En esta práctica nos enfocaremos en la primera fase, que llega hasta el punto 3 del código de análisis:
 
-Debido a la naturaleza de la variable dependiente participación en marchas (si/no), el objetivo de esta práctica es estimar modelos de regresión logística binaria.
+![](images/produccion2.png)
 
-# Librerías
+Al igual que el Código de Preparación, el Código de Análisis posee una estructura definida. En este caso son 4 partes, donde las primeras son similares al código de preparación:
+
+0.  Identificación y descripción general: Título, autor(es), fecha, información breve sobre el contenido del documento
+1.  **Librerías** principales (de R) a utilizar en el análisis
+2.  **Datos** (que provienen de los preparados en la fase anterior)
+3.  **Descripción de variables**
+    -   Tabla general de variables para la sección metodológica del reporte
+    -   Exploración descriptiva de relaciones entre variables
+4.  **Contraste de hipótesis** / inferencia estadística según la técnica que corresponda
+
+Al final de esta práctica la idea es que cada un\_ pueda avanzar hasta el **punto 3** del Código de Análisis. El punto 4 (contraste de hipótesis) se desarrollará más adelante en este curso con énfasis en la técnica de regresión.
+
+# Código de análisis
+
+## 1. Librerías
+
+```{r,message=FALSE,warning=FALSE}
+pacman::p_load(sjlabelled,
+               dplyr, #Manipulacion de datos
+              stargazer, #Tablas
+              sjmisc, # Tablas
+              summarytools, # Tablas
+              kableExtra, #Tablas
+              sjPlot, #Tablas y gráficos
+              sessioninfo, # Información de la sesión de trabajo
+              ggplot2) # Para la mayoría de los gráficos
+```
+
+## 2. Cargar base de datos
+
+Vamos a cargar la base de datos **latinobarometro_proc.Rdata**, que generamos durante la práctica anterior. Se puede llamar desde el directorio en que se guardó anteriormente dando la ruta completa:
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+load("ruta-hacia-carpeta-local/latinobarometro_proc.RData") #Cargar base de datos
+```
+
+O también para esta práctica la podemos llamar directamente desde nuestro sitio web:
+
+```{r }
+load(url("https://github.com/Kevin-carrasco/R-data-analisis/raw/main/files/data/latinobarometro_total.RData")) #Cargar base de datos
+```
+
+-   Exploración inicial general de la base de datos
 
 ```{r}
-pacman::p_load(tidyr,
-               dplyr,
-               sjPlot,
-               sjmisc,
-               psych,
-               texreg,
-               haven,
-               ggplot2,
-               lmtest,
-               DescTools)
+names(proc_data) # Muestra los nombres de las variables de la base de datos
+dim(proc_data) # Dimensiones
 ```
 
-# Datos
+En el caso de esta base, `r dim(proc_data)[1]` casos y `r dim(proc_data)[2]` variables
+
+Recordando el contenido de cada variable preparada en la práctica anterior:
+
+-   [`conf_gob`] = Confianza en el gobierno.
+
+-   [`conf_cong`] = Confianza en el congreso.
+
+-   [`conf_jud`] = Confianza en el poder judicial.
+
+-   [`conf_partpol`] = Confianza en los partidos políticos.
+
+-   [`conf_inst`] = Indice sumativo de confianza en instituciones políticas.
+
+-   [`educacion`] = Nivel educacional(1 = Educacion básica, 2 = Educacion media, 3 = superior)
+
+-   [`sexo`] = Sexo (O = Hombre; 1 = Mujer)
+
+-   [`edad`] = ¿Cuáles su edad? 
+
+## 3. Descripción de variables
+
+Los resultados referidos a descripción de variables se presentan en dos momentos del reporte de investigación:
+
+-   en la sección de *metodología*, cuando se presentan las variables del estudio en una **tabla descriptiva** de variables.
+
+-   en la sección de *análisis*, que en general comienza con una exploración de **asociaciones entre variables**, también conocido como análisis descriptivo.
+
+### 3.1 Tabla descriptiva de variables para sección metodológica
+
+A continuación se presentan dos opciones de generar esta tabla descriptiva de variables con distintas librerías de R.
+
+**a. Tabla descriptiva con `stargazer`**[stargazer]{.sidenote}
+
+La función `stargazer` (de la librería del mismo nombre) permitirá mostrar los principales estadísticos descriptivos univariados de las variables: medidas de tendencia central (media), de dispersión (desviación estándar) y posición (mínimo, máximo, percentiles).
 
 ```{r}
-WVS_2005_2022_Chl<- readRDS(file = "../files/data/WVS_2005_2022_Chl.rds")
+stargazer(proc_data,type = "text")
 ```
 
-```{r eval=FALSE}
-#Cargamos la base de datos desde internet
-load(url("https://github.com/Kevin-carrasco/metod1-MCS/raw/main/files/data/WVS_2005_2022_Chl.RData"))
-```
+Algunas observaciones sobre esta tabla:
 
-## Explorar datos
+-   La opción `type="text"` permite que podamos ver los resultados directamente en la consola, de manera bastante rudimentaria. Con otras opciones que veremos más adelante se puede estilizar para su publicación.
+
+-   Una distinción relevante a considerar cuando se describen variables es si estas son **categóricas** o **continuas**. La definición de si una variables es tratada como categórica o continua es algo que hace el/la autor/a del reporte, sin embargo hay variables nominales como sexo que claramente corresponden a categóricas, y por lo tanto no corresponde hacer un promedio entre ambas. Sin embargo, como esta variable está codificada 0 (hombre) y 1 (mujer), en este caso lo que indica el valor de la columna promedio (Mean=0.537) es la proporción de mujeres vs hombres. En otras palabras, hay un 54% de mujeres y 46% de hombres en la muestra.
+
+**b. Tablas descriptivas con `descr`, librería sjmisc** [sjmisc::descr]{.sidenote}
+
+La opción básica de `descr` es la siguiente:
 
 ```{r}
-summary(WVS_2005_2022_Chl) #con comando de paquete haven
-describe(WVS_2005_2022_Chl) #con comando de paquete psych
+sjmisc::descr(proc_data)
 ```
 
-# Regresiones logísticas
+En este caso utilizamos la forma `librería::función` (`sjmisc::descr`), ya que la función `descr` también existe en otras librerías y así nos aseguramos que la función utilizada es de esa librería específica.
 
-El punto de partida es transformación de los coeficientes 𝛽 en coeficientes logit:
-
-* Se conoce como “logit” a la transformación logarítmica de los odds (traducidos comúnmente como “chances”)
-
-* ¿Qué son los odds? Una razón de probabilidades
-
-* Por lo tanto, para estimar probabilidades a través de una regresión logística hay que seguir estos pasos:
-  1. Estimar los odds o razón de probabilidades
-  2. Estimar odds ratios (razones entre odds)
-  3. Aplicar una transformación logarítmica a esos odds ratios para obtener coeficientes logit
-  4. Calcular las probabilidades
-
-## Tabla de contingencia bivariado: sindicalización / participación en marchas
+Seleccionamos algunas columnas específicas con información más relevante con la opción `show`. Además, agregamos la función `kable` para obtener una tabla que luego sea fácilmente publicable en distintos formatos (a profundizar en ejercicios posteriores):
 
 ```{r}
-WVS_2005_2022_Chl <- WVS_2005_2022_Chl %>%
-  mutate(Unionized = labelled(.$Unionized,c("No"=0,"Sí"=1)),
-         demonstr_dummy = labelled(.$demonstr_dummy,c("No"=0,"Sí"=1)))
-
-WVS_2005_2022_Chl <- as.data.frame(WVS_2005_2022_Chl) #para que la base quede como data frame (necesario para las figuras)
-
-frq(WVS_2005_2022_Chl$Unionized)
-frq(WVS_2005_2022_Chl$demonstr_dummy)
-
-sjPlot::tab_xtab(var.col = WVS_2005_2022_Chl$Unionized, 
-                 var.row = WVS_2005_2022_Chl$demonstr_dummy, 
-                 title = "Participación en marchas según afiliación sindical", 
-                 show.col.prc = TRUE,
-                 value.labels = TRUE,
-                 encoding = "UTF-8")
+sjmisc::descr(proc_data,
+      show = c("label","range", "mean", "sd", "NA.prc", "n"))%>%
+      kable(.,"markdown")
 ```
 
-### Odds
+**c. Tabla descriptiva con `summarytools::dfSummary`** [summarytools::dfSummary]{.sidenote}
 
-$$Odds_{participar} = \frac{0.207}{0.793} = 0.26$$
+Esta tercera opción nos ofrece una tabla aún más detallada, con gráficos para cada variable, las frecuencias para cada valor, y las etiquetas de las variables, por lo que es muy recomendable.
 
-Las chances de participar en una marcha son de 0,26, respecto a las chances de no participar
-
-* En otras palabras: por cada 1 persona, hay sólo 0,26 personas que participan en marchas.
-
-* O más intuitivamente, por cada 100 personas, hay sólo 26 personas que participan
-
-¿Cambian las chances de participar según se esté afiliado/a a un sindicato
-
-$$Odds_{sindical} = \frac{0.26}{0.74} = 0.35$$
-
-$$Odds_{no.sindical} = \frac{0.194}{0.806} = 0.24$$
-
-¿Cómo se interpretan los odds?
-
-* Valores bajo 1 indican que las chances de que ocurra un evento son negativas
-
-* Valores iguales a 1 indican chances iguales
-
-* Valores sobre 1 indican chances positivas
-
-### Odds ratios (razones de chances)
-
-* Cálculo que permite reflejar asociación entre dos variables dicotómicas, a partir de una comparación entre chances
-
-* Siguiendo con el ejemplo anterior, ¿tienen los/as sindicalizados más chances de participar en marchas que quienes no están sindicalizados/as?
-
-$$OR = \frac{P_{sindical}/(1-P_{sindical})}{P_{no.sindical}/(1-P_{no.sindical})}$$
-
-$$OR = \frac{0.26/0.74}{0.194/0.806} = \frac{0.35}{0.24} = 1.46$$
-
-Las chances de participar en marchas de los/as sindicalizados/as son 1,5 veces más que las de quienes no están sindicalizados/as
-
-* Implicancias:
-
-  1. El odds ratio o razones de chances es útil porque nos permite expresar en un número la relación entre dos variables categóricas
-  2. En las regresiones logísticas, el odds ratio es la primera manera de aproximarnos a relación entre variables
-  3. Sin embargo, falta un paso más necesario para construir modelos de regresión logística
-  
-## Logit
-
-* Es una unidad de medida de la relación entre dos variables (VD: dicotómica), que en regresión logística se calcula a partir del logaritmo natural de los odds
-
-* Esta transformación logarítmica es la base de la estimación de parámetros en la regresión logística:
-
-La mejor combinación lineal de predictores no se obtiene a través de MCO, sino a través del procedimiento de máxima verosimilitud
-
-* A diferencia de los odds ratio, los coeficientes logit tienen valores que van de –\infty a +\infty
-
-## Modelo de probabilidad lineal
-
-Primero, solo para comparación, estimamos un modelo de probabilidad lineal.
+Se específica de la siguiente manera:
 
 ```{r}
-m1mpl <- lm(demonstr_dummy ~ Unionized + Wave, data = WVS_2005_2022_Chl)
+summarytools::dfSummary(proc_data, plain.ascii = FALSE)
 ```
 
+Es muy ancha para visualizar bien en la consola de R, pero en su versión más definitiva de publicación se verá así:
 
-```{r results='asis'}
-htmlreg(m1mpl,
-          custom.model.names = "Modelo de Prob Lineal",
-          digits = 3, 
-          stars = c(0.001, 0.01, 0.05, 0.1),symbol = "†")
+```{r eval=FALSE }
+view(dfSummary(proc_data, headings=FALSE))
 ```
 
-## Modelo de regresión logística
+```{r echo=FALSE}
+print(dfSummary(proc_data, headings = FALSE), method = "render")
+```
+
+#### Nota sobre casos perdidos (NAs) [na.omit(data)]{.sidenote}
+
+Hasta ahora hemos mantenido los casos perdidos en la base de datos, ya que son importantes de reportar en la tabla general de variables. Sin embargo, de aquí en adelante se recomienda trabajar solo con casos completos, es decir, **sacar los casos perdidos**. El quitar los casos perdidos de una base de datos es muy simple con la función `na.omit`, pero para tomar precauciones y asegurarse que funciona se recomienda el siguiente procedimiento:
+
+-   respaldar la base de datos original en el espacio de trabajo (por si queremos en adelante realizar algún análisis referido a casos perdidos), la dejaremos con el nombre proc_data_original.
+-   contamos el número de casos con el comando `dim`
+-   contamos el número de casos perdidos con `sum(is.na(proc_data))`
+-   borramos los casos perdidos con `proc_data <-na.omit(proc_data)`
+-   contamos nuevamente con `dim` para asegurarnos que se borraron
+-   y por temas de funcionamiento de R, al realizar la operación de sacar casos perdidos, se borra toda la información de las etiquetas (labels), así que las recuperamos de la base original con el comando `copy_labels`, de la librería `sjlabelled`.
 
 ```{r}
-m0log <- glm(demonstr_dummy~ Unionized, data = WVS_2005_2022_Chl, family = "binomial"(link = "logit"))
-m1log <- glm(demonstr_dummy~ Unionized + Wave, data = WVS_2005_2022_Chl, family = "binomial"(link = "logit"))
-#nota: "logit" viene por defecto en la opción "binomial", por eso no es necesario 
-#incluirla explícitamente en el código (tal como lo hago en los modelos sgtes)
-m2log <- glm(demonstr_dummy~ Unionized + Female + X003 + Educ + private_sector + Wave, data = WVS_2005_2022_Chl,family = "binomial")
-m3log <- glm(demonstr_dummy~ Unionized + Female + X003 + Educ + private_sector + politicization + Wave, data = WVS_2005_2022_Chl,family = "binomial")
+proc_data_original <-proc_data
+dim(proc_data)
+sum(is.na(proc_data))
+proc_data <-na.omit(proc_data)
+dim(proc_data)
+proc_data <-sjlabelled::copy_labels(proc_data,proc_data_original)
 ```
 
+### 3.2 Visualización de variables
 
-```{r results='asis'}
-htmlreg(list(m1mpl, m1log,m2log,m3log),
-          custom.model.names = c("M1 (m prob lineal)","M1 (log odds)","M2 (log odds)","M3 (log odds)"),
-          digits = 3, 
-          stars = c(0.001, 0.01, 0.05, 0.1),symbol = "†")
-```
-
-En el Modelo 1 (M1), el log-odds de participación en marchas para afiliados a sindicatos aumenta en 0.418 en comparación con los no sindicalizados (p<0.01). Este resultado mantiene su significación estadística en el Modelo 2 y baja su significación a p<0.1 en el Modelo 3, al controlar por las demás variables independientes.
-
-En el Modelo 2, En comparación a los/as trabajadores/as del sector público (categoría de referencia), el log-odds de participación en marchas para los/as del sector privado disminuye en 0,52 (p < 0,01), manteniendo el resto de variables constantes.
-
-En el Modelo 3, por cada unidad de aumento en la escala de politización, el log-odds de participación en marchas aumenta en 0,28 (p < 0,001), manteniendo el resto de las variables constantes.
-
-### Problemas de interpretación 
-
-A pesar de sus ventajas, los coeficientes logit son difíciles de interpretar:
-
-* Los coef. logit son el resultado de una transformación de la escala original
-
-* Ellos no muestran directamente probabilidades
-
-* Entonces: Volver a la escala original de **odds ratio** mediante la **exponenciación de los coeficientes** (la función exponencial es la inversa del logaritmo)
-
-$$logit_x = log(odds)$$
-
-$$e^{logit} = odds_x$$
-
-$$e^{0.39} = odds_x = 1.477$$
-
-Las chances (odds) de participar en marchas de los/as sindicalizados/as son 1,5 veces más que las de quienes no están sindicalizados/as, controlando por las otras variables incluidas en el modelo
-
-## Estimación de odds ratios
+Para visualizar variables mediante gráficos, en R el paquete más comúnmente usado es ggplot2. La lógica detrás de este paquete es que funciona por capas. 
 
 ```{r}
-exp(coef(m1log)) #comando básico
-
-### Cálculo de OR para cada modelo
-m0log_OR <- exp(coef(m0log))
-m1log_OR <- exp(coef(m1log))
-m2log_OR <- exp(coef(m2log))
-m3log_OR <- exp(coef(m3log))
+ggplot()
 ```
-
-
-```{r results='asis'}
-##Odds ratios en tabla de texreg
-htmlreg(list(m1log,m2log,m3log), 
-          override.coef = list(m1log_OR,m2log_OR,m3log_OR), # Sobreescribir coeficientes
-          custom.model.names = c("m1 (OR)","m2 (OR)","m3 (OR)"),
-          digits = 3, 
-          stars = c(0.001, 0.01, 0.05, 0.1),symbol = "†")
-#Nota: errores estándares en esta tabla NO tienen  sentido (no están calculados a partir de OR, sino de log odds)
-#Es mejor no reportarlos si solo se van a presentar odds ratios
-```
-
-Sin embargo, los coeficientes de un modelo de reg. logística (log-odds u odds-ratios) no son comparables con los coeficientes de otro modelo
-
-## Cálculo de probabilidades predichas
-
-```{r results='asis'}
-# Tabla básica: sólo sindicalizacion como vble independ
-htmlreg(m0log,
-          custom.model.names = c("m0 (log odds)"),
-          digits = 3, 
-          stars = c(0.001, 0.01, 0.05, 0.1),symbol = "†")
-```
-
-A partir de este modelo se pueden predecir log-odds y, más importante aún, probabilidades para personas con distintos atributos controlados en el modelo (ej., sindicalizadas o no)
-
-$$logit(prob.marcha) = 𝛼+ 𝛽_1X_1 $$
-
-$$logit(prob.marcha)_{sindical} = -1.422 + (0.374 * Unionized=1) = -1.048 $$
-
-$$logit(prob.marcha)_{no.sindical} = -1.422 + (0.374 * Unionized=0) = -1.422 $$
-
-Este “puntaje predicho” (log-odds) no tiene interpretación, por lo que hay que pasarlo a Odds
-
-
-$$Odds_x = e^{𝛼+𝛽_jX_j}$$
-
-$$Odds_{sindicalizados} = e^{-1.048} = 0.35$$
-
-$$Odds_{no.sindicalizados} = e^{-1.422} = 0.24$$
-
-Finalmente, habiendo calculado los odds para cada tipo de persona se pueden calcular sus probabilidades predichas
-
-$$p = \frac{e^{𝛼+𝛽_jX_j}}{1+e^{𝛼+𝛽_jX_j}} = \frac{odds_{xj}}{1+odds_{xj}}$$
-
-$$p_{sindicalizados} = \frac{0.35}{1+0.35} = \frac{0.35}{1.35} = 0.26$$
-
-$$p_{no.sindicalizados} = \frac{0.24}{1+0.24} = \frac{0.24}{1.24} = 0.19$$
-
-La probabilidad de que un/a sindicalizado participe en marchas es del 26%, mientras que la probabilidad de que alguien que no esté sindicalizado/a es del 19%
-
-
-## Cálculo de probabilidades predichas en R
-
-* Paquete ggeffects de R: últil para estimar probabilidades predichas a partir de modelos de regresión logísticas
-
-* Combinado con ggplot2, se pueden generar gráficos que muestran de modo más intuitivo la relación entre variables
-
-Gráfico de probabilidades predichas para sindicalizados/as y no sindicalizados/as
 
 ```{r}
-FigSind_1_Prob <- ggeffects::ggpredict(m3log, terms = c("Unionized")) %>%
-  ggplot(aes(x=x, y=predicted)) +
-  geom_bar(stat="identity", color="grey", fill="grey")+
-  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width=.1) +
-  labs(title="Sindicalización", x = "", y = "") +
+ggplot(proc_data, aes(x = conf_inst))
+```
+
+```{r}
+proc_data %>% ggplot(aes(x = conf_inst)) + 
+  geom_bar()
+```
+
+```{r}
+proc_data %>% ggplot(aes(x = conf_inst)) + 
+  geom_bar(fill = "coral")
+```
+
+```{r}
+proc_data %>% ggplot(aes(x = conf_inst)) + 
+  geom_bar(fill = "coral")+
+  labs(title = "Confianza en instituciones",
+       x = "Confianza en instituciones",
+       y = "Frecuencia")
+```
+
+
+```{r}
+# Crear el gráfico usando ggplot2
+graph1 <- proc_data %>% ggplot(aes(x = conf_inst)) + 
+  geom_bar(fill = "coral")+
+  labs(title = "Confianza en instituciones",
+       x = "Confianza en instituciones",
+       y = "Frecuencia") +
+  geom_text(aes(label = ..count..), stat = "count", colour = "black", 
+    vjust = 1.5, position = position_dodge(.9)) + # agregamos freq de cada barra por grupo
+  theme_bw()
+
+graph1
+
+# y lo podemos guardar:
+
+ggsave(graph1, file="output/graphs/graph1.png")
+
+```
+
+
+### 3.3 Exploración de asociación entre variables
+
+Dado que las hipótesis de investigación corresponden a asociación entre variables, antes de realizar el contraste de hipótesis se suele presentar un análisis descriptivo que explora las asociaciones entre variables.
+
+La forma de explorar las asociaciones entre variables dependen de la naturaleza de las variables que se asocian:
+
+-   Variables categóricas: tabla de contingencia
+-   Variable categórica y continua: tabla de promedios por cada categoría
+
+En esta sección también es muy relevante la visualización de datos mediante gráficos, por lo que incluiremos algunos.
+
+El uso tanto de tablas como de gráficos en el reporte queda a discreción del/a autor/a. La pregunta que orienta esta decisión es: *¿Me permite enriquecer la discusión de los resultados en relación a las hipótesis planteadas?*
+
+#### Tablas de contingencia para variables categóricas
+
+Para tablas de contingencia categóricas utilizaremos la función sjt.xtab, de la librería `sjPlot`. Veamos primero una especificación simple: [sjPlot::sjt.xtab]{.sidenote}
+
+```{r}
+sjt.xtab(proc_data$educacion, proc_data$sexo)
+```
+
+Al ejecutar el comando, el resultado aparece automáticamente en el visor de RStudio. A esta tabla podemos también agregar porcentajes de filas y/o columnas, según sea lo más relevante analizar. En general se recomienda agregar solo un porcentaje, de otra manera la tabla se satura de información. Además, vamos a quitar el pie de la tabla (conviene dejarlo solo si hay hipótesis asociadas al cruce simple entre las dos variables).
+
+```{r}
+sjt.xtab(proc_data$educacion, proc_data$sexo,
+        show.col.prc=TRUE,
+        show.summary=FALSE,
+        encoding = "UTF-8",
+        file="output/tables/tabla-contingencia.html")
+```
+
+#### Tablas de promedio de variable continua por una categóricas
+
+En ejemplo vamos a explorar datos de nuestra variable de confianza en instituciones *conf_inst* por los niveles educacionales *educacion*.
+
+Una forma rápida de explorar esto es mediante la función `tapply`, que nos entrega de manera simple el promedio de una variable por otra:
+
+```{r}
+tapply(proc_data$conf_inst, proc_data$educacion, mean)
+```
+
+Aquí vemos en promedio de *conf_inst* para cada uno de los 3 niveles de la variable educación *educacion*. Si se estima conveniente este tipo de cruces se puede representar también en una tabla con más opciones de información y también de publicación. Para esto utilizaremos una función algo más compleja de la librería `dplyr`.[dplyr]{.sidenote} Esta librería permite aplicar una serie de funciones concatenadas y enlazadas mediante el operador `%>%`. El sentido de cada función aparece comentado abajo:
+
+```{r}
+proc_data %>% # se especifica la base de datos
+  select(conf_inst,educacion) %>% # se seleccionan las variables
+  dplyr::group_by(Educación=sjlabelled::as_label(educacion)) %>% # se agrupan por la variable categórica y se usan sus etiquetas con as_label
+  dplyr::summarise(Obs.=n(),Promedio=mean(conf_inst),SD=sd(conf_inst)) %>% # se agregan las operaciones a presentar en la tabla
+  kable(., format = "markdown") # se genera la tabla
+```
+
+Esta asociación también se puede representar de manera más simple con un gráfico, en este caso de cajas o boxplot mediante la función `geom_boxplot` de `gplot2`:
+
+```{r}
+graph <- ggplot(proc_data, aes(x =educacion, y = conf_inst)) +
+  geom_boxplot() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
+  theme_minimal()
+
+graph
+
+# y lo podemos guardar:
+
+ggsave(graph, file="output/graphs/graph.png")
+```
+
+Sin embargo, al ser los promedios similares no permite ver demasiadas diferencias... Probemos otro
+
+```{r}
+ggplot(proc_data, aes(x =educacion, y = conf_inst)) +
+  geom_point() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
+  theme_minimal()
+
+```
+
+En este gráfico cada punto representa una observación para cada categoría. Por lo tanto, al existir tantos valores difernetes en cada categoría, el gráfico tampoco nos presenta información sustantiva ¿Qué necesitamos hacer? Necesitamos obtener exactamente los datos que queremos graficar, esto es, el promedio por cada categoría. Volvamos a `group_by`
+
+```{r}
+datos <- proc_data %>% group_by(educacion) %>% 
+  summarise(promedio = mean(conf_inst))
+
+ggplot(datos, aes(x =educacion, y = promedio)) +
+  geom_point() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
+  theme_minimal()+
+  ylim(0, 12)
+```
+
+Este gráfico entrega un poco más de información, pero al ver pocas diferencias en el promedio de cada categoría no se logran evidenciar
+
+```{r warning=FALSE}
+proc_data$idenpa <- factor(proc_data$idenpa,
+            labels=c("Argentina",
+         "Bolivia",
+         "Brasil",
+         "Chile",
+         "Colombia",
+         "Costa Rica",
+         "Cuba",
+         "República Dominicana",
+         "Ecuador",
+         "El Salvador",
+         "Guatemala",
+         "Honduras",
+         "México",
+         "Nicaragua",
+         "Panamá",
+         "Paraguay",
+         "Uruguay",
+         "Venezuela"),
+            levels=c("32",
+         "68",
+         "76",
+         "152",
+         "170",
+         "188",
+         "214",
+         "218",
+         "222",
+         "320",
+         "340",
+         "484",
+         "558",
+         "591",
+         "600",
+         "604",
+         "858",
+         "862"))
+
+
+graph_box <- ggplot(proc_data, aes(x = idenpa, y = conf_inst)) +
+  geom_boxplot() +
+  labs(x = "País", y = "Confianza en instituciones") +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotar las etiquetas del eje x
+
+graph_box
+
+# y lo podemos guardar:
+
+ggsave(graph_box, file="output/graphs/graph.png")
+```
+
+De manera alternativa, podemos seguir explorando nuestros datos con otros gráficos
+
+Para varias variables univariadas, tipo escala likert, una buena alternativa es el paquete sjPlot, en este caso la función plot_stackfrq:
+
+```{r}
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data, conf_gob,
+                                 conf_cong,
+                                 conf_jud,
+                                 conf_partpol),
+                                 title = "Confianza en instituciones políticas") +
+  theme(legend.position="bottom")
+
+graph2
+
+# Guardamos
+
+ggsave(graph2, file="output/graphs/graph2.png")
+```
+
+Para asociación de dos variables, retomemos el primer gráfico:
+
+```{r}
+graph3 <- proc_data %>% ggplot(aes(x = conf_inst, fill = sexo)) + 
+  geom_bar(position = "dodge2") +
+  xlab("Confianza en instituciones") +
+  ylab("Cantidad") + 
+  labs(fill="Sexo")+
+  scale_fill_discrete(labels = c('Hombre','Mujer'))+
+  geom_text(aes(label = ..count..), stat = "count", colour = "black", 
+    vjust = 1.5, position = position_dodge(.9)) # agregamos freq de cada barra por grupo
+
+graph3
+
+# Guardamos
+
+ggsave(graph3, file="output/graphs/graph3.png")
+```
+
+una forma alternativa:
+
+```{r}
+proc_data %>% ggplot(aes(x = conf_inst, fill = sexo)) + 
+  geom_bar() +
+  xlab("Confianza en instituciones") +
+  ylab("Cantidad") + 
+  labs(fill="Sexo")+
+  scale_fill_discrete(labels = c('Hombre','Mujer'))
+```
+
+otra forma alternativa:
+
+```{r}
+proc_data %>% ggplot(aes(x = conf_inst)) + 
+  geom_bar() +
+  xlab("Confianza en instituciones") +
+  ylab("Cantidad")+
+  facet_wrap(~sexo)+
+  geom_text(aes(label = ..count..), stat = "count", colour = "white", 
+    vjust = 1.5, position = position_dodge(.9)) # agregamos freq de cada barra por grupo
+```
+
+
+Para variables continuas
+
+```{r}
+graph4 <- ggplot(proc_data, aes(x = as.numeric(edad))) +
+  geom_histogram(binwidth=0.6, colour="black", fill="yellow") +
   theme_bw() +
-  theme(plot.title = element_text(size = 12), 
-        axis.text.x = element_text(angle = 0, vjust = 0.5, size = 12),
-        axis.text.y = element_text(vjust = 0.5, size = 10)) +
-  scale_x_continuous(name = "",
-                     breaks = c(0,1),
-                     labels = c("Non-union members", "Union members")) +
-  scale_y_continuous(limits = c(0,0.35), 
-                     breaks = seq(0,0.35, by = 0.05),
-                     labels = scales::percent_format(accuracy = 1L))
+  xlab("Edad") +
+  ylab("Cantidad")
 
-FigSind_1_Prob
+graph4 
+
+
+
+# Guardamos
+
+ggsave(graph4, file="output/graphs/graph4.png")
 ```
 
-Gráfico de probabilidades predichas para variable politización
+y lo podemos complicar un poco más...
+
+### Asociación entre tres variables
+
+con facet_wrap dividimos el gráfico en distintos paneles, según la cantidad de categorías que tenga una variable
 
 ```{r}
-FigPolit_1_Prob<- ggeffects::ggpredict(m3log, terms="politicization") %>%
-  ggplot(mapping=aes(x = x, y=predicted)) +
-  labs(title="Politización", x = "", y = "")+
+datos <- proc_data %>% group_by(educacion, sexo) %>% 
+  summarise(promedio = mean(conf_inst))
+
+ggplot(datos, aes(x =educacion, y = promedio)) +
+  geom_point() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
+  theme_bw()+
+  ylim(0, 12)+
+  facet_wrap(~sexo)
+```
+
+o alternativamente...
+
+```{r}
+ggplot(datos, aes(x =sexo, y = promedio)) +
+  geom_point() +
+  labs(x = "Sexo", y = "Confianza en instituciones") +
+  theme_bw()+
+  ylim(0, 12)+
+  facet_wrap(~educacion)
+```
+
+Probemos otras agrupaciones. Por ejemplo, categorizar edad en grupos para estimar promedios grupales. Una función clave para lograr esto puede ser case_when de dplyr, combinándolo con mutate. Es decir, crear una nueva variable a partir de un condicional
+
+```{r}
+summary(proc_data$edad)
+
+proc_data <- proc_data %>% 
+  mutate(edad_groups = case_when(edad >=16 & edad<=25 ~ "Entre 16 y 25 años",
+                                 edad >=26 & edad<=39 ~ "Entre 26 y 39 años",
+                                 edad >=40 & edad<=65 ~ "Entre 40 y 65 años",
+                                 edad >65 ~ "Más de 65 años"))
+
+table(proc_data$edad_groups)
+```
+
+Ahora creamos este gráfico
+
+```{r}
+datos <- proc_data %>% group_by(educacion, edad_groups) %>% 
+  summarise(promedio = mean(conf_inst))
+
+ggplot(datos, aes(x =educacion, y = promedio)) +
+  geom_point() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
+  theme_bw()+
+  ylim(0, 7)+
+  facet_wrap(~edad_groups)
+```
+
+y lo podemos seguir complicando, por ejemplo, agregando otra variable en el gráfico
+
+```{r}
+datos <- proc_data %>% group_by(educacion, sexo, edad_groups) %>% 
+  summarise(promedio = mean(conf_inst))
+
+ggplot(datos, aes(x =educacion, y = promedio, color=sexo)) +
+  geom_point() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
+  theme_bw()+
+  ylim(0, 7)+
+  facet_wrap(~edad_groups)
+```
+
+Con 'color' (gráfico anterior) solo se diferencia la variable según color. Con 'shape' (gráfico siguiente) también se diferencia según la forma de la representación
+
+```{r}
+ggplot(datos, aes(x =educacion, y = promedio, color=sexo, shape=sexo)) +
+  geom_point() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
+  theme_bw()+
+  ylim(0, 7)+
+  facet_wrap(~edad_groups)
+```
+
+Y tenemos aún un problema... las categorías del eje x se están solapando. Eso lo podemos corregir modificando el ángulo del eje x.
+
+```{r}
+ggplot(datos, aes(x = educacion, y = promedio, color = sexo, shape = sexo)) +
+  geom_point() +
+  labs(x = "Educación", y = "Confianza en instituciones") +
   theme_bw() +
-  geom_smooth()+
-  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = .2, fill = "black") +
-  theme(plot.title = element_text(size = 12), 
-        axis.text.x = element_text(angle = 0, vjust = 0.5, size = 10),
-        axis.text.y = element_text(vjust = 0.5, size = 10))+
-  scale_x_continuous(breaks = seq(0,6, by = 1))+
-  scale_y_continuous(limits = c(0,0.6), breaks=seq(0,0.6, by = 0.1),
-                     labels = scales::percent_format(accuracy = 1L))
-
-FigPolit_1_Prob
+  ylim(0, 7) +
+  facet_wrap(~edad_groups) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-
-## Bondad de ajuste (comando de paquete lmtest)
-
-* Razón de verosimilitudes
-
-```{r}
-anova(m1log, m2log, test = "Chisq")
-anova(m2log, m3log, test = "Chisq") 
-lrtest(m1log, m2log) #likelihood ratio test / Prueba de razón de verosimilitud (comparación m1-m2)
-
-lrtest(m2log, m3log) #likelihood ratio test / Prueba de razón de verosimilitud (comparación m2-m3)
-```
-
-* Pseudo R2 (McFadden)
-
-```{r}
-m1log_R2<-DescTools::PseudoR2(m1log)
-m2log_R2<-DescTools::PseudoR2(m2log)
-m3log_R2<-DescTools::PseudoR2(m3log)
-```
-
-
-```{r results='asis'}
-#Misma tabla, en log odds, con Pseudo R2
-htmlreg(list(m1log,m2log,m3log),
-          custom.model.names = c("m1 (log odds)","m2 (log odds)","m3 (log odds)"),
-          custom.gof.rows=list("Pseudo R2" = c(m1log_R2, m2log_R2,m3log_R2)),
-          digits = 3, 
-          stars = c(0.001, 0.01, 0.05, 0.1),symbol = "†")
-```
-
-## Efectos de interacción
-
-sindicalizacion - sector privado
-
-```{r}
-m3.1log <- glm(demonstr_dummy~ Unionized + Female + X003 + Educ + private_sector + politicization + Wave + Unionized*private_sector, 
-               data = WVS_2005_2022_Chl,family = "binomial")
-```
-
-
-```{r results='asis'}
-htmlreg(list(m1log,m2log,m3log,m3.1log),
-          custom.model.names = c("M1 (log odds)","M2 (log odds)","M3 (log odds)",
-                                 "M3.1 (log odds)"),
-          digits = 3, 
-          stars = c(0.001, 0.01, 0.05, 0.1),symbol = "†")
-```
-
-* La interacción también se puede graficar según probabilidades predichas
-
-```{r}
-# ojo que la relación sindicalización x sector privado no es significativa
-FigSindSector_int<-ggeffects::ggpredict(m3.1log, terms = c("Unionized", "private_sector")) %>%
-  ggplot(aes(x=x, y=predicted, shape = group, color = group)) +
-  geom_line(aes(group=group,linetype = group),position = position_dodge(.1)) + 
-  geom_point(size = 2.5,position = position_dodge(.1))+
-  scale_x_continuous(name = "", breaks=c(0,1), labels = c("No sindicalizados/as", "Sindicalizados/as")) + 
-  scale_shape_discrete(name = "Sector de empleo",
-                       limits = c("0", "1"),
-                       labels = c("Público", "Privado")) +
-  scale_color_manual(name = "Sector de empleo",
-                     limits = c("0", "1"),
-                     labels = c("Público", "Privado"),
-                     values = c("black", "black")) +
-  scale_linetype_manual(name = "Sector de empleo",
-                        limits = c("0", "1"),
-                        labels = c("Público", "Privado"),
-                        values = c("solid", "dashed")) +
-  scale_y_continuous(limits = c(0,0.40), breaks=seq(0,0.40, by = 0.05),
-                     labels = scales::percent_format(accuracy = 1L)) +
-  theme_bw() +
-  labs(title="", y = "") + 
-  theme(plot.title = element_text(size = 11),
-        axis.text=element_text(size=11))
-
-FigSindSector_int
-```
-
-* Sector de empleo - politización
-
-```{r}
-m3.2log <- glm(demonstr_dummy~ Unionized + Female + X003 + Educ + private_sector 
-               + politicization + Wave + private_sector*politicization,
-               data = WVS_2005_2022_Chl,family = "binomial")
-```
-
-
-```{r results='asis'}
-htmlreg(list(m1log,m2log,m3log,m3.1log,m3.2log),
-          custom.model.names = c("M1 (log odds)","M2 (log odds)","M3 (log odds)",
-                                 "M3.1 (log odds)","M3.2 (log odds)"),
-          digits = 3, 
-          stars = c(0.001, 0.01, 0.05, 0.1),symbol = "†")
-```
-
-
-```{r}
-FigPolitSector_int<-ggeffects::ggpredict(m3.2log, terms = c("politicization", "private_sector")) %>%
-  ggplot(aes(x=x, y=predicted, shape = group, color = group)) +
-  geom_line(aes(group=group,linetype = group),position = position_dodge(.1)) + 
-  geom_point(size = 2.5,position = position_dodge(.1))+
-  scale_x_continuous(breaks=seq(0,6, by = 1), name = "") + 
-  scale_shape_discrete(name = "Sector de empleo",
-                       limits = c("0", "1"),
-                       labels = c("Público", "Privado")) +
-  scale_color_manual(name = "Sector de empleo",
-                     limits = c("0", "1"),
-                     labels = c("Público", "Privado"),
-                     values = c("black", "black")) +
-  scale_linetype_manual(name = "Sector de empleo",
-                        limits = c("0", "1"),
-                        labels = c("Público", "Privado"),
-                        values = c("solid", "dashed")) +
-  scale_y_continuous(limits = c(0,0.8), breaks=seq(0,0.8, by = 0.1),
-                     labels = scales::percent_format(accuracy = 1L)) +
-  theme_bw() +
-  labs(title="", y = "") + 
-  theme(plot.title = element_text(size = 11),
-        axis.text=element_text(size=11))
-FigPolitSector_int
-```
-
 
 
 
