@@ -141,6 +141,30 @@ data %>% filter(ola==1) %>% ggplot(aes(x = d01_01)) +
     vjust = 1.5, position = position_dodge(.9)) # agregamos freq de cada barra por grupo
 ```
 
+* Con porcentajes
+
+```{r}
+data %>%
+  filter(ola == 1) %>%
+  group_by(d01_01, m0_sexo) %>%
+  summarise(count = n(), .groups = 'drop') %>%
+  group_by(m0_sexo) %>%
+  mutate(pct = count / sum(count) * 100) %>%
+  ggplot(aes(x = d01_01, y = count, fill = factor(d01_01))) +
+  geom_bar(stat = "identity") +
+  xlab("Estatus social subjetivo") +
+  ylab("Cantidad") +
+  facet_wrap(~factor(m0_sexo)) +
+  geom_text(aes(label = paste0(round(pct, 1), "%")), 
+            stat = "identity", 
+            vjust = 1.5, 
+            color = "black",
+            position = position_dodge(0.9)) +
+  theme(legend.position = "none")
+
+```
+
+
 # Distribución de variables
 
 ## Distribuciones continuas y discretas
