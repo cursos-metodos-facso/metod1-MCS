@@ -1,7 +1,7 @@
 ---
 title: "Práctica 6 Visualización de datos"
 subtitle: "Metodología I - Magíster en Ciencias Sociales"
-linktitle: "Práctica 6: Regresión logística y Probabilidades predichas"
+linktitle: "Práctica 6: Visualización de datos"
 date: "2023-06-23"
 lang: es
 ---
@@ -26,7 +26,7 @@ Al igual que el Código de Preparación, el Código de Análisis posee una estru
     -   Exploración descriptiva de relaciones entre variables
 4.  **Contraste de hipótesis** / inferencia estadística según la técnica que corresponda
 
-Al final de esta práctica la idea es que cada un\_ pueda avanzar hasta el **punto 3** del Código de Análisis. El punto 4 (contraste de hipótesis) se desarrollará más adelante en este curso con énfasis en la técnica de regresión.
+Al final de esta práctica la idea es que cada un\_ pueda avanzar hasta el **punto 3** del Código de Análisis.
 
 # Código de análisis
 

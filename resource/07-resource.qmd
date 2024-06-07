@@ -1,5 +1,5 @@
 ---
-title: "Práctica 7 Correlación y regresióna"
+title: "Práctico 7 Distribución de variables"
 subtitle: "Metodología I - Magíster en Ciencias Sociales"
 linktitle: "Práctica 7: Correlación y regresión"
 date: "2023-06-23"
@@ -8,246 +8,312 @@ lang: es
 
 # Presentación
 
-La siguiente práctica tiene el objetivo de repasar en la interpretación de coeficientes de correlación y la construcción de índices, así como también en la interpretación de coeficientes de regresión lineal y logística. Para ello, utilizaremos la base de datos de la tercera ola del [*Estudio Longitudinal Social del Chile 2018*](https://doi.org/10.7910/DVN/H8OVMF) con el objetivo de analizar los determinantes de la **Participación Ciudadana.**
+# Objetivo de la práctica
 
-La versión original de este ejercicio proviene del curso de [Estadística multivariada](https://multivariada.netlify.app/assignment/10-code/) versión 2022.
+En esta **Práctica** comenzamos con el segundo momento de procesamiento de datos, que es el análisis propiamente tal. El análisis se divide en descripción de variables y contraste de hipótesis. En este curso nos enfocaremos en la primera fase, que llega hasta el punto 3 del código de análisis:
 
-# Librerías
+![](images/produccion2.png)
 
-```{r}
-pacman::p_load(dplyr, summarytools, sjPlot,texreg, corrplot,ggplot2,sjlabelled, fastDummies)
-```
+Al igual que el Código de Preparación, el Código de Análisis posee una estructura definida. En este caso son 4 partes, donde las primeras son similares al código de preparación:
 
-# Datos
+0.  Identificación y descripción general: Título, autor(es), fecha, información breve sobre el contenido del documento
+1.  **Librerías** principales (de R) a utilizar en el análisis
+2.  **Datos** (que provienen de los preparados en la fase anterior)
+3.  **Descripción de variables**
+    -   Tabla general de variables para la sección metodológica del reporte
+    -   Exploración descriptiva de relaciones entre variables
 
-El Estudio Longitudinal Social del Chile [ELSOC](https://coes.cl/encuesta-panel/), único en Chile y América Latina, consiste en encuestar a casi 3.000 chilenos, anualmente, a lo largo de una década. ELSOC ha sido diseñado para evaluar la manera cómo piensan, sienten y se comportan los chilenos en torno a un conjunto de temas referidos al conflicto y la cohesión social en Chile. La población objetivo son hombres y mujeres entre 15 y 75 años de edad con un alcance nacional, donde se obtuvo una muestra final de **3748** casos en el año 2018.
+Al final de esta práctica la idea es que cada un\_ pueda avanzar hasta el **punto 3** del Código de Análisis.
 
-```{r}
-load("../files/data/elsoc2.RData")
-```
+# Código de análisis
 
-```{r eval=FALSE}
-#Cargamos la base de datos desde internet
-load(url("https://github.com/Kevin-carrasco/metod1-MCS/raw/main/files/data/elsoc2.RData"))
-```
+## 1. Librerías y datos
 
-## Explorar datos
-
-A partir de la siguiente tabla se obtienen estadísticos descriptivos que luego serán relevantes para realizar las transformaciones y análisis posteriores.
-
-```{r}
-view_df(elsoc,max.len = 50)
-```
-
-## Variable dependiente: participación política
-
-```{r, fig.width=10}
-plot_stackfrq(elsoc[,c("part01","part02","part03","part04")]) + theme(legend.position="bottom")
+```{r,message=FALSE,warning=FALSE}
+pacman::p_load(sjlabelled,
+               dplyr, #Manipulacion de datos
+              stargazer, #Tablas
+              sjmisc, # Tablas
+              summarytools, # Tablas
+              kableExtra, #Tablas
+              sjPlot, #Tablas y gráficos
+              ggplot2) # Para la mayoría de los gráficos
 ```
 
 ```{r}
-corrplot.mixed(cor(select(elsoc,part01,part02,part03,part04),
-                   use = "complete.obs"))
+load(url("https://dataverse.harvard.edu/api/access/datafile/7245118"))
+
+data <- elsoc_long_2016_2022.2 %>% select(ola, c18_11, d01_01, d02_01, d02_02, d02_03, m0_sexo, m0_edad, m01)
+
+data <- data %>% set_na(., na = c(-999, -888, -777, -666))
+
+data$educacion <- car::recode(data$m01, "c(1,2,3,4,5,6,7)=1;c(8,9,10)=2")
+data$educacion <- factor(data$educacion, labels = c("Media","Universitaria"))
+data_original <-data
+data <- na.omit(data)
+data <-sjlabelled::copy_labels(data,data_original)
+```
+
+## Visualización de datos
+
+```{r}
+print(dfSummary(data), method='render')
 ```
 
 ```{r}
-elsoc <- elsoc %>% mutate(partpol=rowSums(select(., part01,part02,part03,part04)))
-summary(elsoc$partpol)
+data %>% filter(ola==1) %>% frq(d01_01)
 ```
 
-## Variable independiente: ingresos
-
-ingresos hogar variable continua
-```{r}
-summary(elsoc$inghogar)
-```
-ingreso hogar en tramos
-
-```{r} 
-sjmisc::frq(elsoc$inghogar_t,
-            out = "txt",
-            show.na = T) %>% knitr::kable()
-```
-
-podemos obtener la mediana de cada tramo
 
 ```{r}
-elsoc$inghogar_t[elsoc$inghogar_t==1] <-(       220000 )    # [1]  "Menos de $220.000 mensuales liquidos"          
-elsoc$inghogar_t[elsoc$inghogar_t==2] <-(220001 +280000 )/2 # [2]  "De $220.001 a $280.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==3] <-(280001 +330000 )/2 # [3]  "De $280.001 a $330.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==4] <-(330001 +380000 )/2 # [4]  "De $330.001 a $380.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==5] <-(380001 +420000 )/2 # [5]  "De $380.001 a $420.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==6] <-(420001 +470000 )/2 # [6]  "De $420.001 a $470.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==7] <-(470001 +510000 )/2 # [7]  "De $470.001 a $510.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==8] <-(510001 +560000 )/2 # [8]  "De $510.001 a $560.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==9] <-(560001 +610000 )/2 # [9]  "De $560.001 a $610.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==10]<-(610001 +670000 )/2 # [10] "De $610.001 a $670.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==11]<-(670001 +730000 )/2 # [11] "De $670.001 a $730.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==12]<-(730001 +800000 )/2 # [12] "De $730.001 a $800.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==13]<-(800001 +890000 )/2 # [13] "De $800.001 a $890.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==14]<-(890001 +980000 )/2 # [14] "De $890.001 a $980.000 mensuales liquidos"       
-elsoc$inghogar_t[elsoc$inghogar_t==15]<-(980001 +1100000)/2 # [15] "De $980.001 a $1.100.000 mensuales liquidos"      
-elsoc$inghogar_t[elsoc$inghogar_t==16]<-(1100001+1260000)/2 # [16] "De $1.100.001 a $1.260.000 mensuales liquidos"    
-elsoc$inghogar_t[elsoc$inghogar_t==17]<-(1260001+1490000)/2 # [17] "De $1.260.001 a $1.490.000 mensuales liquidos"    
-elsoc$inghogar_t[elsoc$inghogar_t==18]<-(1490001+1850000)/2 # [18] "De $1.490.001 a $1.850.000 mensuales liquidos"    
-elsoc$inghogar_t[elsoc$inghogar_t==19]<-(1850001+2700000)/2 # [19] "De $1.850.001 a $2.700.000 mensuales liquidos"    
-elsoc$inghogar_t[elsoc$inghogar_t==20]<-(2700000)           # [20] "Mas de $2.700.000 a mensuales liquidos"
+# Crear el gráfico usando ggplot2
+graph1 <- data %>% filter(ola==1) %>% 
+  ggplot(aes(x = d01_01)) + 
+  geom_bar(fill = "coral")+
+  labs(title = "Estatus social subjetivo",
+       x = "Estatus social subjetivo",
+       y = "Frecuencia") +
+  geom_text(aes(label = ..count..), stat = "count", colour = "black", 
+    vjust = 1.5, position = position_dodge(.9)) + # agregamos freq de cada barra por grupo
+  theme_bw()
+
+graph1
 ```
 
-y luego *imputar* este valor medio a los casos NA
 
 ```{r}
-elsoc$inghogar_i <- ifelse(test = (is.na(elsoc$inghogar)), #¿existen NA en ingresos?
-                           yes = elsoc$inghogar_t,         #VERDADERO, remplazar con la media del tramo
-                           no = elsoc$inghogar)            #FALSE, mantener la variable original.
+graph <- data %>% filter(ola==1) %>% 
+  ggplot(aes(x =educacion, y = d01_01)) +
+  geom_boxplot() +
+  labs(x = "Educación", y = "Estatus social subjetivo") +
+  theme_minimal()+
+  scale_y_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9,10))
 
-elsoc$inghogar_i <- set_label(elsoc$inghogar_i,"Ingreso total del hogar (imputada)")
+graph
 ```
 
 ```{r}
-elsoc$ing_pcap <- elsoc$inghogar_i/elsoc$tamhogar
-elsoc$ing_pcap <- set_label(elsoc$ing_pcap,"Ingreso per cápita del hogar")
+graph2 <- data %>% 
+  ggplot(aes(x =factor(ola), y = d01_01)) +
+  geom_boxplot() +
+  labs(x = "Año", y = "Estatus social subjetivo") +
+  theme_minimal()+
+  scale_y_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9,10))
+
+graph2
 ```
 
 ```{r}
-elsoc$quintile<- dplyr::ntile(x = elsoc$ing_pcap,
-                              n = 5) # n de categorias, para quintiles usamos 5 
-elsoc$quintile <- factor(elsoc$quintile,c(1,2,3,4,5), c("Quintil 1","Quintil 2","Quintil 3","Quintil 4","Quintil 5")) 
-elsoc %>% 
-  group_by(quintile) %>% 
-  summarise(n=n(),
-            Media=mean(ing_pcap,na.rm = T),
-            Mediana=median(ing_pcap,na.rm = T)) %>% 
-  knitr::kable()
+graph3 <- data %>% filter(ola==1) %>% 
+  ggplot(aes(x = d01_01, fill = factor(m0_sexo))) + 
+  geom_bar(position = "dodge2") +
+  xlab("Estatus social subjetivo") +
+  ylab("Cantidad") + 
+  labs(fill="Sexo")+
+  scale_fill_discrete(labels = c('Hombre','Mujer'))+
+  geom_text(aes(label = ..count..), stat = "count", colour = "black", 
+    vjust = 1.5, position = position_dodge(.9), size=3) # agregamos freq de cada barra por grupo
 
+graph3
+```
+
+Una forma alternativa
+
+```{r}
+data %>% filter(ola==1) %>% 
+  ggplot(aes(x = d01_01, fill = factor(m0_sexo))) + 
+  geom_bar() +
+  xlab("Estatus social subjetivo") +
+  ylab("Cantidad") + 
+  labs(fill="Sexo")+
+  scale_fill_discrete(labels = c('Hombre','Mujer'))
+```
+
+Otra forma alternativa
+
+```{r}
+data %>% filter(ola==1) %>% ggplot(aes(x = d01_01)) + 
+  geom_bar() +
+  xlab("Estatus social subjetivo") +
+  ylab("Cantidad")+
+  facet_wrap(~factor(m0_sexo))+
+  geom_text(aes(label = ..count..), stat = "count", colour = "white", 
+    vjust = 1.5, position = position_dodge(.9)) # agregamos freq de cada barra por grupo
+```
+
+# Distribución de variables
+
+## Distribuciones continuas y discretas
+
+* Distribución continua
+
+Las distribuciones continuas aplican a variables numericas (intervalares y de razón). Es una distribución que describe la probabilidad o frecuencia de que una variable continua tome un valor particular dado un intervalo o un rango.
+
+```{r}
+graph4 <- ggplot(data, aes(x = as.numeric(m0_edad))) +
+  geom_histogram(binwidth=0.6, colour="black", fill="yellow") +
+  theme_bw() +
+  xlab("Edad") +
+  ylab("Cantidad")
+
+graph4 
+```
+
+Por su parte, las distribuciones discretas son comunmente utilizadas con variables categóricas (nominales y ordinales). Son distribuciones en las que una variable sólo puede tomar un número contable de valores distintos. En otras palabras, es una distribución en la que la variable sólo puede tomar valores específicos, en lugar de cualquier valor dentro de un intervalo.
+
+```{r}
+graph5 <- data %>% filter(ola==1) %>% 
+  ggplot(aes(x = factor(m01))) + 
+  geom_bar(fill = "coral")+
+  labs(title = "Educación",
+       x = "Educación",
+       y = "Frecuencia") +
+  geom_text(aes(label = ..count..), stat = "count", colour = "black", 
+    vjust = 1.5, position = position_dodge(.9)) + # agregamos freq de cada barra por grupo
+  theme_bw()
+
+graph5 
+```
+
+## Asimetría y curtosis
+
+La asimetría es la medida en que la distribución de una variable se aleja de una distribución simétrica a ambos lados de su punto central. ¿Qué tan simétrica es la distribución de mis datos en ambos lados de sus colas respecto al centro?
+
+Por su parte, la curtosis es la medida del grado de agrupamiento de los datos de una distribución. ¿Qué tan agrupados están mis datos en la distribución?
+
+Ambas son útiles para conocer de mejor manera la distribución de nuestros datos, además de que nos permiten conocer bajo qué supuestos podemos realizar analisis más complejos (próximos cursos de la carrera).
+
+![](images/asimetria.png)
+
+### Tabla de Asimetría (Skewness)
+
+| Valor de Asimetría | Interpretación               | Definición                                                                 |
+|--------------------|------------------------------|---------------------------------------------------------------------------|
+| 0                  | Distribución simétrica       | La distribución es perfectamente simétrica, sin sesgo a la izquierda o derecha. |
+| > 0 y < 0.5        | Asimetría positiva baja      | La distribución tiene una cola ligeramente más larga hacia los valores mayores. |
+| 0.5 - 1            | Asimetría positiva moderada  | La distribución tiene una cola más notable hacia los valores mayores.     |
+| > 1                | Asimetría positiva alta      | La distribución tiene una cola larga hacia los valores mayores.           |
+| < 0 y > -0.5       | Asimetría negativa baja      | La distribución tiene una cola ligeramente más larga hacia los valores menores. |
+| -0.5 - -1          | Asimetría negativa moderada  | La distribución tiene una cola más notable hacia los valores menores.     |
+| < -1               | Asimetría negativa alta      | La distribución tiene una cola larga hacia los valores menores.           |
+
+### Tabla de Curtosis
+
+| Valor de Curtosis  | Interpretación               | Definición                                                                 |
+|--------------------|------------------------------|---------------------------------------------------------------------------|
+| 0                  | Distribución mesocúrtica     | La distribución tiene colas y un pico similar a una distribución normal.   |
+| < 0                | Distribución platicúrtica    | La distribución es más plana, con colas más ligeras y menos datos en el centro. |
+| > 0 y < 1          | Leve leptocúrtica            | La distribución tiene un pico ligeramente más alto y colas más pesadas que una normal. |
+| 1 - 2              | Leptocúrtica moderada        | La distribución tiene un pico más alto y colas más pesadas que una normal. |
+| > 2                | Leptocúrtica alta            | La distribución tiene un pico muy alto y colas mucho más pesadas que una normal. |
+
+
+## Análisis de la forma de una distribución
+
+Analicemos e interpretemos la forma de la distribución de nuestras variables. En este ejemplo tenemos:
+
+una de razón,
+una ordinal de 10 categorías.
+
+```{r}
+data <- data %>% filter(ola==1)
+psych::describe(data$m0_edad)
 ```
 
 ```{r}
-elsoc$quintilemiss <- factor(elsoc$quintile,ordered = T)
-elsoc$quintilemiss <- ifelse(test=is.na(elsoc$quintilemiss),yes = 6,no = elsoc$quintilemiss)
-elsoc$quintilemiss <- factor(elsoc$quintilemiss ,levels = c(1,2,3,4,5,6),labels =  c("Quintil 1","Quintil 2","Quintil 3","Quintil 4","Quintil 5","Missing")) 
-elsoc %>% group_by(quintilemiss) %>% summarise(n=n())
+ggplot(data = data, 
+       mapping = aes(x = m0_edad)) + 
+  geom_density(color = "black", fill = "#FA8072", alpha = 0.8)  + 
+  labs(title ="Diagrama densidad: Edad", 
+       x = "Edad", 
+       y = "Frecuencia") 
 ```
 
-## Variables dummy
-
-Una forma de pasar una variable categórica a dummies es con la función dummy_cols del paquete fastDummies
+A partir de los estadísticos entregados y la gráfica de densidad, sabemos que la variable edad tiene una asimetría positiva muy baja (skew = 0.07), lo cual indica que la distribución de los datos es casi simétrica. Esto es consistente con la gráfica, donde la mayor parte de los datos está distribuida de manera uniforme alrededor del centro. Aunque la curtosis negativa (kurtosis = -0.98) indica una distribución platicúrtica, la gráfica muestra una concentración notable de datos en el centro (aproximadamente entre 30 y 60 años), lo que sugiere una distribución central más prominente de lo que la curtosis podría sugerir por sí sola.
 
 ```{r}
-elsoc <- dummy_cols(elsoc, select_columns = "quintilemiss")
-head(elsoc[,16:22])
+psych::describe(data$d01_01)
 ```
-
-¿cómo hacerlo para una variable *numérica*?
-
-También existen muchas formas, como por ejemplo establecer como punto de corte la media o la mediana, o ver la distribución de las respuestas y tratar de establecer una distribución homogénea entre las dos nuevas categorías. 
-
-Si recordamos la distribución de nuestra variable dependiente antes de construir el índice de participación: 
-
-```{r, fig.width=10}
-plot_stackfrq(elsoc[,c("part01","part02","part03","part04")]) + theme(legend.position="bottom")
-```
-
-y luego en el índice de participación
 
 ```{r}
-summary(elsoc$partpol)
+ggplot(data = data, 
+       mapping = aes(x = d01_01)) + 
+  geom_density(color = "black", fill = "darkred", alpha = 0.8)  + 
+  labs(title ="Histograma densidad: Estatus social subjetivo", 
+       x = "Satisfaccion", 
+       y = "Frecuencia") 
 ```
 
-Podemos notar que la mayoría de las respuestas se agrupan en la categoría "nunca" de las variables por separado y luego en el índice la mediana también corresponde al valor mínimo posible de "4" que es la suma de todas las personas que nunca han participado en ninguna de las opciones. Por lo tanto, tenemos dos criterios que nos permiten decidir que nuestra variable dependiente puede ser considera como dummy bajo los valores 0=nunca ha participado; y 1=si ha participado.
-
-Una forma de hacer esta agrupación de valores es con la función case_when del paquete dplyr (similar a ifelse)
+A partir de los estadísticos entregados y la gráfica de densidad, sabemos que la variable "Estatus social subjetivo" tiene una asimetría prácticamente nula (skew = -0.02), lo cual indica que la distribución de los datos es casi perfectamente simétrica. Esto es consistente con la gráfica, que muestra una distribución equilibrada a ambos lados del centro. La curtosis positiva (kurtosis = 1.19) indica una distribución leptocúrtica, con una mayor concentración de datos en el centro y colas más gruesas. La gráfica muestra varios picos prominentes, especialmente alrededor del valor 5, lo que sugiere una alta concentración de respuestas en ese punto.
 
 ```{r}
-elsoc <- elsoc %>% rowwise() %>%  mutate(partpol_dummy = case_when(partpol==4~0,
-                                                                   partpol>4~1,
-                                                                   TRUE ~ NA))
-table(elsoc$partpol_dummy)
+psych::describe(data$d02_01)
+```
+```{r}
+ggplot(data = data, 
+       mapping = aes(x = d02_01)) + 
+  geom_density(color = "black", fill = "darkred", alpha = 0.8)  + 
+  labs(title ="Histograma densidad: Justicia distributiva: pensiones", 
+       x = "Satisfaccion", 
+       y = "Frecuencia") 
 ```
 
-# Regresión lineal
+A partir de los estadísticos entregados y la gráfica de densidad, sabemos que la variable "Justicia distributiva: pensiones" tiene una asimetría positiva (skew = 0.85), lo cual indica que la distribución de los datos tiene una cola más larga hacia los valores mayores. Esto es consistente con la gráfica, donde se observa una gran concentración de datos alrededor del valor 2 y una extensión hacia valores más altos. La curtosis negativa (kurtosis = -0.15) sugiere que la distribución es ligeramente platicúrtica, con una menor concentración en el centro y más dispersión en los extremos. Aunque hay un pico pronunciado en el valor 2, los otros valores muestran una mayor dispersión.
 
-veamos primero las diferencias de usar cada tipo de variable de ingreso
+
+## Distribuciones empíricas y teóricas
+
+una distribución empírica (u observada) es la distribución de los valores que asume la variable en un grupo concreto a partir de una observación.
+
+Mientras que, por su parte, una distribución teórica es función matématica que expresan la distribución de un conjunto de números mediante su probabilidad de ocurencia. En palabras sencillas, es una función de densidad que permite asignar probabilidades de ocurrencia a los resultados.
+
+Cuando una distribución empírica se asejema a una teórica, podemos aplicarle a la primera las propiedades de la última. Así, nos permiten hacer inferencia estadística y conocer una serie de características de la población.
+
+Una de las distribuciones teóricas más utilizada es la normal o Gaussiana, la cual es una herramienta potente y ampliamente utilizada en estadística y probabilidad, debido a sus numerosas propiedades útiles y a sus aplicaciones prácticas en un gran número de campos y contextos.
+
+Contrastemos ahora la distribución empírica de nuestras variables con la distribución normal
+
 
 ```{r}
-fit01<- lm(partpol~ing_pcap,data=elsoc)
-fit02<- lm(partpol~quintile,data=elsoc)
-fit03<- lm(partpol~quintilemiss,data=elsoc)
-```
-
-```{r, results='asis'}
-labs01 <- c("Intercepto","Ingreso per/cap",
-            "Quintil 2","Quintil 3","Quintil 4","Quintil 5",
-            "Quintil 2","Quintil 3","Quintil 4","Quintil 5","Quintil perdido")
+ggplot(data, aes(m0_edad)) + 
+  geom_histogram(aes(x = m0_edad, y = ..density..), bins = 50, color = "black", fill = "grey") +
+  geom_density(color = "blue")
 ```
 
 
-```{r, results='asis', eval=FALSE}
-#screenreg para que se vea en R
-screenreg(list(fit01,fit02,fit03),custom.coef.names = labs01)
-```
 
-```{r, results='asis'}
-# htmlreg para que se vea en el sitio web
-htmlreg(list(fit01,fit02,fit03),doctype = FALSE, 
-        custom.model.names = c("Modelo 1","Modelo 2","Modelo 3"),
-        custom.coef.names = labs01)
-```
-
-El tercer modelo, con el quintil de casos perdidos, es el que entrega más información y además tiene mayor cantidad de casos (3740).
 
 ```{r}
-fit04<- lm(partpol~sexo,data=elsoc)
-fit05<- lm(partpol~sexo+edad,data=elsoc)
-fit06<- lm(partpol~sexo+edad+quintilemiss,data=elsoc)
-fit07<- lm(partpol~sexo+edad+quintilemiss+pospol,data=elsoc)
-
-labs02 <- c("Intercepto","Sexo (mujer=1)","Edad",
-            "Quintil 2","Quintil 3","Quintil 4","Quintil 5","Quintil perdido",
-            "Izquierda (ref. derecha)","Centro","Idep./Ninguno")
+ggplot(data, aes(m0_edad)) + 
+  geom_histogram(aes(x = m0_edad, y = ..density..), bins = 50, color = "black", fill = "grey") +
+  geom_density(color = "blue")+
+  stat_function(fun = dnorm, args = list(mean = mean(data$m0_edad), sd = sd(data$m0_edad)))
 ```
 
-```{r, results='asis', eval=FALSE}
-screenreg(list(fit04,fit05,fit06, fit07),custom.coef.names = labs02)
-```
+En la primera figura vemos la distribución empírica de la variable edad (histograma y densidad). En la segunda, agregamos la curva normal (o distribución), y obtenemos una evaluación gráfica de qué tan bien nuestros datos se ajustan a esta distribución teórica.
 
-```{r, results='asis'}
-htmlreg(list(fit04,fit05,fit06, fit07),doctype = FALSE, 
-        custom.model.names = c("Modelo 1","Modelo 2","Modelo 3", "Modelo 4"),
-        custom.coef.names = labs02)
-```
-
-El Modelo 1 indica que las mujeres participan 0.13 unidades menos en comparación con los hombres, sin embargo, esta relación no es estadísticamente significativa (p>0.05).
-
-El Modelo 2 indica que por cada unidad que aumenta la edad, la participación política disminuye en promedio 0.04 unidades, con un 99.9% de significación estadístico y manteniendo el sexo constante. Esta relación es consistente en los otros dos modelos.
-
-El Modelo 3 indica que en medida que aumenta el ingreso, la participación política tiende a ser más alta. En específico, en comparación con el menor quintil de ingreso, al pertenecer a un quintil de ingreso 2 (p<0.05), 3, 4 y 5 (p<0.001), la participación política aumenta, manteniendo el resto de las variables constantes. Este efecto disminuye un poco en el modelo siguiente, pero mantiene un efecto lineal (a mayor quintil, mayor participación).
-
-En el Modelo 4 que incluye la posición política de los/as encuestados, la participación política de las personas de izquierda, centro o independiente/ninguno es menor en comparación con las personas de derecha, con una significación estadística del 99.9%, manteniendo el resto de las variables constantes.
-
-# Regresión logística
+Hagamos lo mismo con la variable estatus social subjetivo
 
 ```{r}
-fit01log <- glm(partpol_dummy ~ sexo, data = elsoc, family = "binomial")
-fit02log <- glm(partpol_dummy ~ sexo+edad,data=elsoc, family = "binomial")
-fit03log <- glm(partpol_dummy ~ sexo+edad+quintilemiss,data=elsoc, family = "binomial")
-fit04log <- glm(partpol_dummy ~ sexo+edad+quintilemiss+pospol,data=elsoc, family = "binomial")
+ggplot(data, aes(d01_01)) + 
+  geom_histogram(aes(x = d01_01, y = ..density..), color = "black", fill = "grey") +
+  scale_x_continuous(limits = c(0,10)) +
+  geom_density(color = "blue")+
+    stat_function(fun = dnorm, args = list(mean = mean(data$d01_01), sd = sd(data$d01_01)))
 ```
 
-```{r, results='asis', eval=FALSE}
-screenreg(list(fit01log,fit02log,fit03log, fit04log),custom.coef.names = labs02)
+Una mejor manera de ver si nuestros datos o distribución empírica se ajustan a una distribución normal, es mediante los Q-Q plots.
+
+```{r}
+ggplot(data, aes(sample = m0_edad)) +
+  stat_qq() +
+  stat_qq_line(color = "blue")
 ```
 
-```{r, results='asis'}
-htmlreg(list(fit01log,fit02log,fit03log, fit04log),doctype = FALSE, 
-        custom.model.names = c("Modelo 1 (log odds)","Modelo 2(log odds)","Modelo 3(log odds)", "Modelo 4(log odds)"),
-        custom.coef.names = labs02)
+```{r}
+ggplot(data, aes(sample = d01_01)) +
+  stat_qq() +
+  stat_qq_line(color = "blue")
 ```
 
-En el Modelo 1, en comparación con los hombres, el log-odds de participación política para las mujeres disminuye en 0.16 (p<0.05). Este efecto se vuelve positivo al controlar por el resto de variables en los modelos 3 y 4, pero pierde su significación estadística.
-
-En el Modelo 2 se incluye la variable edad, donde su efecto indica que por cada unidad que aumenta la edad, el log-odds de participación política disminuye en 0.04 (p<0.001), manteniendo el sexo constante. Este efecto es consistente en el resto de los modelos al controlar por las demás variables.
-
-En el Modelo 3 se incluyen los quintiles de ingreso como variable predictora que indican que, en comparación con el menor quintil de ingreso, al poseer un quintil de ingreso de 3, 4 o 5 los log-odds de participación política aumentan (p<0.001), manteniendo el resto de las variables constantes. Este efecto disminuye un poco en el modelo siguiente, pero mantiene un efecto lineal (a mayor quintil, mayor log-odds).
-
-Finalmente, en el Modelo 4 que incluye la posición política de los/as encuestados, el log-odds de ser de izquierda, centro o independiente/ninguno disminuye en comparación con las personas de derecha (p<0.001), manteniendo el resto de las variables constantes.
+La idea es que ajuste la curva teorica (la recta) con la mayor cantidad de puntos (la variable observada). Nos permite ver donde ajusta y donde no ajusta.
