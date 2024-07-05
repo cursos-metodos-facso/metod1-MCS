@@ -21,7 +21,7 @@ En detalle, aprenderemos:
 
 ## Recursos de la práctica
 
-En esta práctica trabajaremos con la base de datos de la Encuesta Suplementaria de Ingresos (ESI) del 2021 realizada por el [Instituto Nacional de Estadísticas (INE)](https://www.ine.gob.cl/). Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace [{{< fa table >}} `ESI 2021`](https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/Input/data/esi-2021-ocupados.RData) podrán descargar el archivo que contiene la base ESI 2021.
+En esta práctica trabajaremos con la base de datos de la Encuesta Suplementaria de Ingresos (ESI) del 2021 realizada por el [Instituto Nacional de Estadísticas (INE)](https://www.ine.gob.cl/). Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace [{{< fa table >}} `ESI 2021`](https://github.com/cursos-metodos-facso/metod-1/raw/main/resource/Input/data/esi-2021-ocupados.RData) podrán descargar el archivo que contiene la base ESI 2021.
 
 
 # ¿Qué es la inferencia estadística?
