@@ -110,6 +110,8 @@ website:
           file: resource/07-resource.qmd
         - text: "Práctico 8"
           file: resource/08-resource.qmd
+        - text: "Práctico 9"
+          file: resource/09-resource.qmd
 
   page-footer:
     left: |
