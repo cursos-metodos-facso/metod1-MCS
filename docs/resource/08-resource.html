@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Práctico 8. Índices y Escalas – Metodología I - MCS</title>
+<title>Metodología I - MCS - Práctico 8. Índices y Escalas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -81,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -96,7 +90,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -104,14 +97,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Práctico 8. Índices y Escalas – Metodología I - MCS">
+<meta property="og:title" content="Metodología I - MCS - Práctico 8. Índices y Escalas">
 <meta property="og:description" content="Metodología I - Magíster en Ciencias Sociales">
 <meta property="og:image" content="https://metod1-mcs.netlify.app/files/social-image-f22.png">
-<meta property="og:site_name" content="Metodología I - MCS">
+<meta property="og:site-name" content="Metodología I - MCS">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="500">
 <meta property="og:image:width" content="500">
-<meta name="twitter:title" content="Práctico 8. Índices y Escalas – Metodología I - MCS">
+<meta name="twitter:title" content="Metodología I - MCS - Práctico 8. Índices y Escalas">
 <meta name="twitter:description" content="Metodología I - Magíster en Ciencias Sociales">
 <meta name="twitter:image" content="https://metod1-mcs.netlify.app/files/social-image-f22.png">
 <meta name="twitter:creator" content="@juankcastillo">
@@ -125,60 +118,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Metodología I - MCS</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html"> 
-<span class="menu-text">Programa</span></a>
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Programa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html"> 
-<span class="menu-text">Planificación</span></a>
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text">Planificación</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../content/index.html"> 
-<span class="menu-text">Clases</span></a>
+    <a class="nav-link" href="../content/index.html" rel="" target="">
+ <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../trabajos.html"> 
-<span class="menu-text">Trabajos</span></a>
+    <a class="nav-link" href="../trabajos.html" rel="" target="">
+ <span class="menu-text">Trabajos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../resource/index.html" aria-current="page"> 
-<span class="menu-text">Practicos</span></a>
+    <a class="nav-link active" href="../resource/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Practicos</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resource/08-resource.html">Práctico 8</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resource/08-resource.html">Práctico 8</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -244,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -319,9 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <section id="objetivos-de-la-práctica" class="level1">
 <h1>Objetivos de la práctica</h1>
@@ -342,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="librerías" class="level2">
 <h2 class="anchored" data-anchor-id="librerías">Librerías</h2>
 <p>Cargamos las librerías necesarias:</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-1_6c936c7f5ebdcd0d8a427378e48b4418">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pacman")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -362,20 +353,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Sin embargo, para realizar este ejercicio práctico utilizaremos una muestra aleatoria de esta base de datos para simplificar el proceso de construcción de índices. El código que crea este subset está disponible <a href="https://github.com/cursos-metodos-facso/investigacion-cuantitativa/blob/main/files/subset_casen.R">acá</a></p>
 <section id="cargar-base-de-datos" class="level3">
 <h3 class="anchored" data-anchor-id="cargar-base-de-datos">Cargar base de datos</h3>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-2_22c76d896b63f415a086cafe76349df8">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/investigacion-cuantitativa/raw/main/files/data/casen2022.RData"</span>)) <span class="co">#Cargar base de datos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="descripción-de-variables" class="level3">
 <h3 class="anchored" data-anchor-id="descripción-de-variables">Descripción de variables</h3>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-3_2f4cc2f63cc296e366fd5cb10beefc55">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(<span class="fu">dfSummary</span>(casen2022, <span class="at">headings=</span><span class="cn">FALSE</span>, <span class="at">graph.col =</span> <span class="cn">FALSE</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-4_c8b6972510e469047a2d5726f0b7c9d8">
 <div class="cell-output-display">
 <div class="container st-container">
 
-<table class="table table-striped table-bordered st-table st-table-striped st-table-bordered st-multiline caption-top table-sm small" data-quarto-postprocess="true">
+<table class="table table-striped table-bordered st-table st-table-striped st-table-bordered st-multiline table-sm small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 14%">
 <col style="width: 14%">
@@ -401,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">asistencia [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en asistencia</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -414,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -441,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">rezago [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en rezago escolar</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -454,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -481,7 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">escolaridad [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en escolaridad</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -494,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -521,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">4</td>
 <td style="text-align: left;">malnutricion [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en malnutrición en niños/as</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -534,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -561,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">sist_salud [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en adscripción a sistema de salud</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -574,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -601,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">6</td>
 <td style="text-align: left;">atencion [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en atención</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -614,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -641,7 +632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">ocupacion [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en ocupación</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -654,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -681,7 +672,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">8</td>
 <td style="text-align: left;">seg_social [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en seguridad social</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -694,7 +685,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -721,7 +712,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">9</td>
 <td style="text-align: left;">jubilacion [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en jubilaciones</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -734,7 +725,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -761,7 +752,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">10</td>
 <td style="text-align: left;">habitabilidad [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en habitabilidad</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -774,7 +765,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -801,7 +792,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">11</td>
 <td style="text-align: left;">hacinamiento [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en hacinamiento</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -814,7 +805,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -841,7 +832,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">12</td>
 <td style="text-align: left;">vivienda [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en estado de la vivienda</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -854,7 +845,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -881,7 +872,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">13</td>
 <td style="text-align: left;">serv_basicos [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en servicios básicos</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -894,7 +885,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -921,7 +912,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">14</td>
 <td style="text-align: left;">entorno [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en entorno</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -934,7 +925,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -961,7 +952,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">15</td>
 <td style="text-align: left;">ap_part_social [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en apoyo y participación social</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -974,7 +965,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -1001,7 +992,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">16</td>
 <td style="text-align: left;">trato [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en trato igualitario</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -1014,7 +1005,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -1041,7 +1032,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">17</td>
 <td style="text-align: left;">seguridad [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Hogar carente en seguridad</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 0</td>
@@ -1054,7 +1045,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">0</td>
@@ -1081,7 +1072,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">18</td>
 <td style="text-align: left;">region [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Región</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Mean (sd) : 8.8 (4.3)</td>
@@ -1105,7 +1096,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;">19</td>
 <td style="text-align: left;">area [haven_labelled, vctrs_vctr, double]</td>
 <td style="text-align: left;">Área</td>
-<td style="text-align: left; padding: 8; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 8; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: left; padding: 0; margin: 0; border: 0;">Min : 1</td>
@@ -1118,7 +1109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table></td>
-<td style="text-align: left; padding: 0; vertical-align: middle;"><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<td style="text-align: left; padding: 0; vertical-align: middle;"><table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color:transparent">
 <td style="text-align: right; padding: 0 2px 0 7px; margin: 0; border: 0;">1</td>
@@ -1144,7 +1135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 
-<p>Generated by <a href="https://github.com/dcomtois/summarytools">summarytools</a> 1.0.1 (<a href="https://www.r-project.org/">R</a> version 4.3.2)<br>2024-06-28</p>
+<p>Generated by <a href="https://github.com/dcomtois/summarytools">summarytools</a> 1.0.1 (<a href="https://www.r-project.org/">R</a> version 4.3.2)<br>2025-03-20</p>
 </div>
 </div>
 </div>
@@ -1155,7 +1146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="medición-de-pobreza-multidimensional-en-cuatro-dimensiones-hasta-2014" class="level2">
 <h2 class="anchored" data-anchor-id="medición-de-pobreza-multidimensional-en-cuatro-dimensiones-hasta-2014">Medición de pobreza multidimensional en cuatro dimensiones (hasta 2014)</h2>
 <p>Seleccionamos solo los indicadores que eran utilizados hasta 2014</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-5_959c7d05f2bebdf62a0be135231b9cc6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>indicadores2014 <span class="ot">&lt;-</span> casen2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(asistencia, </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                                        rezago, </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                                        escolaridad, </span>
@@ -1172,7 +1163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_all</span>(<span class="sc">~</span>(<span class="fu">as.numeric</span>(.))) <span class="co"># Convertimos todas las variables a numéricas</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Con la función <em>mutate</em> creamos una nueva variable para cada dimensión, que contenga el promedio simple de los tres indicadores correspondientes.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-6_c5a6bbf31563fbd1dec9b0ad8e252be5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>indicadores2014 <span class="ot">=</span> indicadores2014 <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">educ =</span> <span class="fu">mean</span>(<span class="fu">c</span>(asistencia, rezago, escolaridad)),</span>
@@ -1182,14 +1173,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Luego, como la pobreza multidimensional consideraba cuatro dimensiones equivalentes (sin ponderar), es posible obtener el índice de pobreza multidimensional a partir del promedio de las cuatro dimensiones.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-7_c3e4352d70b3457a925fc172cbbd5e69">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>indicadores2014 <span class="ot">=</span> indicadores2014 <span class="sc">%&gt;%</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pobreza =</span> <span class="fu">mean</span>(<span class="fu">c</span>(educ, salud, trabajo, vivienda))) <span class="sc">%&gt;%</span> </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Lo que nos da este resultado:</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-8_5552977edfee501d410c282d6985b6ea">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>indicadores2014 <span class="sc">%&gt;%</span> <span class="fu">select</span>(pobreza) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>) <span class="co"># Primeros 10 casos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 1
@@ -1214,7 +1205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>¿Cómo podemos conocer el porcentaje total de pobreza multidimensional del país?</p>
 <p>El PNUD considera como límite para el índice de cuatro dimensiones un 25% de pobreza multidimensional (lo que equivale a tener carencia en los tres indicadores de una dimensión). Por lo tanto, podemos utilizar un condicional que indique “si” existe pobreza muldimensional cuando nuestra variable “pobreza” sea mayor o igual a 0.25 y que indique que “no” existe pobreza multidimensional cuando la variable “pobreza” sea menor a 0.25. <em>case_when</em> viene en dplyr.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-9_ed0580637401d93892f20808bc518bd7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>indicadores2014 <span class="ot">&lt;-</span> indicadores2014 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pobreza =</span> <span class="fu">case_when</span>(pobreza<span class="sc">&gt;=</span><span class="fl">0.25</span><span class="sc">~</span><span class="st">"si"</span>,</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                                                      pobreza<span class="sc">&lt;</span><span class="fl">0.25</span><span class="sc">~</span><span class="st">"no"</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                           )</span>
@@ -1232,7 +1223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Veamos ahora el mismo proceso, pero considerando la quinta dimensión que fue agregada en 2016 sobre Redes y Cohesión Social.</p>
 <p>En esta operacionalización del índice de pobreza multidimensional las cuatro dimensiones originales equivalen a un 22.5% cada una, mientras que la nueva dimensión de redes y cohesión social equivale a un 10%.</p>
 <p>Seleccionemos solo los indicadores que son utilizados desde 2016.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-10_7fe892e9aa0cf299ea92c9680ef9bfbf">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>indicadores2016 <span class="ot">&lt;-</span> casen2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(asistencia, </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                                        rezago, </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                                        escolaridad, </span>
@@ -1254,7 +1245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_all</span>(<span class="sc">~</span>(<span class="fu">as.numeric</span>(.))) <span class="co"># Convertimos todas las variables a numéricas</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Seguimos los mismos pasos que con el índice anterior, estimando un promedio simple para cada una de las dimensiones.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-11_54c09afa25d59bd68cfa89e3af1ea291">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>indicadores2016 <span class="ot">=</span> indicadores2016 <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">educ =</span> <span class="fu">mean</span>(<span class="fu">c</span>(asistencia, rezago, escolaridad)),</span>
@@ -1265,14 +1256,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Sin embargo, como en esta ocasión se trata de un índice ponderado (con dimensiones con distinto peso cada una), multiplicamos cada dimensión por su peso correspondiente y las sumamos.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-12_67e5cdacd826ca035339ee3618c85968">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>indicadores2016 <span class="ot">=</span> indicadores2016 <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pobreza_pond =</span> (educ<span class="sc">*</span><span class="fl">22.5</span>) <span class="sc">+</span> (salud<span class="sc">*</span><span class="fl">22.5</span>) <span class="sc">+</span> (trabajo<span class="sc">*</span><span class="fl">22.5</span>) <span class="sc">+</span> (vivienda<span class="sc">*</span><span class="fl">22.5</span>) <span class="sc">+</span> (redes_cohesion<span class="sc">*</span><span class="dv">10</span>)) <span class="sc">%&gt;%</span>  </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Lo que nos da este resultado:</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-13_49eb852c699b5f5e7c2f953ee7a59616">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>indicadores2016 <span class="sc">%&gt;%</span> <span class="fu">select</span>(pobreza_pond) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>) <span class="co"># Primeros 10 casos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 1
@@ -1297,7 +1288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>¿Cómo podemos conocer el porcentaje total de pobreza multidimensional del país?</p>
 <p>El PNUD considera como límite para el índice de cinco dimensiones un 22.5% de pobreza multidimensional (lo que equivale a tener carencia en los tres indicadores de una dimensión). Por lo tanto, podemos utilizar un condicional que indique “si” existe pobreza muldimensional cuando nuestra variable “pobreza” sea mayor o igual a 22.5 y que indique que “no” existe pobreza multidimensional cuando la variable “pobreza” sea menor a 22.5.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-14_46eb0d6730997da8ef82972a5f11e5f8">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>indicadores2016 <span class="ot">&lt;-</span> indicadores2016 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pobreza =</span> <span class="fu">case_when</span>(pobreza_pond<span class="sc">&gt;=</span><span class="fl">22.5</span><span class="sc">~</span><span class="st">"si"</span>,</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                                                      pobreza_pond<span class="sc">&lt;</span><span class="fl">22.5</span><span class="sc">~</span><span class="st">"no"</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                           )</span>
@@ -1313,7 +1304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="otros" class="level3">
 <h3 class="anchored" data-anchor-id="otros">Otros</h3>
 <p>Podemos utilizar otras variables de la CASEN para poder conocer cómo se distribuye la pobreza multidimensional en Chile. Por ejemplo, porcentaje de pobreza multidimensional por región:</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-15_601f58e8f492070983eb1c8684701946">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(indicadores2016<span class="sc">$</span>region, indicadores2016<span class="sc">$</span>pobreza), <span class="at">margin =</span> <span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    
@@ -1337,7 +1328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>o pobreza multidimensional por zona geográfica 1) urbano 2) rural</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-16_461247d7a31c1fb2c17fdbea87590a1a">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(indicadores2016<span class="sc">$</span>area, indicadores2016<span class="sc">$</span>pobreza), <span class="at">margin =</span> <span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   
@@ -1359,7 +1350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="librerías-1" class="level2">
 <h2 class="anchored" data-anchor-id="librerías-1">Librerías</h2>
 <p>Las librerías que utilizaremos esta sesión son las siguientes:</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-17_86349dddabda5bb8a404ff959e0f0899">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pacman") # Cargar sólo si no la tenemos instalada</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># library(pacman)</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># conjunto de paquetes, sobre todo dplyr y ggplot2</span></span>
@@ -1373,70 +1364,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())       <span class="co"># para limpiar el entorno de trabajo</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Además, instalaremos la librería <code>jogRu</code> desde github, que nos permitirá calcular el alfa de Chronbach para variables ordinales.</p>
-<div class="cell">
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-18_7d09b179128853ee2d98c4757aa20f11">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"jogrue/jogRu"</span>, <span class="at">force =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>yaml       (2.3.7  -&gt; 2.3.8   ) [CRAN]
-xfun       (0.43   -&gt; 0.45    ) [CRAN]
-highr      (0.10   -&gt; 0.11    ) [CRAN]
-evaluate   (0.23   -&gt; 0.24.0  ) [CRAN]
-fs         (1.6.3  -&gt; 1.6.4   ) [CRAN]
-glue       (1.6.2  -&gt; 1.7.0   ) [CRAN]
-cli        (3.6.1  -&gt; 3.6.3   ) [CRAN]
-digest     (0.6.33 -&gt; 0.6.36  ) [CRAN]
-sass       (0.4.8  -&gt; 0.4.9   ) [CRAN]
-rlang      (1.1.2  -&gt; 1.1.4   ) [CRAN]
-fastmap    (1.1.1  -&gt; 1.2.0   ) [CRAN]
-cachem     (1.0.8  -&gt; 1.1.0   ) [CRAN]
-tinytex    (0.49   -&gt; 0.51    ) [CRAN]
-knitr      (1.45   -&gt; 1.47    ) [CRAN]
-jsonlite   (1.8.7  -&gt; 1.8.8   ) [CRAN]
-htmltools  (0.5.7  -&gt; 0.5.8.1 ) [CRAN]
-bslib      (0.6.1  -&gt; 0.7.0   ) [CRAN]
-fansi      (1.0.5  -&gt; 1.0.6   ) [CRAN]
-munsell    (0.5.0  -&gt; 0.5.1   ) [CRAN]
-farver     (2.1.1  -&gt; 2.1.2   ) [CRAN]
-vctrs      (0.6.4  -&gt; 0.6.5   ) [CRAN]
-gtable     (0.3.4  -&gt; 0.3.5   ) [CRAN]
-ggplot2    (3.4.4  -&gt; 3.5.1   ) [CRAN]
-stringi    (1.8.2  -&gt; 1.8.4   ) [CRAN]
-rmarkdown  (2.26   -&gt; 2.27    ) [CRAN]
-backports  (1.4.1  -&gt; 1.5.0   ) [CRAN]
-rstudioapi (0.15.0 -&gt; 0.16.0  ) [CRAN]
-data.table (1.15.2 -&gt; 1.15.4  ) [CRAN]
-Hmisc      (5.1-1  -&gt; 5.1-3   ) [CRAN]
-psych      (2.3.9  -&gt; 2.4.6.26) [CRAN]
-package 'yaml' successfully unpacked and MD5 sums checked
-package 'xfun' successfully unpacked and MD5 sums checked
-package 'highr' successfully unpacked and MD5 sums checked
-package 'evaluate' successfully unpacked and MD5 sums checked
+<pre><code>yaml        (2.3.8  -&gt; 2.3.10) [CRAN]
+xfun        (0.45   -&gt; 0.51  ) [CRAN]
+evaluate    (1.0.1  -&gt; 1.0.3 ) [CRAN]
+R6          (2.5.1  -&gt; 2.6.1 ) [CRAN]
+fs          (1.6.4  -&gt; 1.6.5 ) [CRAN]
+glue        (1.7.0  -&gt; 1.8.0 ) [CRAN]
+cli         (3.6.2  -&gt; 3.6.4 ) [CRAN]
+digest      (0.6.34 -&gt; 0.6.37) [CRAN]
+rlang       (1.1.3  -&gt; 1.1.5 ) [CRAN]
+mime        (0.12   -&gt; 0.13  ) [CRAN]
+tinytex     (0.53   -&gt; 0.56  ) [CRAN]
+knitr       (1.47   -&gt; 1.50  ) [CRAN]
+jsonlite    (1.8.8  -&gt; 1.9.1 ) [CRAN]
+fontawesome (0.5.2  -&gt; 0.5.3 ) [CRAN]
+bslib       (0.8.0  -&gt; 0.9.0 ) [CRAN]
+colorspace  (2.1-0  -&gt; 2.1-1 ) [CRAN]
+pillar      (1.9.0  -&gt; 1.10.1) [CRAN]
+withr       (3.0.1  -&gt; 3.0.2 ) [CRAN]
+gtable      (0.3.5  -&gt; 0.3.6 ) [CRAN]
+ggplot2     (3.5.0  -&gt; 3.5.1 ) [CRAN]
+stringi     (1.8.3  -&gt; 1.8.4 ) [CRAN]
+rmarkdown   (2.28   -&gt; 2.29  ) [CRAN]
+rstudioapi  (0.16.0 -&gt; 0.17.1) [CRAN]
+data.table  (1.16.0 -&gt; 1.17.0) [CRAN]
+Hmisc       (5.1-3  -&gt; 5.2-3 ) [CRAN]
+psych       (2.4.1  -&gt; 2.4.12) [CRAN]</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  There is a binary version available but the source version is later:
+     binary source needs_compilation
+mime   0.12   0.13              TRUE
+
+  Binaries will be installed
+package 'yaml' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'xfun' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'evaluate' successfully unpacked and MD5 sums checked
+package 'R6' successfully unpacked and MD5 sums checked
 package 'fs' successfully unpacked and MD5 sums checked
-package 'glue' successfully unpacked and MD5 sums checked
-package 'cli' successfully unpacked and MD5 sums checked
-package 'digest' successfully unpacked and MD5 sums checked
-package 'sass' successfully unpacked and MD5 sums checked
-package 'rlang' successfully unpacked and MD5 sums checked
-package 'fastmap' successfully unpacked and MD5 sums checked
-package 'cachem' successfully unpacked and MD5 sums checked
+package 'glue' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'cli' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'digest' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'rlang' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'mime' successfully unpacked and MD5 sums checked
 package 'tinytex' successfully unpacked and MD5 sums checked
-package 'jsonlite' successfully unpacked and MD5 sums checked
-package 'htmltools' successfully unpacked and MD5 sums checked
+package 'jsonlite' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'fontawesome' successfully unpacked and MD5 sums checked
 package 'bslib' successfully unpacked and MD5 sums checked
-package 'fansi' successfully unpacked and MD5 sums checked
-package 'munsell' successfully unpacked and MD5 sums checked
-package 'farver' successfully unpacked and MD5 sums checked
-package 'vctrs' successfully unpacked and MD5 sums checked
+package 'colorspace' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'pillar' successfully unpacked and MD5 sums checked
+package 'withr' successfully unpacked and MD5 sums checked
 package 'gtable' successfully unpacked and MD5 sums checked
-package 'stringi' successfully unpacked and MD5 sums checked
-package 'backports' successfully unpacked and MD5 sums checked
-package 'rstudioapi' successfully unpacked and MD5 sums checked
-package 'data.table' successfully unpacked and MD5 sums checked
-package 'Hmisc' successfully unpacked and MD5 sums checked
+package 'stringi' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'rstudioapi' successfully unpacked and MD5 sums checked
+package 'data.table' successfully unpacked and MD5 sums checked</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'Hmisc' successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-    C:\Users\kevin\AppData\Local\Temp\Rtmp4Wel75\downloaded_packages
+    C:\Users\danie\AppData\Local\Temp\RtmpuEZxkz\downloaded_packages
 ── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file 'C:\Users\kevin\AppData\Local\Temp\Rtmp4Wel75\remotes24a0584a41c7\jogrue-jogRu-c659fcd/DESCRIPTION' ... OK
+* checking for file 'C:\Users\danie\AppData\Local\Temp\RtmpuEZxkz\remotes3b2c40f37fdf\jogrue-jogRu-c659fcd/DESCRIPTION' ... OK
 * preparing 'jogRu':
 * checking DESCRIPTION meta-information ... OK
 * checking for LF line-endings in source and make files and shell scripts
@@ -1472,14 +1483,14 @@ Nota
 </ul>
 <section id="cargar-base-de-datos-1" class="level3">
 <h3 class="anchored" data-anchor-id="cargar-base-de-datos-1">Cargar base de datos</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/investigacion-cuantitativa/raw/main/files/data/data.csv"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-19_ff5326da7ac6cd836488d0ede1837888">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/investigacion-cuantitativa/raw/main/files/data/data.csv"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualización-de-datos" class="level3">
 <h3 class="anchored" data-anchor-id="visualización-de-datos">Visualización de datos</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-20_8909d308bbdd3248a172f93405e21995">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 Q12 Q13 Q14 Q15 Q16 Q17 Q18 Q19 Q20 Q21
 1  2  2  3  1  4  5  4  3  4   3   3   1   5   4   4   4   2   3   3   1   4
@@ -1503,7 +1514,7 @@ Nota
 5       2.9           2.0  52      1       80
 6       3.4           2.6  30      2       60</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   1071 obs. of  39 variables:
  $ Q1           : int  2 2 3 3 1 3 4 2 2 4 ...
@@ -1554,26 +1565,26 @@ Nota
 <section id="recodificar" class="level3">
 <h3 class="anchored" data-anchor-id="recodificar">Recodificar</h3>
 <p>Para que todas las escalas queden en el mismo orden jerárquico, es necesario invertir algunos ítems.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(Q1, Q9, Q17, Q25, Q29, <span class="co"># afiliativo</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                 Q22,                   <span class="co"># autofortalecedor</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                 Q7, Q15, Q23, Q31,     <span class="co"># agresivo</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                 Q16), <span class="sc">~</span>(<span class="dv">6</span><span class="sc">-</span>.)) <span class="sc">%&gt;%</span>      <span class="co"># autodestructivo</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> car<span class="sc">::</span><span class="fu">recode</span>(.<span class="sc">$</span>gender, <span class="st">"0 = NA;</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="st">                              1 = 'Hombre'; 2 = 'Mujer'; 3 = 'Otro'"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>), <span class="sc">~</span>(<span class="fu">ifelse</span>(. <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">|</span> . <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="cn">NA</span>, .))) <span class="sc">%&gt;%</span> </span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-21_d03f835300882536ed785103d3d42ae2">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(Q1, Q9, Q17, Q25, Q29, <span class="co"># afiliativo</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                 Q22,                   <span class="co"># autofortalecedor</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                 Q7, Q15, Q23, Q31,     <span class="co"># agresivo</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                 Q16), <span class="sc">~</span>(<span class="dv">6</span><span class="sc">-</span>.)) <span class="sc">%&gt;%</span>      <span class="co"># autodestructivo</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> car<span class="sc">::</span><span class="fu">recode</span>(.<span class="sc">$</span>gender, <span class="st">"0 = NA;</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="st">                              1 = 'Hombre'; 2 = 'Mujer'; 3 = 'Otro'"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>), <span class="sc">~</span>(<span class="fu">ifelse</span>(. <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">|</span> . <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="cn">NA</span>, .))) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="crear-objetos-para-dimensiones-de-la-escala" class="level3">
 <h3 class="anchored" data-anchor-id="crear-objetos-para-dimensiones-de-la-escala">Crear objetos para dimensiones de la escala</h3>
 <p>Creamos cuatro objetos que contienen los ítems de cada dimensión de la escala.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>afiliativo       <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q1, Q5, Q9 , Q13, Q17, Q21, Q25, Q29)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>autofortalecedor <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q2, Q6, Q10, Q14, Q18, Q22, Q26, Q30)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>agresivo         <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q3, Q7, Q11, Q15, Q19, Q23, Q27, Q31)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>autodestructivo  <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q4, Q8, Q12, Q16, Q20, Q24, Q28, Q32)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-22_f977b8b8011b7c111735fa5fecdfa93d">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>afiliativo       <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q1, Q5, Q9 , Q13, Q17, Q21, Q25, Q29)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>autofortalecedor <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q2, Q6, Q10, Q14, Q18, Q22, Q26, Q30)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>agresivo         <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q3, Q7, Q11, Q15, Q19, Q23, Q27, Q31)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>autodestructivo  <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Q4, Q8, Q12, Q16, Q20, Q24, Q28, Q32)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -1581,30 +1592,30 @@ Nota
 <h2 class="anchored" data-anchor-id="explorar-datos">Explorar datos</h2>
 <section id="descriptivos" class="level3">
 <h3 class="anchored" data-anchor-id="descriptivos">Descriptivos</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Medias para cada dimensión</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Afiliativo =</span> <span class="fu">mean</span>(affiliative),</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autofortalecedor =</span> <span class="fu">mean</span>(selfenhancing),</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Agresivo =</span> <span class="fu">mean</span>(agressive),</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autodestructivo =</span> <span class="fu">mean</span>(selfdefeating))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-23_a68fd4bd35a761d936858b103425ac55">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Medias para cada dimensión</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Afiliativo =</span> <span class="fu">mean</span>(affiliative),</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autofortalecedor =</span> <span class="fu">mean</span>(selfenhancing),</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Agresivo =</span> <span class="fu">mean</span>(agressive),</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autodestructivo =</span> <span class="fu">mean</span>(selfdefeating))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Afiliativo Autofortalecedor Agresivo Autodestructivo
 1   4.010628         3.392308 2.968219        2.767308</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frecuencias por género</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>gender)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frecuencias por género</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>gender)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Hombre  Mujer   Otro 
    537    443      8 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Medias para cada dimensión por género</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span> </span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Afiliativo =</span> <span class="fu">mean</span>(affiliative),</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autofortalecedor =</span> <span class="fu">mean</span>(selfenhancing),</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Agresivo =</span> <span class="fu">mean</span>(agressive),</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autodestructivo =</span> <span class="fu">mean</span>(selfdefeating))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Medias para cada dimensión por género</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span> </span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Afiliativo =</span> <span class="fu">mean</span>(affiliative),</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autofortalecedor =</span> <span class="fu">mean</span>(selfenhancing),</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Agresivo =</span> <span class="fu">mean</span>(agressive),</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Autodestructivo =</span> <span class="fu">mean</span>(selfdefeating))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
   gender Afiliativo Autofortalecedor Agresivo Autodestructivo
@@ -1621,9 +1632,9 @@ Hombre  Mujer   Otro
 <section id="estimar-correlación" class="level3">
 <h3 class="anchored" data-anchor-id="estimar-correlación">Estimar correlación</h3>
 <p>Se debe estimar la correlación de cada dimensión de la escala por separado.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afiliativo</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(afiliativo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-24_f4c31b7679ac101909f23bdc21a4becb">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Afiliativo</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(afiliativo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Q1        Q5        Q9       Q13       Q17       Q21       Q25
 Q1  1.0000000 0.4219343 0.3171529 0.4266762 0.5290245 0.4568504 0.4618863
@@ -1644,8 +1655,8 @@ Q21 0.3156306
 Q25 0.3451300
 Q29 1.0000000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Autofortalecedor</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(autofortalecedor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Autofortalecedor</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(autofortalecedor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Q2        Q6       Q10       Q14       Q18       Q22       Q26
 Q2  1.0000000 0.2741238 0.4379514 0.4405901 0.4886435 0.3370991 0.4080850
@@ -1666,8 +1677,8 @@ Q22 0.1709110
 Q26 0.2913439
 Q30 1.0000000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agresivo</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(agresivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agresivo</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(agresivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Q3        Q7       Q11       Q15       Q19       Q23       Q27
 Q3  1.0000000 0.2839415 0.2631534 0.3945511 0.2853576 0.3608919 0.3484064
@@ -1688,8 +1699,8 @@ Q23 0.3925590
 Q27 0.2855325
 Q31 1.0000000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Autodestructivo</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(autodestructivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Autodestructivo</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(autodestructivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Q4        Q8       Q12       Q16       Q20       Q24       Q28
 Q4  1.0000000 0.4659424 0.4125085 0.3313143 0.4417460 0.3942768 0.2305862
@@ -1747,8 +1758,8 @@ Nota
 </div>
 </div>
 <p>Asimismo, esperamos que la correlación de cada ítem respecto del total sea al menos de .4 (media) y, ojalá, de al menos .6 (alta). Ítems con correlaciones muy bajas podrían eliminarse, especialmente si el alfa de Chronbach aumenta en caso de que el ítem sea eliminado.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(afiliativo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-25_da0419d11bd6456160f0a4a225c3bcf6">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(afiliativo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -1795,7 +1806,7 @@ Q21 0.01 0.03 0.09 0.29 0.58    0
 Q25 0.01 0.03 0.06 0.29 0.60    0
 Q29 0.06 0.11 0.20 0.34 0.28    0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(autofortalecedor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(autofortalecedor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -1842,7 +1853,7 @@ Q22 0.12 0.26 0.27 0.24 0.11    0
 Q26 0.06 0.12 0.26 0.35 0.22    0
 Q30 0.02 0.09 0.16 0.35 0.39    0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(agresivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(agresivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -1889,7 +1900,7 @@ Q23 0.09 0.21 0.28 0.28 0.15    0
 Q27 0.36 0.28 0.15 0.13 0.07    0
 Q31 0.10 0.22 0.24 0.22 0.20    0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(autodestructivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(autodestructivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -1936,8 +1947,8 @@ Q24 0.21 0.36 0.25 0.12 0.06    0
 Q28 0.13 0.18 0.22 0.28 0.19    0
 Q32 0.18 0.22 0.29 0.23 0.09    0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para toda la escala </span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para toda la escala </span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -2061,8 +2072,8 @@ Q32 0.18 0.22 0.29 0.23 0.09    0</code></pre>
 <section id="alfa-ordinal" class="level4">
 <h4 class="anchored" data-anchor-id="alfa-ordinal">Alfa Ordinal</h4>
 <p>Como se señaló, el alfa de Chronbach está diseñado para variables continuas. Por ello, podemos calcular el alfa ordinal para las puntuaciones de cada ítem. Para esto, utilizaremos la función <code>ordinal_alpha()</code>de <code>jogRu</code>, que estima el alfa ordinal a partir de correlación policórica (según lo propuesto por Zumbo et al.(2007)).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(afiliativo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="08-resource_cache/html/unnamed-chunk-26_80a1abb4c1282e274719c5a028054a87">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(afiliativo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -2097,7 +2108,7 @@ Q21 0.79  0.76   0.71
 Q25 0.81  0.79   0.73
 Q29 0.67  0.60   0.56</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(autofortalecedor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(autofortalecedor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -2132,7 +2143,7 @@ Q22 0.54  0.43   0.40
 Q26 0.76  0.73   0.67
 Q30 0.61  0.53   0.47</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(agresivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(agresivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -2167,7 +2178,7 @@ Q23 0.61  0.53   0.47
 Q27 0.65  0.57   0.52
 Q31 0.74  0.70   0.63</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(autodestructivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(autodestructivo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -2202,8 +2213,8 @@ Q24 0.59  0.49   0.45
 Q28 0.49  0.36   0.33
 Q32 0.77  0.73   0.67</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para toda la escala </span></span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para toda la escala </span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>jogRu<span class="sc">::</span><span class="fu">ordinal_alpha</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -2330,7 +2341,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2362,50 +2384,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/metod1-mcs\.netlify\.app");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2415,17 +2398,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2437,130 +2411,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -2604,7 +2455,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2630,32 +2480,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2718,18 +2542,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by Kevin Carrasco &amp; Daniela Olivares <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
-</div>   
+    <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by Daniela Olivares &amp; Kevin Carrasco <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">
-<p>Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/cursos-metodos-facso/metod1-MCS">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></p>
-</div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/cursos-metodos-facso/metod1-MCS">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>
-
 
 
 

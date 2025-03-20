@@ -115,7 +115,7 @@ website:
 
   page-footer:
     left: |
-      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by Kevin Carrasco & Daniela Olivares <br>
+      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by Daniela Olivares & Kevin Carrasco <br>
       All content licensed under a {{< fa brands creative-commons >}}
       {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
       [Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
