@@ -1,4 +1,4 @@
-author: Kevin Carrasco
+author: Kevin Carrasco & Daniela Olivares
 
 instructor:
   name: Daniela Olivares
@@ -27,13 +27,13 @@ instructor2:
 
 course:
   number: "MCS7113"
-  semester: "Primer Semestre 2024"
+  semester: "Primer Semestre 2025"
   days: "Viernes"
   time: "09:00-11:45 AM"
-  location: "Sala 44. Cuarto piso edificio antiguo FACSO"
-  dates: "Marzo 22–Julio  07, 2024"
+  location: "Sala 334. Depto de Sociología"
+  dates: "Marzo 21–Julio  06, 2025"
   github: "https://github.com/cursos-metodos-facso/metod1-MCS"
-  copyright_year: "2024"
+  copyright_year: "2025"
   slack: ""
 
 university:

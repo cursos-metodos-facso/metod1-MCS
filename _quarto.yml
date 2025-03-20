@@ -30,8 +30,8 @@ website:
   twitter-card:
     image: "/files/social-image-f22.png"
     card-style: summary_large_image
-    creator: "@juankcastillo"
-    site: "@juankcastillo"
+    creator: "@kevincarrascoq1"
+    site: "@kevincarrascoq1"
 
   open-graph:
     image: "/files/social-image-f22.png"
@@ -69,18 +69,18 @@ website:
           contents:
             - text: "01: Sesión 1"
               file: content/01-content.qmd
-            - text: "02: Sesión 2"
-              file: content/02-content.qmd
-            - text: "03: Sesión 3"
-              file: content/03-content.qmd
-            - text: "04: Sesión 4"
-              file: content/04-content.qmd
-            - text: "05: Sesión 5"
-              file: content/05-content.qmd
-            - text: "06: Sesión 6"
-              file: content/06-content.qmd
-            - text: "07: Sesión 7"
-              file: content/07-content.qmd
+            # - text: "02: Sesión 2"
+            #   file: content/02-content.qmd
+            # - text: "03: Sesión 3"
+            #   file: content/03-content.qmd
+            # - text: "04: Sesión 4"
+            #   file: content/04-content.qmd
+            # - text: "05: Sesión 5"
+            #   file: content/05-content.qmd
+            # - text: "06: Sesión 6"
+            #   file: content/06-content.qmd
+            # - text: "07: Sesión 7"
+            #   file: content/07-content.qmd
             #- text: "08: Sesión 8"
             #  file: content/09-content.qmd
             #- text: "09: Sesión 9"
@@ -94,24 +94,24 @@ website:
       contents:
         - text: "Descripción"
           file: resource/index.qmd
-        - text: "Práctico 1"
-          file: resource/01-resource.qmd
-        - text: "Práctico 2"
-          file: resource/02-resource.qmd
-        - text: "Práctico 3"
-          file: resource/03-resource.qmd
-        - text: "Práctico 4"
-          file: resource/04-resource.qmd
-        - text: "Práctico 5"
-          file: resource/05-resource.qmd
-        - text: "Práctico 6"
-          file: resource/06-resource.qmd
-        - text: "Práctico 7"
-          file: resource/07-resource.qmd
-        - text: "Práctico 8"
-          file: resource/08-resource.qmd
-        - text: "Práctico 9"
-          file: resource/09-resource.qmd
+        # - text: "Práctico 1"
+        #   file: resource/01-resource.qmd
+        # - text: "Práctico 2"
+        #   file: resource/02-resource.qmd
+        # - text: "Práctico 3"
+        #   file: resource/03-resource.qmd
+        # - text: "Práctico 4"
+        #   file: resource/04-resource.qmd
+        # - text: "Práctico 5"
+        #   file: resource/05-resource.qmd
+        # - text: "Práctico 6"
+        #   file: resource/06-resource.qmd
+        # - text: "Práctico 7"
+        #   file: resource/07-resource.qmd
+        # - text: "Práctico 8"
+        #   file: resource/08-resource.qmd
+        # - text: "Práctico 9"
+        #   file: resource/09-resource.qmd
 
   page-footer:
     left: |
