@@ -39,7 +39,7 @@ website:
 
   navbar:
     pinned: true
-    background: "#916ded"
+    background: "#3c4fa6"
     right:
       - syllabus.qmd
       - schedule.qmd
@@ -94,8 +94,8 @@ website:
       contents:
         - text: "Descripción"
           file: resource/index.qmd
-        # - text: "Práctico 1"
-        #   file: resource/01-resource.qmd
+        - text: "Práctico 1"
+          file: resource/01-resource.qmd
         # - text: "Práctico 2"
         #   file: resource/02-resource.qmd
         # - text: "Práctico 3"
